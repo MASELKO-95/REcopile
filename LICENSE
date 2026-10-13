@@ -1,0 +1,85 @@
+Recopile Community License 1.0 — projekt licencji
+LicenseRef-Recopile-Community-1.0
+Copyright (c) 2026 MASELKO-95
+Autor oryginalnego projektu: MASELKO-95
+Kontakt: https://github.com/MASELKO-95
+Oryginalne repozytorium: https://github.com/MASELKO-95/recopile
+
+1. Zakres
+Licencja obejmuje wyłącznie oryginalny kod, dokumentację i inne materiały
+Recopile, do których MASELKO-95 ma prawa i które udostępnia na tych warunkach.
+Cudze programy, biblioteki, fonty, metadane, ilustracje i gry zachowują własne
+licencje i prawa. Nie ogranicza to praw do nich wynikających z ich licencji
+ani praw przyznanych bezpośrednio ustawą.
+
+2. Korzystanie niekomercyjne
+Możesz bez opłat używać, analizować, kopiować, kompilować i modyfikować materiały
+objęte tą licencją oraz tworzyć na ich podstawie własne wersje do celów
+niekomercyjnych. Możesz nieodpłatnie udostępniać oryginalne i zmienione wersje,
+zachowując tę licencję, autora i opis zmian. Sam status organizacji non-profit
+nie zwalnia z warunku, że dane wykorzystanie faktycznie jest niekomercyjne.
+
+3. Wskazanie autora i oryginału
+Każda udostępniana kopia musi zachować tę licencję, informację o prawach
+autorskich oraz autora oryginału: MASELKO-95. W README lub równoważnej
+dokumentacji oraz w dostępnym z aplikacji widoku „O projekcie / Licencja”
+należy czytelnie wskazać pochodzenie z Recopile i podać działający link do
+oryginalnego repozytorium wskazanego przez autora. Nie wolno usuwać atrybucji,
+podawać się za autora oryginału ani sugerować poparcia wersji pochodnej przez
+autora bez jego zgody. Możesz oznaczyć własny wkład i nazwę swojej wersji.
+
+4. Oznaczenie zmian
+Udostępniając zmienioną wersję, oznacz ją jako zmodyfikowaną i dołącz dostępny
+opis istotnych zmian, ich autora oraz datę lub numer wersji, np. w CHANGELOG.md
+lub MODIFICATIONS.md. Nie musisz opisywać każdej linii; wymagany jest rzetelny
+opis zmian funkcjonalnych pozwalający odróżnić oryginał od zmienionego wydania.
+
+5. Wykorzystanie komercyjne
+Ta licencja nie udziela prawa do wykorzystania komercyjnego. Przed takim
+wykorzystaniem potrzebna jest osobna, pisemna zgoda MASELKO-95 oraz udzielenie
+licencji komercyjnej określającej zakres zastosowania i ewentualne opłaty.
+Samo wystąpienie o zgodę, brak odpowiedzi, darowizna lub wpłata Sponsors nie
+oznaczają udzielenia licencji komercyjnej.
+Wykorzystanie komercyjne obejmuje w szczególności sprzedaż lub odpłatne
+udostępnianie programu lub jego części, płatne funkcje, subskrypcje, odpłatne
+usługi oparte na tym kodzie, użycie jako części zarobkowego produktu oraz
+monetyzację dystrybucji przez reklamy, sponsoring promocyjny lub afiliację.
+Zwykłe prywatne granie w oficjalnym wydaniu nie jest wykorzystaniem komercyjnym
+przez gracza, również gdy wydanie autora oferuje dobrowolne wsparcie lub reklamy.
+
+6. Dobrowolne darowizny
+Dobrowolne darowizny bez świadczenia wzajemnego, płatnych funkcji, reklam,
+obietnicy uprzywilejowanego dostępu ani promocji sponsorów są dozwolone jako
+wsparcie rzeczywiście niekomercyjnego projektu. Darowizna nie może być ceną
+dostępu do programu ani sposobem obejścia wymogu licencji komercyjnej.
+
+7. Dalsza dystrybucja i własny wkład
+Nie możesz udzielać innym większych praw do oryginalnych materiałów Recopile
+niż sam otrzymałeś. Obowiązek atrybucji, opisu zmian i uzyskania zgody na
+komercję oryginalnego kodu musi pozostać zachowany. Własny samodzielny wkład
+możesz licencjonować osobno, ale nie zmienia to warunków materiałów Recopile
+ani cudzych komponentów. Wymiana bibliotek i inne uprawnienia wymagane przez
+licencję cudzej biblioteki pozostają dozwolone w zakresie tej biblioteki.
+
+8. Prawa autora
+MASELKO-95 może udostępniać własne materiały na innych warunkach, udzielać
+licencji komercyjnych i monetyzować własne wydania. Nie daje to praw do
+relicencjonowania cudzych materiałów bez uprawnienia. Ta licencja nie udziela
+praw do znaków towarowych, oryginalnych gier, ISO, BIOS-u ani zasobów gry.
+
+9. Warunki i naruszenia
+Uprawnienia obowiązują pod warunkiem przestrzegania tej licencji. W razie
+naruszenia należy zaprzestać działań wykraczających poza otrzymane prawa.
+Wznowienie dystrybucji po naruszeniu wymaga usunięcia naruszenia i uzgodnienia
+z autorem przywrócenia uprawnień.
+
+10. Brak gwarancji
+Program jest udostępniany w stanie, w jakim jest, bez gwarancji działania,
+przydatności do konkretnego celu ani zgodności z każdym urządzeniem i grą.
+W granicach dopuszczonych przez prawo autor nie ponosi odpowiedzialności za
+szkody wynikłe z używania. Nie wyłącza to praw ani odpowiedzialności, których
+obowiązujące prawo nie pozwala wyłączyć.
+
+To własna licencja z udostępnionym kodem i ograniczeniem komercyjnym.
+Nie jest to MIT, GNU GPL ani licencja zatwierdzona przez OSI. Przed oficjalnym
+wydaniem tekst stanowi projekt do sprawdzenia prawnego.
