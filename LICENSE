@@ -1,85 +1,75 @@
-Recopile Community License 1.0 — projekt licencji
+Recopile Community License 1.0 — Draft
 LicenseRef-Recopile-Community-1.0
 Copyright (c) 2026 MASELKO-95
-Autor oryginalnego projektu: MASELKO-95
-Kontakt: https://github.com/MASELKO-95
-Oryginalne repozytorium: https://github.com/MASELKO-95/recopile
+Original project: RE:COPILE
+Original repository: https://github.com/MASELKO-95/recopile
+Licensor and contact: https://github.com/MASELKO-95
 
-1. Zakres
-Licencja obejmuje wyłącznie oryginalny kod, dokumentację i inne materiały
-Recopile, do których MASELKO-95 ma prawa i które udostępnia na tych warunkach.
-Cudze programy, biblioteki, fonty, metadane, ilustracje i gry zachowują własne
-licencje i prawa. Nie ogranicza to praw do nich wynikających z ich licencji
-ani praw przyznanych bezpośrednio ustawą.
+Plain-language summary (the terms below control):
+You may use, study, modify and share RE:COPILE for noncommercial purposes.
+Keep the original author and link, identify your changes and share the source
+of distributed versions. If you want to earn money from RE:COPILE or a version
+based on it, ask MASELKO-95 first and obtain written commercial permission.
 
-2. Korzystanie niekomercyjne
-Możesz bez opłat używać, analizować, kopiować, kompilować i modyfikować materiały
-objęte tą licencją oraz tworzyć na ich podstawie własne wersje do celów
-niekomercyjnych. Możesz nieodpłatnie udostępniać oryginalne i zmienione wersje,
-zachowując tę licencję, autora i opis zmian. Sam status organizacji non-profit
-nie zwalnia z warunku, że dane wykorzystanie faktycznie jest niekomercyjne.
+1. Scope and noncommercial permission
+The licensor grants a worldwide, royalty-free, non-exclusive copyright license
+to use, study, copy, build, modify and distribute the original RE:COPILE materials
+that the licensor owns, for noncommercial purposes, subject to all these terms.
+Noncommercial means not primarily intended for commercial advantage or monetary
+compensation. A nonprofit label alone does not make a use noncommercial.
+Private gameplay with the official launcher is permitted, including an official
+edition that offers the licensor's optional support or advertising features.
 
-3. Wskazanie autora i oryginału
-Każda udostępniana kopia musi zachować tę licencję, informację o prawach
-autorskich oraz autora oryginału: MASELKO-95. W README lub równoważnej
-dokumentacji oraz w dostępnym z aplikacji widoku „O projekcie / Licencja”
-należy czytelnie wskazać pochodzenie z Recopile i podać działający link do
-oryginalnego repozytorium wskazanego przez autora. Nie wolno usuwać atrybucji,
-podawać się za autora oryginału ani sugerować poparcia wersji pochodnej przez
-autora bez jego zgody. Możesz oznaczyć własny wkład i nazwę swojej wersji.
+2. Attribution, original link and changes
+Keep this license and copyright notices in all distributed copies. Show
+"Based on RE:COPILE by MASELKO-95" and the original repository link in the README
+or equivalent documentation and in an accessible About / License view.
+For a modified version, identify it as modified and provide a reasonably clear
+summary of significant changes, the modifier and the date or version.
+Do not claim authorship of the original or endorsement by the original author.
 
-4. Oznaczenie zmian
-Udostępniając zmienioną wersję, oznacz ją jako zmodyfikowaną i dołącz dostępny
-opis istotnych zmian, ich autora oraz datę lub numer wersji, np. w CHANGELOG.md
-lub MODIFICATIONS.md. Nie musisz opisywać każdej linii; wymagany jest rzetelny
-opis zmian funkcjonalnych pozwalający odróżnić oryginał od zmienionego wydania.
+3. Source availability and redistribution
+When distributing the software, including a modified version in executable form,
+provide the corresponding source and build instructions under these same terms,
+either with the copy or through a clearly identified, freely accessible download.
+Do not impose terms that remove the permissions granted here for RE:COPILE's
+original materials. This condition does not relicense independent third-party
+components or restrict the rights granted by their own licenses.
 
-5. Wykorzystanie komercyjne
-Ta licencja nie udziela prawa do wykorzystania komercyjnego. Przed takim
-wykorzystaniem potrzebna jest osobna, pisemna zgoda MASELKO-95 oraz udzielenie
-licencji komercyjnej określającej zakres zastosowania i ewentualne opłaty.
-Samo wystąpienie o zgodę, brak odpowiedzi, darowizna lub wpłata Sponsors nie
-oznaczają udzielenia licencji komercyjnej.
-Wykorzystanie komercyjne obejmuje w szczególności sprzedaż lub odpłatne
-udostępnianie programu lub jego części, płatne funkcje, subskrypcje, odpłatne
-usługi oparte na tym kodzie, użycie jako części zarobkowego produktu oraz
-monetyzację dystrybucji przez reklamy, sponsoring promocyjny lub afiliację.
-Zwykłe prywatne granie w oficjalnym wydaniu nie jest wykorzystaniem komercyjnym
-przez gracza, również gdy wydanie autora oferuje dobrowolne wsparcie lub reklamy.
+4. Commercial use requires a separate license
+This license does not permit commercial use. Before selling, offering paid
+features or subscriptions, providing paid services based on the software,
+embedding it in a commercial product, or monetizing its distribution through
+advertising, promotional sponsorship or affiliate links, obtain written approval
+and a separate commercial license from MASELKO-95. A request, silence, a donation
+or a GitHub Sponsors payment is not commercial permission.
+Voluntary donations without any benefits, paid access, advertising or sponsor
+promotion may support a genuinely noncommercial version. The licensor may
+commercially license or monetize materials the licensor owns separately.
 
-6. Dobrowolne darowizny
-Dobrowolne darowizny bez świadczenia wzajemnego, płatnych funkcji, reklam,
-obietnicy uprzywilejowanego dostępu ani promocji sponsorów są dozwolone jako
-wsparcie rzeczywiście niekomercyjnego projektu. Darowizna nie może być ceną
-dostępu do programu ani sposobem obejścia wymogu licencji komercyjnej.
+5. Third-party rights
+Game data, games, BIOS files, firmware, trademarks, libraries, fonts and other
+third-party materials retain their respective owners and licenses. This license
+grants no rights to redistribute them and does not override rights required by
+their licenses or applicable law. Commercial rights to a contributor's separately
+owned work must be obtained from that contributor where required.
 
-7. Dalsza dystrybucja i własny wkład
-Nie możesz udzielać innym większych praw do oryginalnych materiałów Recopile
-niż sam otrzymałeś. Obowiązek atrybucji, opisu zmian i uzyskania zgody na
-komercję oryginalnego kodu musi pozostać zachowany. Własny samodzielny wkład
-możesz licencjonować osobno, ale nie zmienia to warunków materiałów Recopile
-ani cudzych komponentów. Wymiana bibliotek i inne uprawnienia wymagane przez
-licencję cudzej biblioteki pozostają dozwolone w zakresie tej biblioteki.
+6. Compliance and termination
+These permissions are conditional on compliance. If notified of a violation,
+stop the violating activity. Permissions terminate if the violation is not
+corrected within 30 days of receiving notice. A first violation corrected within
+that period reinstates the permissions; repeat violations require the licensor's
+written agreement for reinstatement. Existing compliant recipients keep their
+own permissions under this license.
 
-8. Prawa autora
-MASELKO-95 może udostępniać własne materiały na innych warunkach, udzielać
-licencji komercyjnych i monetyzować własne wydania. Nie daje to praw do
-relicencjonowania cudzych materiałów bez uprawnienia. Ta licencja nie udziela
-praw do znaków towarowych, oryginalnych gier, ISO, BIOS-u ani zasobów gry.
+7. No warranty or liability
+To the extent permitted by applicable law, the software is provided "as is",
+without warranty, including merchantability, fitness for a particular purpose
+or noninfringement. The licensor is not liable for damages arising from use or
+distribution. Mandatory legal rights and liabilities remain unaffected.
 
-9. Warunki i naruszenia
-Uprawnienia obowiązują pod warunkiem przestrzegania tej licencji. W razie
-naruszenia należy zaprzestać działań wykraczających poza otrzymane prawa.
-Wznowienie dystrybucji po naruszeniu wymaga usunięcia naruszenia i uzgodnienia
-z autorem przywrócenia uprawnień.
-
-10. Brak gwarancji
-Program jest udostępniany w stanie, w jakim jest, bez gwarancji działania,
-przydatności do konkretnego celu ani zgodności z każdym urządzeniem i grą.
-W granicach dopuszczonych przez prawo autor nie ponosi odpowiedzialności za
-szkody wynikłe z używania. Nie wyłącza to praw ani odpowiedzialności, których
-obowiązujące prawo nie pozwala wyłączyć.
-
-To własna licencja z udostępnionym kodem i ograniczeniem komercyjnym.
-Nie jest to MIT, GNU GPL ani licencja zatwierdzona przez OSI. Przed oficjalnym
-wydaniem tekst stanowi projekt do sprawdzenia prawnego.
+This is a custom source-available license, not GNU GPL, MIT or an OSI-approved
+open-source license. Its noncommercial restriction is incompatible with claiming
+that RE:COPILE's original code is distributed under unmodified GNU GPL.
+Draft for legal review before the official release; no claim of guaranteed
+validity in every jurisdiction is made.

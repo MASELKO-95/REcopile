@@ -28,7 +28,17 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 
 Before downloading, the launcher presents the project's actual **README, license, release information and author support links**. Documentation stays with the installed version. Automatic updates require prior consent; a changed license requires a fresh review. Updates are checked at startup, announced, then approved updates are downloaded at the next startup. Previous port versions and user data are retained.
 
-For Forza Horizon, the original [arcanite24/pinyon-shift](https://github.com/arcanite24/pinyon-shift) is the default **Final** source in this catalog. Its original launcher handles setup. “Final” names our default channel; consult upstream's README for its actual release status. The alternative [Linux fork](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial) is **Pre-release — unsupported / archived** and is never selected automatically.
+## Authors represented in the catalog
+
+- [MASELKO-95](https://github.com/MASELKO-95)
+- [arcanite24](https://github.com/arcanite24)
+- [mchughalex](https://github.com/mchughalex)
+- [hedge-dev](https://github.com/hedge-dev)
+- [PCSX2 team](https://github.com/PCSX2)
+- [RPCS3 team](https://github.com/RPCS3)
+
+Selected projects by these authors are listed in the catalog. Their original
+README, license, credits and support links are shown inside the launcher.
 
 PCSX2 and RPCS3 are managed separately. Their BIOS / firmware instructions and per-game compatibility apply. Xbox 360 emulation can use a user-configured local adapter; an emulator is not included just because a title appears in the catalog.
 
@@ -51,7 +61,7 @@ experimental local project, with full gameplay unverified.
 
 Original RE:COPILE materials use the draft [Recopile Community License](LICENSE).
 Noncommercial use and modifications require attribution to **MASELKO-95**, a
-link to this original repository and a description of changes. Commercial reuse
+link to this original repository, a description of changes and source for distributed versions. Commercial reuse
 requires **written permission and a separate commercial license**. This custom
 source-available license is not MIT, GPL or an OSI-approved open-source license.
 Third-party components retain their own terms.
