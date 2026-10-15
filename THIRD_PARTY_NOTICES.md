@@ -1,57 +1,58 @@
-# Komponenty i prawa autorów
+# Third-party components and notices
 
-GNU GPLv3 obejmuje własny kod i materiały RE:COPILE. Nie zmienia licencji ani praw poniższych
-projektów, gier, znaków towarowych i danych.
+GNU GPLv3 covers original RE:COPILE code and materials. Independent components,
+projects, games, trademarks and data retain their own rights and terms.
+Related repositories: [REPOSITORIES.md](REPOSITORIES.md).
 
 - React: MIT, https://github.com/facebook/react/blob/main/LICENSE
 - Phosphor Icons: MIT, https://github.com/phosphor-icons/react/blob/master/LICENSE
-- Electron: MIT oraz licencje Chromium; pakiet Electron zawiera LICENSE,
-  LICENSES.chromium.html i dokumenty swoich zależności.
+- Electron: MIT and Chromium licenses. Electron includes LICENSE,
+  LICENSES.chromium.html and its dependency notices.
 - electron-builder / electron-updater: MIT,
   https://github.com/electron-userland/electron-builder/blob/master/LICENSE
 - Python: PSF, https://docs.python.org/3/license.html
 - Chaquopy: MIT, https://github.com/chaquo/chaquopy/blob/master/LICENSE
 - Pillow: HPND, https://github.com/python-pillow/Pillow/blob/main/LICENSE
 - py7zr: LGPL-2.1, https://github.com/miurahr/py7zr/blob/master/LICENSE
-- Inter i Barlow Condensed: SIL Open Font License. Pełne teksty dołączone w
-  `frontend/public/assets/fonts/*-LICENSE.txt` i w zbudowanym interfejsie.
-- Google Mobile Ads / UMP: warunki Google, tylko wariant Android skonfigurowany
-  do reklam; https://developers.google.com/admob/android/privacy.
+- Inter and Barlow Condensed: SIL Open Font License. Full texts are included in
+  `frontend/public/assets/fonts/*-LICENSE.txt` and the frontend build.
+- Google Mobile Ads / UMP: Google's terms; only a future Android variant
+  configured for advertising. https://developers.google.com/admob/android/privacy
 
-Porty i emulatory są pobierane bezpośrednio z GitHub Releases ich autorów.
-Launcher pobiera ich rzeczywiste README i LICENSE dla wybranego wydania,
-pokazuje je przed pobraniem programu, zachowuje w `Recopile-project-info` i
-przedstawia finansowanie zadeklarowane w FUNDING.yml. Nie przepakowujemy ISO,
-BIOS-u ani oryginalnych zasobów gry.
+Ports and emulators are downloaded directly from their projects' GitHub Releases.
+The launcher retrieves the actual README and LICENSE for the selected release,
+shows them before downloading the program, keeps them in `Recopile-project-info`
+and displays funding links declared in FUNDING.yml. It does not repackage ISO,
+BIOS or original game assets. Original upstream project names are retained.
 
-Katalog metadanych powstał z publicznych baz Libretro/libretro-database:
-https://github.com/libretro/libretro-database. Pochodzenie, wersje plików,
-daty i sumy źródeł są zapisane w migawce `data/catalog.json.gz`, a w aplikacji
-w informacji o katalogu. Metadane są oddzielone od praw do samych gier.
+Catalog metadata is based on public Libretro/libretro-database data:
+https://github.com/libretro/libretro-database. Provenance, file revisions,
+dates and source hashes are recorded in `data/catalog.json.gz` and the catalog
+information shown in the application. Metadata rights are separate from rights
+to the games themselves.
 
-Wpisy Xbox One pochodzą z list „List of Xbox One games (A–L)” i „(M–Z)”
-angielskiej Wikipedii. Autorzy: Wikipedia contributors, CC BY-SA 4.0.
-Adresy stron i sumy pobranych źródeł zapisano w `data/catalog.json.gz`.
-Opisy pobierane na żądanie z Wikipedii pozostają w oryginalnym języku angielskim;
-aplikacja pokazuje link do artykułu, atrybucję autorów i oznaczenie CC BY-SA 4.0.
+Xbox One entries come from English Wikipedia's “List of Xbox One games (A–L)”
+and “(M–Z)”. Attribution: Wikipedia contributors, CC BY-SA 4.0.
+Source URLs and retrieved-content hashes are stored in `data/catalog.json.gz`.
+Descriptions requested from Wikipedia stay in their original English and are
+accompanied by an article link, contributor attribution and CC BY-SA 4.0 label.
 https://en.wikipedia.org/wiki/List_of_Xbox_One_games_(A%E2%80%93L)
 https://en.wikipedia.org/wiki/List_of_Xbox_One_games_(M%E2%80%93Z)
 https://creativecommons.org/licenses/by-sa/4.0/
 
-Okładki w lokalnym podglądzie pochodzą z Wikipedii, Libretro thumbnails i
-xlenore/ps2-covers. Własność ilustracji pozostaje u ich autorów/wydawców.
-Domyślne narzędzia pakowania pomijają ten lokalny zbiór grafik, ponieważ samo
-pobranie okładki nie daje zgody na jej dalszą dystrybucję. W wydaniu publicznym
-użyj własnych okładek lub materiałów z odpowiednimi prawami. Interfejs ma
-działający widok zastępczy, gdy okładka nie została dołączona.
+Artwork cached in the local preview comes from Wikipedia, Libretro thumbnails
+and xlenore/ps2-covers. Illustrations remain the property of their respective
+creators/publishers. Default packaging excludes this local artwork collection:
+downloading a cover does not grant redistribution rights. Public distributions
+should use original artwork or appropriately licensed materials. The interface
+provides a placeholder when no cover is available.
 
-Nowe grafiki z Wikipedia/Wikimedia są pobierane tylko dla widocznych wyników
-wyszukiwania lub po jawnym żądaniu użytkownika. Pamięć `covers/` w lokalnych
-danych aplikacji nie jest częścią wydania. Link do artykułu przy grafice pozwala
-sprawdzić jej pochodzenie; licencja tekstu Wikipedii nie udziela automatycznie
-praw do ilustracji należącej do wydawcy gry.
+New images from Wikipedia/Wikimedia are downloaded only for visible search
+results or an explicit player request. The `covers/` cache in local application
+data is not part of a release. Article links identify image provenance;
+Wikipedia's text license does not automatically license a game publisher's art.
 
-Budowanie samodzielnej aplikacji dołącza binarne zależności z ich oryginalnymi
-licencjami. Dystrybutor powinien zachować te dokumenty oraz udostępnić źródła
-komponentów, dla których wymaga tego ich licencja. Użycie nazwy Xbox,
-PlayStation czy tytułu gry nie oznacza powiązania ani poparcia przez jej wydawcę.
+Standalone builds include binary dependencies with their original licenses.
+Distributors must retain the required notices and provide source for components
+whose licenses require it. Use of Xbox, PlayStation or a game title does not
+imply affiliation with or endorsement by its publisher.

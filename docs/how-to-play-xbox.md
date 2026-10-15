@@ -2,7 +2,7 @@
 
 **Download the port → choose your own ISO → prepare the game → play.**
 
-These steps describe **Forza Horizon / Pinyon Shift · RE:COPILE Edition** on
+These steps describe **Forza Horizon / Pinyon Shift** on
 Linux and Windows. Each other port has its own supported game versions,
 requirements and preparation procedure. The in-app **How to play** page is
 available in English, Polish and Hungarian.
@@ -11,7 +11,7 @@ available in English, Polish and Hungarian.
    and open its details. Check the package for your operating system and the
    compatibility information. A metadata entry or source repository alone
    does not provide a playable port.
-2. **Download the port tools.** Select **Pinyon Shift · RE:COPILE Edition**,
+2. **Download the port tools.** Select **Pinyon Shift**,
    the default **Final** channel, then **Download port tools**. Review that
    release's actual README, license, authors and requirements before approving
    the download. Automatic updates have a separate optional consent. The

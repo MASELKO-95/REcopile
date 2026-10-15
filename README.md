@@ -4,7 +4,7 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Development preview.** Linux is the current validation platform. Windows packaging is being prepared and needs testing on Windows before an official release. Android is deferred.
+**Development preview.** Linux is the current validation platform. Windows packaging is being prepared and needs testing on Windows before a public release. Android is deferred.
 
 ## Languages
 
@@ -24,7 +24,7 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 - Keep profiles, play history and launcher activity badges local. Export a summary image to share yourself, for example on Discord.
 - Review mod packages with a manifest, README, license and file hashes. Activation requires an explicit mod folder or adapter supported by the port. Creator templates and the package builder provide Linux / Windows installation helpers.
 
-## Sources, updates and authors
+## Sources and updates
 
 **A port supplies software; you supply your own game data.** RE:COPILE does not distribute console game images, BIOS files, firmware, copyrighted game assets or unpublished commercial game source code. Follow each project's instructions to prepare your own copy. There is no universal automatic “ISO to native game” conversion.
 
@@ -32,7 +32,7 @@ Before downloading, the launcher presents the project's actual **README, license
 
 The in-app **How to play** page has a detailed Xbox 360 text guide, separate
 from the PS2 DVD reader. [Read the guide](docs/how-to-play-xbox.md).
-Forza Horizon's **RE:COPILE Edition** panel uses the original Pinyon Shift
+Forza Horizon's setup panel uses **Pinyon Shift**'s original
 command-line tools for ISO/folder verification, building and direct launch.
 The original authors, release source and BSD license are retained. A completed
 build and confirmed gameplay are distinct states.
@@ -43,22 +43,8 @@ package. **Ratchet & Clank: Up Your Arsenal (3) · RE:COPILE Edition** is experi
 with intro/title-screen progress; full gameplay and Windows remain unverified.
 [Source and build instructions](https://github.com/MASELKO-95/ratchet-3-recopile-edition).
 
-## Authors represented in the catalog
-
-The separate [port and project list](PORTS.md) contains source links, systems and
-development status, and is updated whenever a project is added to the catalog.
-
-- [MASELKO-95](https://github.com/MASELKO-95)
-- [arcanite24](https://github.com/arcanite24)
-- [mchughalex](https://github.com/mchughalex)
-- [hedge-dev](https://github.com/hedge-dev)
-- [fabioap-cpu](https://github.com/fabioap-cpu)
-- [ShreyashDesai](https://github.com/ShreyashDesai)
-- [PCSX2 team](https://github.com/PCSX2)
-- [RPCS3 team](https://github.com/RPCS3)
-
-Selected projects by these authors are listed in the catalog. Their original
-README, license, credits and support links are shown inside the launcher.
+Related repositories: [REPOSITORIES.md](REPOSITORIES.md).
+Port availability and status: [PORTS.md](PORTS.md).
 
 PCSX2 and RPCS3 are managed separately. Their BIOS / firmware instructions and per-game compatibility apply. Xbox 360 emulation can use a user-configured local adapter; an emulator is not included just because a title appears in the catalog.
 
@@ -113,7 +99,7 @@ npm ci
 npm run package
 ```
 
-Build the backend on the target operating system. Desktop configuration targets Linux AppImage / DEB and Windows NSIS; configuration alone is not a verified installer. An official release is needed to validate launcher self-updates end to end.
+Build the backend on the target operating system. Desktop configuration targets Linux AppImage / DEB and Windows NSIS; configuration alone is not a verified installer. A public release is needed to validate launcher self-updates end to end.
 
 See the [publisher guide](docs/publisher-guide.md), [roadmap](ROADMAP.md), [privacy](PRIVACY.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Distribution and Discord settings live in `data/distribution.json`. An unset Discord invite is shown as unconfigured.
 

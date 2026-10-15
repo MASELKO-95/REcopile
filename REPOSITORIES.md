@@ -1,0 +1,16 @@
+# Related repositories
+
+- [arcanite24/pinyon-shift](https://github.com/arcanite24/pinyon-shift)
+- [fabioap-cpu/Forza-Horizon-2-Recomp](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp)
+- [hedge-dev/UnleashedRecomp](https://github.com/hedge-dev/UnleashedRecomp)
+- [MASELKO-95/Forza-Horizon-2-Recomp](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp)
+- [MASELKO-95/pinyon-shift-Native-Linux-unofficial](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial)
+- [MASELKO-95/ratchet-3-recopile-edition](https://github.com/MASELKO-95/ratchet-3-recopile-edition)
+- [MASELKO-95/SCP-Vulkan-edition](https://github.com/MASELKO-95/SCP-Vulkan-edition)
+- [MASELKO-95/Wanderer-dice-farkle-game](https://github.com/MASELKO-95/Wanderer-dice-farkle-game)
+- [mchughalex/skate3recomp](https://github.com/mchughalex/skate3recomp)
+- [PCSX2/pcsx2](https://github.com/PCSX2/pcsx2)
+- [RPCS3/rpcs3](https://github.com/RPCS3/rpcs3)
+- [RPCS3/rpcs3-binaries-linux](https://github.com/RPCS3/rpcs3-binaries-linux)
+- [RPCS3/rpcs3-binaries-win](https://github.com/RPCS3/rpcs3-binaries-win)
+- [ShreyashDesai/Forza-Horizon-2-Recomp](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp)

@@ -1,41 +1,44 @@
-# Prywatność Recopile
+# RE:COPILE privacy notice
 
-Profile, historia uruchomień, statystyki, odznaki launchera, ustawienia i robocze
-raporty zgodności są zapisywane na urządzeniu. Launcher nie wysyła ich do autora
-ani na Discorda automatycznie. Eksport podsumowania tworzy obraz, który sam
-wybierasz, gdzie udostępnić.
+Profiles, launch history, statistics, launcher activity badges, settings and
+compatibility report drafts are stored on your device. RE:COPILE does not
+send them to its developer or Discord automatically. Exporting a profile
+summary creates an image that you choose whether and where to share.
 
-Sprawdzanie wydań, katalogu i dokumentacji oraz pobieranie programów łączy się
-z GitHubem i jego serwerami plików. GitHub otrzymuje zwykłe dane połączenia,
-np. adres IP. Nie potrzebujesz konta GitHub do używania launchera ani pobierania
-publicznych wydań.
+Checking releases, catalogs and project documentation, and downloading programs,
+connects to GitHub and its file servers. GitHub receives ordinary connection
+data, such as your IP address. You do not need a GitHub account to use the
+launcher or download public releases.
 
-Opisy gier i adresy ilustracji są pobierane z angielskiej Wikipedii dla widocznych
-wpisów lub otwartej gry. Same pliki grafik pobieramy z Wikimedia wyłącznie dla
-widocznych wyników wyszukiwania albo po kliknięciu „Pobierz okładki” (bieżąca
-strona lub jedna gra). Nie pobieramy grafik całego katalogu. Wikipedia/Wikimedia
-otrzymują nazwę sprawdzanej gry i zwykłe dane połączenia, np. adres IP; nie
-wysyłamy im profilu, historii grania ani ścieżek użytkownika. Opisy i okładki
-pozostają w lokalnej pamięci podręcznej, aby nie pobierać ich ponownie.
+Game descriptions and image URLs are requested from English Wikipedia for
+visible entries or the game you open. Image files are downloaded from Wikimedia
+only for visible search results or when you select **Download covers** for the
+current page or one game. RE:COPILE does not download artwork for the entire
+catalog. Wikipedia/Wikimedia receive the requested game title and ordinary
+connection data, such as your IP address; RE:COPILE does not send them your
+profile, play history or local file paths. Descriptions and covers are cached
+locally to avoid repeat downloads.
 
-Opcjonalne logowanie odbywa się na stronie GitHuba w zewnętrznej przeglądarce.
-Recopile nie ma formularza hasła GitHub, nie odczytuje sesji przeglądarki i nie
-przechowuje tokenów konta. Zgłoszenie otwiera się jako szkic issue; publikujesz
-je dopiero przyciskiem GitHuba. Publiczne issue może być widoczne dla innych.
-Przed wysłaniem przejrzyj treść. Raport zgodności zawiera wybraną grę, wersję,
-system, model sprzętu/GPU i opis; nie zawiera numeru seryjnego, nazwy użytkownika
-systemowego, ścieżek do plików ani haseł.
+Optional GitHub sign-in takes place on GitHub's website in your external
+browser. RE:COPILE has no GitHub password form, does not read your browser
+session and does not store account tokens. A report opens as an issue draft;
+you publish it using GitHub's submit button. Public issues may be visible to
+others. Review their contents before submitting. A compatibility report includes
+the selected game, port version, operating system, hardware/GPU model and your
+description. It does not automatically include hardware serial numbers, your
+system username, local file paths or passwords.
 
-Wsparcie przez GitHub Sponsors jest dobrowolne i otwiera zewnętrzną stronę.
-Reklamy są dostępne wyłącznie w wydaniu Android, domyślnie wyłączone. Włączenie
-preferencji reklam nie zastępuje zgody na przetwarzanie danych wymaganej przez
-Google. Po skonfigurowaniu AdMob wydanie Android wyświetla formularz Google
-UMP, zanim poprosi o reklamę. Możesz wyłączyć reklamy i zmienić ustawienia
-prywatności reklam w każdej chwili. W wydaniu bez identyfikatorów AdMob nie ma
-żądań reklamowych. Windows i Linux nie zawierają SDK reklam ani skryptów reklam.
+GitHub Sponsors support is optional and opens an external website. Linux and
+Windows contain no advertising SDKs or ad scripts. Android support is deferred.
+For a future Android build configured with AdMob, ads are optional and disabled
+by default. Enabling the preference does not replace the consent required by
+Google: its UMP form is presented before an ad request. You can turn ads off
+and change ad privacy choices in settings. A build without AdMob publisher IDs
+does not make advertising requests.
 
-Pobierane porty i emulatory są osobnymi programami. Ich README, licencja,
-polityka prywatności i sposób przechowywania zapisów należą do ich autorów.
-Recopile pokazuje dokumentację projektu przed pobraniem. Nie deklaruje, że
-każdy program zewnętrzny jest bezpieczny ani że każdy tytuł działa na każdym
-urządzeniu.
+Downloaded ports and emulators are independent programs. Their README, license,
+privacy policy, network activity and save handling are governed by their own
+projects. RE:COPILE displays project documentation before downloading. Port
+preparation can download that project's compilers and dependencies; your game
+images and prepared files remain local to the setup workflow. Consult the
+selected project's documentation for its behavior.

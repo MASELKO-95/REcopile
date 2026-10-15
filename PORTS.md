@@ -4,10 +4,10 @@ Generated from `data/registry.json`. This list is updated with catalog changes.
 Packages are declared by catalog entries; package availability is separate from tested gameplay.
 Read each project's original README and license inside the launcher before downloading.
 
-| Project | Author | Linux | Windows | Channel / status | Links |
+| Project | GitHub owner | Linux | Windows | Channel / status | Links |
 | --- | --- | --- | --- | --- | --- |
 | Pinyon Shift Linux alternative | MASELKO-95 | Declared package | No declared package | Pre-release; unsupported / archived | [Project](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial) · [Releases](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial/releases) · [Guide](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial#readme) |
-| Pinyon Shift · RE:COPILE Edition | arcanite24 | Declared package | Declared package | Final catalog channel; see upstream status | [Project](https://github.com/arcanite24/pinyon-shift) · [Releases](https://github.com/arcanite24/pinyon-shift/releases) · [Guide](https://github.com/arcanite24/pinyon-shift/blob/main/docs/LINUX.md) |
+| Pinyon Shift | arcanite24 | Declared package | Declared package | Final catalog channel; see upstream status | [Project](https://github.com/arcanite24/pinyon-shift) · [Releases](https://github.com/arcanite24/pinyon-shift/releases) · [Guide](https://github.com/arcanite24/pinyon-shift/blob/main/docs/LINUX.md) |
 | Skate 3 Recompiled | mchughalex | Declared package | Declared package | Catalogued project; check author documentation | [Project](https://github.com/mchughalex/skate3recomp) · [Releases](https://github.com/mchughalex/skate3recomp/releases) · [Guide](https://github.com/mchughalex/skate3recomp#linux) |
 | Unleashed Recompiled | hedge-dev | Declared package | Declared package | Catalogued project; check author documentation | [Project](https://github.com/hedge-dev/UnleashedRecomp) · [Releases](https://github.com/hedge-dev/UnleashedRecomp/releases) · [Guide](https://github.com/hedge-dev/UnleashedRecomp#how-to-install) |
 | PCSX2 | PCSX2 | Declared package | Declared package | Emulator; per-game compatibility varies | [Project](https://github.com/PCSX2/pcsx2) · [Releases](https://github.com/PCSX2/pcsx2/releases) · [Guide](https://pcsx2.net/docs/category/setup/) |
