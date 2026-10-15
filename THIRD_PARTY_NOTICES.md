@@ -47,8 +47,9 @@ downloading a cover does not grant redistribution rights. Public distributions
 should use original artwork or appropriately licensed materials. The interface
 provides a placeholder when no cover is available.
 
-New images from Wikipedia/Wikimedia are downloaded only for visible search
-results or an explicit player request. The `covers/` cache in local application
+New images from Wikipedia/Wikimedia are downloaded for visible search
+results, an explicit player request or the first game on a visible collection
+tile. Whole-series artwork is not fetched by opening a collection. The `covers/` cache in local application
 data is not part of a release. Article links identify image provenance;
 Wikipedia's text license does not automatically license a game publisher's art.
 

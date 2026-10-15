@@ -14,13 +14,13 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 ## Your library
 
 - Search an offline Xbox 360, Xbox One, PlayStation 2 and PlayStation 3 metadata catalog. Xbox One entries have no launch integration unless a port or local installation is assigned.
-- Read game descriptions independently of artwork. New covers download only for visible search results or with **Download covers** for the current page / selected game. Text and artwork are cached locally; ordinary browsing does not download new covers. Wikipedia descriptions currently use English source text.
+- Read game descriptions independently of artwork. Covers download for visible search results, **Download covers** for the current page / selected game, and the first game representing each visible collection tile. Text and artwork are cached locally; catalog browsing does not download new covers. Wikipedia descriptions currently use English source text.
 - Keep a **recompilations only** view, or include emulation and other local games.
 - Install project releases from their authors' GitHub repositories. Edit each source or follow its manual installation instructions.
 - See separate **Linux / Windows package** labels and **device compatibility** reports. A downloadable program does not guarantee a working game.
 - Use **On this PC** to filter declared packages and local executables for the host system. Linux also lists Windows packages with an explicit **Proton / Wine · untested** label; these packages can be installed manually and linked as local games.
 - Add existing programs like a non-Steam game. On Linux, select an installed **Proton** version or **Wine** for Windows executables. Each game gets a separate compatibility prefix; an installed UMU launcher can also be used.
-- Organize series into collections, including Ratchet & Clank. Projects in development are labelled separately from released, playable ports.
+- Open Forza and Ratchet & Clank collections from first-game cover tiles. Each series has its own view with console projects, official PC releases and store links. Delisted PC games are labelled separately; connect an existing PC installation to launch it from the library. Projects in development retain their own status.
 - Keep profiles, play history and launcher activity badges local. Export a summary image to share yourself, for example on Discord.
 - Review mod packages with a manifest, README, license and file hashes. Activation requires an explicit mod folder or adapter supported by the port. Creator templates and the package builder provide Linux / Windows installation helpers.
 
@@ -28,23 +28,21 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 
 **A port supplies software; you supply your own game data.** RE:COPILE does not distribute console game images, BIOS files, firmware, copyrighted game assets or unpublished commercial game source code. Follow each project's instructions to prepare your own copy. There is no universal automatic “ISO to native game” conversion.
 
-Before downloading, the launcher presents the project's actual **README, license, release information and author support links**. Documentation stays with the installed version. Automatic updates require prior consent; a changed license requires a fresh review. Updates are checked at startup, announced, then approved updates are downloaded at the next startup. Previous port versions and user data are retained.
+Before downloading, the launcher presents the project's actual **README, license, release information and author support links**. Open the License tab and accept its terms separately from the README acknowledgment. Installation is blocked if the license is unavailable. Documentation and the accepted license hash stay with the installed version. Automatic updates require prior consent; a changed license requires fresh acceptance. Updates are checked at startup, announced, then approved updates are downloaded at the next startup. Previous port versions and user data are retained.
 
-The in-app **How to play** page has a detailed Xbox 360 text guide, separate
-from the PS2 DVD reader. [Read the guide](docs/how-to-play-xbox.md).
-Forza Horizon's setup panel uses **Pinyon Shift**'s original
-command-line tools for ISO/folder verification, building and direct launch.
-The original authors, release source and BSD license are retained. A completed
-build and confirmed gameplay are distinct states.
+The in-app **How to play** page explains the shared Xbox 360 / PS2 workflow:
+choose a project, review its README and accept its license, prepare your own copy,
+configure or build, then launch. It includes separate Xbox 360 console / USB
+and PS2 DVD instructions. [Read the guide](docs/how-to-play.md).
 
-**Forza Horizon 2** is a source-only Xbox 360 experiment: its upstream describes
-a Windows loading-screen stall, with no confirmed gameplay or installable
-package. **Ratchet & Clank: Up Your Arsenal (3) · RE:COPILE Edition** is experimental Linux research
-with intro/title-screen progress; full gameplay and Windows remain unverified.
-[Source and build instructions](https://github.com/MASELKO-95/ratchet-3-recopile-edition).
+**From disc to game** links to porting tools, including ShiftGlue SDK and
+PS2Recomp, and to emulator documentation. Each game's details retain its actual
+source, README, license and compatibility status. Supported integrations use
+RE:COPILE's own setup panel and direct launch while retaining upstream software,
+licenses and saves.
 
-Related repositories: [REPOSITORIES.md](REPOSITORIES.md).
-Port availability and status: [PORTS.md](PORTS.md).
+Project authors: [GitHub profiles](REPOSITORIES.md).
+Project sources, availability and status: [PORTS.md](PORTS.md).
 
 PCSX2 and RPCS3 are managed separately. Their BIOS / firmware instructions and per-game compatibility apply. Xbox 360 emulation can use a user-configured local adapter; an emulator is not included just because a title appears in the catalog.
 

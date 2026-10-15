@@ -12,8 +12,10 @@ launcher or download public releases.
 
 Game descriptions and image URLs are requested from English Wikipedia for
 visible entries or the game you open. Image files are downloaded from Wikimedia
-only for visible search results or when you select **Download covers** for the
-current page or one game. RE:COPILE does not download artwork for the entire
+for visible search results, when you select **Download covers** for the
+current page or one game, and for the first game representing each visible
+collection tile. Opening a collection does not fetch covers for its full series.
+RE:COPILE does not download artwork for the entire
 catalog. Wikipedia/Wikimedia receive the requested game title and ordinary
 connection data, such as your IP address; RE:COPILE does not send them your
 profile, play history or local file paths. Descriptions and covers are cached
@@ -41,4 +43,10 @@ privacy policy, network activity and save handling are governed by their own
 projects. RE:COPILE displays project documentation before downloading. Port
 preparation can download that project's compilers and dependencies; your game
 images and prepared files remain local to the setup workflow. Consult the
-selected project's documentation for its behavior.
+selected project's documentation for its behavior. Project license acceptance,
+the accepted license hash and optional update consent are stored locally.
+
+Collection purchase links open Steam or the publisher's website in your
+external browser. The store receives ordinary connection data and handles
+purchases and its own account / license requirements. RE:COPILE does not
+collect payment information or infer game ownership from a store link.

@@ -14,10 +14,20 @@ Read each project's original README and license inside the launcher before downl
 | RPCS3 | RPCS3 | Declared package | Declared package | Emulator; per-game compatibility varies | [Project](https://github.com/RPCS3/rpcs3-binaries-linux) · [Releases](https://github.com/RPCS3/rpcs3-binaries-linux/releases) · [Guide](https://rpcs3.net/quickstart) |
 | Wanderer | MASELKO-95 | Declared package | No declared package | Catalogued project; check author documentation | [Project](https://github.com/MASELKO-95/Wanderer-dice-farkle-game) · [Releases](https://github.com/MASELKO-95/Wanderer-dice-farkle-game/releases) · [Guide](https://github.com/MASELKO-95/Wanderer-dice-farkle-game) |
 | Ratchet & Clank: Up Your Arsenal (Ratchet & Clank 3) · RE:COPILE Edition | MASELKO-95 | Experiment only; no package | No declared package | In development; gameplay unverified | [Project](https://github.com/MASELKO-95/ratchet-3-recopile-edition) · [Releases](https://github.com/MASELKO-95/ratchet-3-recopile-edition/releases) · [Guide](https://github.com/MASELKO-95/ratchet-3-recopile-edition#requirements-and-build) |
-| Minecraft PS3 own-disc / ISO integration | MASELKO-95 (planned integration) | No declared package | No declared package | Planned; no ready port | No public release · [Guide] |
+| Minecraft PS3 own-disc / ISO integration | MASELKO-95 (planned integration) | No declared package | No declared package | Planned; no ready port | No public release |
 | Forza Horizon 2 Recompiled (original) | fabioap-cpu | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp) · [Releases](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp#readme) |
 | Forza Horizon 2 Recompiled (fork) | ShreyashDesai | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp) · [Releases](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp#readme) |
 | Forza Horizon 2 Recompiled (research fork) | MASELKO-95 | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp) · [Releases](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme) |
+
+## Porting tools and emulators
+
+| Tool | Platform | Type | Links |
+| --- | --- | --- | --- |
+| ShiftGlue SDK | Xbox 360 | Porting SDK | [Project](https://github.com/arcanite24/shiftglue-sdk) · [Guide](https://github.com/arcanite24/shiftglue-sdk) |
+| Xenia | Xbox 360 | Emulator | [Project](https://github.com/xenia-project/xenia) · [Guide](https://github.com/xenia-project/xenia/wiki/Quickstart) |
+| PS2Recomp | PlayStation 2 | Porting SDK | [Project](https://github.com/ran-j/PS2Recomp) · [Guide](https://github.com/ran-j/PS2Recomp) |
+| PCSX2 | PlayStation 2 | Emulator | [Project](https://github.com/PCSX2/pcsx2) · [Guide](https://pcsx2.net/docs/category/setup/) |
+| RPCS3 | PlayStation 3 | Emulator | [Project](https://github.com/RPCS3/rpcs3) · [Guide](https://rpcs3.net/quickstart) |
 
 “Final” identifies the original default channel in this catalog; it does not
 override the upstream release status. Unsupported forks are not automatic update sources.

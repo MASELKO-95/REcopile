@@ -11,14 +11,19 @@ The current interface has **English, Polish and Hungarian**.
 Before an official release: validate installers on Linux and Windows, exercise
 launcher updates with an actual release, qualify each supported port with its
 author's instructions and user-owned data, publish approved compatibility reports,
-add the maintainer's real Discord invite and review the custom license.
+and verify release packaging includes the required GPLv3 source and notices.
 
 Xbox One is currently a metadata catalog, with no shipped launch integration.
 
-Later: **Android**, **PlayStation 4**, more game collections and
+Later: **Android**, **PlayStation 4**, **PSP**, **PS Vita**, more game collections and
 port-specific workshop adapters. Desktop ports do not automatically run on Android.
 Optional Android ads need explicit choice and the applicable consent flow.
 
 Ratchet & Clank 3 is an experimental local project; full gameplay is unverified.
 Minecraft PS3 from a user's own disc image is a planned integration, not a released
 playable ISO port. No release dates are promised for planned features.
+
+Later: connect a player-selected performance recorder, import its FPS / frame
+time and other supported measurements from local logs, and summarize a test
+session with the game, port version and test environment. Recording and log
+import are not implemented yet. Players choose whether to share a summary.

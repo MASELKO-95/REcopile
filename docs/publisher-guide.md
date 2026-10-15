@@ -59,7 +59,9 @@ For another version of the same port, publish a new release in the **game
 project's repository** with the same asset naming scheme. Keep existing tags
 immutable and game/source identifiers stable. The launcher retains the actual
 upstream README, license and funding links. Automatic updates need prior
-consent and a visible notice; changed licenses need fresh review. Do not copy
+consent and a visible notice; changed licenses need fresh acceptance. Players
+must separately accept the actual release license; a README acknowledgment
+alone cannot authorize installation. A missing license blocks installation. Do not copy
 independent upstream binaries into the hub's repository just to list a port.
 
 ## Local projects and RE:COPILE Edition
