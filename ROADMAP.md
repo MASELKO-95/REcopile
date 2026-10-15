@@ -1,7 +1,8 @@
 # RE:COPILE roadmap
 
 Current preview: Linux / Windows desktop architecture, Steam-style libraries,
-Xbox 360 / PS2 / PS3 metadata, editable sources, local programs with Proton / Wine,
+Xbox 360 / Xbox One / PS2 / PS3 metadata, on-demand artwork, independent game descriptions,
+host-specific package filtering, editable sources, local programs with Proton / Wine,
 profiles, issue drafts, compatibility data, collections and local mod templates.
 
 The current interface has **English, Polish and Hungarian**.
@@ -12,7 +13,9 @@ launcher updates with an actual release, qualify each supported port with its
 author's instructions and user-owned data, publish approved compatibility reports,
 add the maintainer's real Discord invite and review the custom license.
 
-Later: **Android**, **PlayStation 4**, **Xbox One**, more game collections and
+Xbox One is currently a metadata catalog, with no shipped launch integration.
+
+Later: **Android**, **PlayStation 4**, more game collections and
 port-specific workshop adapters. Desktop ports do not automatically run on Android.
 Optional Android ads need explicit choice and the applicable consent flow.
 

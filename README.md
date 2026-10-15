@@ -13,10 +13,12 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 
 ## Your library
 
-- Search an offline Xbox 360, PlayStation 2 and PlayStation 3 metadata catalog.
+- Search an offline Xbox 360, Xbox One, PlayStation 2 and PlayStation 3 metadata catalog. Xbox One entries have no launch integration unless a port or local installation is assigned.
+- Read game descriptions independently of artwork. New covers download only for visible search results or with **Download covers** for the current page / selected game. Text and artwork are cached locally; ordinary browsing does not download new covers. Wikipedia descriptions currently use English source text.
 - Keep a **recompilations only** view, or include emulation and other local games.
 - Install project releases from their authors' GitHub repositories. Edit each source or follow its manual installation instructions.
 - See separate **Linux / Windows package** labels and **device compatibility** reports. A downloadable program does not guarantee a working game.
+- Use **On this PC** to filter declared packages and local executables for the host system. Linux also lists Windows packages with an explicit **Proton / Wine · untested** label; these packages can be installed manually and linked as local games.
 - Add existing programs like a non-Steam game. On Linux, select an installed **Proton** version or **Wine** for Windows executables. Each game gets a separate compatibility prefix; an installed UMU launcher can also be used.
 - Organize series into collections, including Ratchet & Clank. Projects in development are labelled separately from released, playable ports.
 - Keep profiles, play history and launcher activity badges local. Export a summary image to share yourself, for example on Discord.
@@ -28,12 +30,30 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 
 Before downloading, the launcher presents the project's actual **README, license, release information and author support links**. Documentation stays with the installed version. Automatic updates require prior consent; a changed license requires a fresh review. Updates are checked at startup, announced, then approved updates are downloaded at the next startup. Previous port versions and user data are retained.
 
+The in-app **How to play** page has a detailed Xbox 360 text guide, separate
+from the PS2 DVD reader. [Read the guide](docs/how-to-play-xbox.md).
+Forza Horizon's **RE:COPILE Edition** panel uses the original Pinyon Shift
+command-line tools for ISO/folder verification, building and direct launch.
+The original authors, release source and BSD license are retained. A completed
+build and confirmed gameplay are distinct states.
+
+**Forza Horizon 2** is a source-only Xbox 360 experiment: its upstream describes
+a Windows loading-screen stall, with no confirmed gameplay or installable
+package. **Ratchet & Clank: Up Your Arsenal (3) · RE:COPILE Edition** is experimental Linux research
+with intro/title-screen progress; full gameplay and Windows remain unverified.
+[Source and build instructions](https://github.com/MASELKO-95/ratchet-3-recopile-edition).
+
 ## Authors represented in the catalog
+
+The separate [port and project list](PORTS.md) contains source links, systems and
+development status, and is updated whenever a project is added to the catalog.
 
 - [MASELKO-95](https://github.com/MASELKO-95)
 - [arcanite24](https://github.com/arcanite24)
 - [mchughalex](https://github.com/mchughalex)
 - [hedge-dev](https://github.com/hedge-dev)
+- [fabioap-cpu](https://github.com/fabioap-cpu)
+- [ShreyashDesai](https://github.com/ShreyashDesai)
 - [PCSX2 team](https://github.com/PCSX2)
 - [RPCS3 team](https://github.com/RPCS3)
 
@@ -46,25 +66,61 @@ GitHub accounts are **optional**. Sign in on GitHub in your external browser to 
 
 Optional support: [GitHub Sponsors](https://github.com/sponsors/MASELKO-95). Each game project keeps its own authors and funding links. Linux and Windows contain no advertising. Optional ads are a future Android feature only, requiring an explicit choice and the applicable consent flow.
 
+## Steam-style folders
 
-## Development status
+Choose one or more libraries, including libraries on other drives:
 
-This repository reserves the project's name. The launcher is being developed locally;
-source code and official installers will be published after desktop validation.
-There is no downloadable official release yet.
+```text
+RecopileLibrary/
+  recopileapps/
+    common/Game title (Platform)/
+      versions/source-version/
+        Recopile-project-info/README.md, LICENSE, project.json
+      current/                 # Linux; current.json on Windows
+      content/                 # your prepared project data
+      gamefiles/               # reference to your own copy
+      mods/
+    engines/
+    downloading/
+    discimages/
+    appmanifest_*.json
+  userdata/local/              # saves, settings, compatibility prefixes
+```
 
-**Android, PS4 and Xbox One** are later plans. Minecraft PS3 from a user's own
-ISO is a planned integration, not a playable port. Ratchet & Clank 3 is an
-experimental local project, with full gameplay unverified.
+A new default library affects future installations. Existing installations retain their locations. Local shortcuts leave the original files in place.
+
+## Development
+
+Python 3.11 or later and Node 22 or later are recommended for building. Players will not need Python or Node in a packaged desktop release.
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-build.txt
+cd frontend
+npm ci
+npm run build
+cd ..
+./start.sh
+```
+
+The development UI uses a loopback service at `127.0.0.1` to access the library and filesystem. It is not a game server and is not exposed to the network. The Electron window chooses an available local port itself.
+
+```sh
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python tools/freeze_backend.py
+cd desktop
+npm ci
+npm run package
+```
+
+Build the backend on the target operating system. Desktop configuration targets Linux AppImage / DEB and Windows NSIS; configuration alone is not a verified installer. An official release is needed to validate launcher self-updates end to end.
+
+See the [publisher guide](docs/publisher-guide.md), [roadmap](ROADMAP.md), [privacy](PRIVACY.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Distribution and Discord settings live in `data/distribution.json`. An unset Discord invite is shown as unconfigured.
+
+The console catalog combines Libretro metadata (Xbox 360 / PS2 / PS3) and attributed Wikipedia game lists (Xbox One), including regional variants, repeated titles and announced entries. Its entry count is not a count of unique, released or playable games. Source URLs and hashes are retained in `data/catalog.json.gz`. “No port assigned” means no confirmed entry in this catalog; it does not establish that no port exists elsewhere.
 
 ## License
 
-Original RE:COPILE materials use the draft [Recopile Community License](LICENSE).
-Noncommercial use and modifications require attribution to **MASELKO-95**, a
-link to this original repository, a description of changes and source for distributed versions. Commercial reuse
-requires **written permission and a separate commercial license**. This custom
-source-available license is not MIT, GPL or an OSI-approved open-source license.
-Third-party components retain their own terms.
+Copyright (C) 2026 **MASELKO-95**. Original RE:COPILE code and materials use [GNU GPLv3](LICENSE) (`GPL-3.0-only`). Preserve copyright and license notices, mark distributed modifications with their date, and provide the Corresponding Source when distributing executables as required by GPLv3. Commercial use is allowed. Third-party components and downloaded ports retain their own terms. See [NOTICE](NOTICE) and [license notes](docs/licensing.md).
 
-Game names and trademarks belong to their respective owners. RE:COPILE is not
-affiliated with console or game publishers.
+Game names and trademarks belong to their respective owners. RE:COPILE is not affiliated with console or game publishers.

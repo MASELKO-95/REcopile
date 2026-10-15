@@ -1,0 +1,13 @@
+RE:COPILE
+Copyright (C) 2026 MASELKO-95
+Original project: https://github.com/MASELKO-95/recopile
+SPDX-License-Identifier: GPL-3.0-only
+
+Original RE:COPILE code and project materials are distributed under the
+GNU General Public License version 3 only; see LICENSE. There is no warranty
+to the extent permitted by law. Third-party terms are in THIRD_PARTY_NOTICES.md.
+
+2026-10-15 — MASELKO-95: adopted GNU GPLv3 in place of the previous custom
+license draft; added Xbox One metadata, on-demand artwork, experimental FH2
+sources, RE:COPILE Edition setup and a text guide for Xbox 360 ports.
+Further project changes are recorded in CHANGELOG.md.
