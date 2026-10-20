@@ -4,7 +4,7 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Public beta 0.2.2-beta.1.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.1) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
+**Public beta 0.2.2-beta.2.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.2) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
 
 ## Languages
 
@@ -107,7 +107,7 @@ The development UI uses a loopback service at `127.0.0.1` to access the library 
 .venv/bin/python tools/freeze_backend.py
 cd desktop
 npm ci
-npm run package
+python3 ../tools/package_desktop.py
 ```
 
 Build the backend on the target operating system. Linux packaging produces an
@@ -125,3 +125,5 @@ The console catalog combines Libretro metadata (Xbox 360 / PS2 / PS3) and attrib
 Copyright (C) 2026 **MASELKO-95**. Original RE:COPILE code and materials use [GNU GPLv3](LICENSE) (`GPL-3.0-only`). Preserve copyright and license notices, mark distributed modifications with their date, and provide the Corresponding Source when distributing executables as required by GPLv3. Commercial use is allowed. Third-party components and downloaded ports retain their own terms. See [NOTICE](NOTICE) and [license notes](docs/licensing.md).
 
 Game names and trademarks belong to their respective owners. RE:COPILE is not affiliated with console or game publishers.
+
+Optional per-game configuration is described in [Game settings](docs/game-settings.md).

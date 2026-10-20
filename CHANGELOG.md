@@ -1,5 +1,13 @@
 # Historia zmian
 
+## 0.2.2-beta.2 — 2026-10-20
+
+- Opcjonalne Ustawienia gry: wspólny panel dla integracji, argumenty uruchamiania i wybór zgodności Windows na Linuxie. Graj nadal uruchamia grę bez dodatkowego ekranu.
+- Pełne opcje konfiguracji udostępniane przez CLI Pinyon Shift 0.6, w tym FSR 2/3, DLSS, presety, limity FPS, efekty, zalecenia sprzętowe oraz kopie ustawień. Starsze instalacje mogą korzystać z istniejącej łatki Linux 0.4.
+- Osobny zestaw dostępnych opcji lokalnego FH2, bez deklarowania FSR lub potwierdzonej rozgrywki.
+- Aktualizator wybiera wydania aplikacji ze wspólnego repozytorium i pomija paczki portów.
+- Poprawne porównywanie wersji beta i stabilnych, osobne metadane kanału beta.
+
 ## 0.2.2-beta.1 — 2026-10-20
 
 - Pierwsza publiczna beta Linux: AppImage, DEB, pacman oraz zgodne źródła GPLv3.

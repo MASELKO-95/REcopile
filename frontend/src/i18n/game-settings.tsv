@@ -1,0 +1,42 @@
+Ustawienia gry	Game settings	Játékbeállítások
+Ustawienia są opcjonalne. Przycisk Graj uruchamia grę bez otwierania tego panelu.	Settings are optional. Play starts the game directly.	A beállítások nem kötelezők. A Játék gomb közvetlenül indítja a játékot.
+Wczytywanie ustawień…	Loading settings…	Beállítások betöltése…
+Rozdzielczość wewnętrzna	Internal resolution	Belső felbontás
+Skalowanie obrazu	Output scaling	Képfelskálázás
+Mapa skarbów	Treasure Map	Kincses térkép
+Profil grafiki gry	Game graphics preset	Játék grafikai profilja
+Filtrowanie anizotropowe	Anisotropic filtering	Anizotropikus szűrés
+Wygładzanie obrazu	Anti-aliasing	Élsimítás
+Limit prezentacji FPS	Presentation FPS limit	Megjelenítési FPS-korlát
+Limit renderowania FPS	Rendering FPS limit	Renderelési FPS-korlát
+Wyłącz bloom	Disable bloom	Bloom kikapcsolása
+Wyłącz rozmycie ruchu	Disable motion blur	Mozgáselmosás kikapcsolása
+Wyłącz głębię ostrości	Disable depth of field	Mélységélesség kikapcsolása
+Profil rozdzielczości	Resolution preset	Felbontási profil
+API grafiki	Graphics API	Grafikus API
+Synchronizacja pionowa	Vertical sync	Függőleges szinkronizálás
+Włączone	On	Be
+Wyłączone	Off	Ki
+Domyślne gry	Game default	Játék alapértelmezése
+Bez limitu	Uncapped	Korlátlan
+Brak	None	Nincs
+Własne	Custom	Egyéni
+Pad	Controller	Kontroller
+Klawiatura i mysz — kamera	Keyboard and mouse — camera	Billentyűzet és egér — kamera
+Klawiatura i mysz — kierowanie	Keyboard and mouse — steering	Billentyűzet és egér — kormányzás
+Pinyon Shift · ustawienia oryginalnego launchera. Dalsze ustawienia ekranu i sterowania są dostępne w grze pod F6.	Pinyon Shift · original launcher settings. More display and input settings are available in-game with F6.	Pinyon Shift · az eredeti indító beállításai. További kijelző- és vezérlési beállítások a játékban, az F6 gombbal érhetők el.
+FSR 2/3 wymagają bibliotek FidelityFX, a DLSS zgodnego sprzętu i bibliotek. Wybór opcji nie potwierdza jej dostępności.	FSR 2/3 need FidelityFX libraries; DLSS needs compatible hardware and libraries. Selecting an option does not confirm availability.	Az FSR 2/3 FidelityFX-könyvtárakat, a DLSS kompatibilis hardvert és könyvtárakat igényel. Az opció kiválasztása nem igazolja az elérhetőségét.
+Ustawienia korzystają z łatki starszego portu Linux.	Settings use the older Linux port's patch.	A beállítások a régebbi Linux-port javítását használják.
+FH2 pozostaje eksperymentalny. Ten silnik udostępnia poniższe opcje; rozgrywka nie jest jeszcze potwierdzona.	FH2 remains experimental. These options are available in its runtime; gameplay has not been verified.	Az FH2 továbbra is kísérleti. Ezek a beállítások elérhetők a futtatókörnyezetben; a játszhatóság még nincs igazolva.
+Sprawdź sprzęt i zalecenia	Check hardware and recommendations	Hardver és ajánlások ellenőrzése
+Zastosuj zalecany profil	Apply recommended preset	Ajánlott profil alkalmazása
+Zaawansowane ustawienia grafiki	Advanced graphics settings	Speciális grafikai beállítások
+Limit FPS: 0 oznacza brak limitu.	FPS limit: 0 means uncapped.	FPS-korlát: a 0 korlátlant jelent.
+Opcje uruchamiania	Launch options	Indítási beállítások
+Dodatkowe argumenty (jeden w wierszu)	Additional arguments (one per line)	További argumentumok (soronként egy)
+Używaj argumentów zgodnych z instrukcją podłączonego programu.	Use arguments documented by the connected program.	A csatlakoztatott program dokumentált argumentumait használd.
+Plik konfiguracji	Configuration file	Konfigurációs fájl
+Kopia ustawień	Settings backup	Beállítások biztonsági másolata
+Zapisano. Ustawienia zostaną użyte przy następnym uruchomieniu.	Saved. Settings apply on the next launch.	Mentve. A beállítások a következő indításkor lépnek érvénybe.
+Domyślne	Defaults	Alapértékek
+Przywróć kopię ustawień	Restore settings backup	Beállítások biztonsági másolatának visszaállítása

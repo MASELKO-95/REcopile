@@ -77,11 +77,19 @@ def latest_release(source: dict):
     repo = validate_repo(source["repo"])
     tag = source.get("release_tag")
     endpoint = "/releases/tags/" + quote(tag, safe="") if tag else "/releases/latest"
-    release = fetch_json("https://api.github.com/repos/" + repo + endpoint)
-    if release.get("draft") or release.get("prerelease"):
-        raise UserError("To wydanie nie jest stabilne.")
-    assets = [a for a in release.get("assets", []) if fnmatch.fnmatchcase(a.get("name", ""), source.get("asset_pattern", "")) and
-              not (source.get("exclude_pattern") and fnmatch.fnmatchcase(a["name"], source["exclude_pattern"]))]
+    scan = source.get("scan_releases", False) and not tag
+    payload = fetch_json("https://api.github.com/repos/" + repo + ("/releases?per_page=50" if scan else endpoint))
+    releases = payload if scan else [payload]
+    eligible = []
+    for candidate in releases:
+        if candidate.get("draft") or (candidate.get("prerelease") and not source.get("allow_prerelease")):
+            continue
+        matches = [a for a in candidate.get("assets", []) if fnmatch.fnmatchcase(a.get("name", ""), source.get("asset_pattern", "")) and
+                   not (source.get("exclude_pattern") and fnmatch.fnmatchcase(a["name"], source["exclude_pattern"]))]
+        if matches: eligible.append((candidate, matches))
+    if scan:
+        eligible.sort(key=lambda item: version_key(item[0]["tag_name"]), reverse=True)
+    release, assets = eligible[0] if eligible else ({}, [])
     if len(assets) != 1:
         message = "Brak pasującej paczki dla tego urządzenia" if not assets else "Kilka paczek pasuje do wzorca — doprecyzuj źródło"
         raise UserError(message + f" ({source.get('asset_pattern', 'brak wzorca')}).")
@@ -89,6 +97,15 @@ def latest_release(source: dict):
     validate_url(asset["browser_download_url"])
     return {"version": release["tag_name"], "url": release["html_url"], "published_at": release.get("published_at"),
             "notes": release.get("body", "")[:16000], "asset": asset, "assets": release.get("assets", [])}
+
+
+def version_key(value):
+    """SemVer ordering for launcher releases, including beta -> stable."""
+    match = re.fullmatch(r"v?(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?", value)
+    if not match: raise UserError("Niepoprawna wersja wydania launchera.")
+    major, minor, patch, prerelease = match.groups()
+    parts = tuple((0, int(p)) if p.isdigit() else (1, p) for p in (prerelease or '').split('.'))
+    return int(major), int(minor), int(patch), int(prerelease is None), parts
 
 
 def expected_checksum(release: dict):

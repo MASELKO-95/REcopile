@@ -18,7 +18,7 @@ from pathlib import Path
 from . import __version__
 from .jobs import Jobs
 from .library import location, point_current, write_manifest
-from .network import Cancelled, UserError, download, expected_checksum, extract, fetch_json, latest_release, validate_repo
+from .network import Cancelled, UserError, download, expected_checksum, extract, fetch_json, latest_release, validate_repo, version_key
 from .storage import Store, game_id
 from .registry import FIELDS, entry, validate_registry
 from .profiles import Profiles
@@ -31,6 +31,7 @@ from .platforms import PLATFORMS, device_options
 from .port_setup import PortSetup
 from .steam import SteamLibrary
 from .performance import Performance
+from .game_settings import GameSettings
 
 
 class Launcher:
@@ -44,6 +45,7 @@ class Launcher:
         self.workshop = Workshop(self)
         self.media = GameMedia(self.store)
         self.port_setup = PortSetup(self)
+        self.game_settings = GameSettings(self)
         self.running = {}
         self.process_lock = threading.RLock()
         self.stop = threading.Event()
@@ -187,16 +189,14 @@ class Launcher:
         repo = self.preferences().get("launcher_repo", "")
         if not repo: raise UserError("Wydawca nie skonfigurował jeszcze repozytorium launchera.")
         patterns = {"linux":"Recopile-*-linux-x86_64.AppImage", "windows":"Recopile-*-windows-x64-Setup.exe", "android":"Recopile-*-android.apk"}
-        return {"id":"launcher", "name":"Recopile Games Hub", "repo":validate_repo(repo), "asset_pattern":patterns[self.system_key()]}
+        return {"id":"launcher", "name":"Recopile Games Hub", "repo":validate_repo(repo), "asset_pattern":patterns[self.system_key()],
+                "scan_releases":True, "allow_prerelease":'-' in __version__}
 
     def check_launcher_release(self):
         source = self.launcher_source()
         release = latest_release(source)
         version = release["version"].lstrip("v")
-        if not re.fullmatch(r"\d+\.\d+\.\d+", version): raise UserError("Wydanie launchera wymaga wersji v1.2.3.")
-        current = tuple(map(int, __version__.split('-', 1)[0].split('.')))
-        candidate = tuple(map(int, version.split('.')))
-        if candidate < current or (candidate == current and '-' not in __version__):
+        if version_key(version) <= version_key(__version__):
             self.store.put("settings","launcher_update", {"available":False,"version":__version__})
             return {"available":False,"version":__version__}
         documents = self.documents.get(source, release)
@@ -244,6 +244,7 @@ class Launcher:
 
     def describe_game(self, game):
         game["port_setup"] = self.port_setup.information(game)
+        game["game_settings"] = self.game_settings.information(game)
         if any(s['id']=='ratchet3-local' for s in game.get('sources',[])):
             game['local_project']=self.store.get('settings','project:ratchet3-local',{})
         if (game["port_setup"] and game.get("install")
@@ -657,6 +658,8 @@ class Launcher:
         prefs = self.preferences()
         if not install:
             raise UserError("Najpierw zainstaluj port albo dodaj swoją kopię gry.")
+        if game and not setup:
+            install = self.game_settings.launch_install(ident, install)
         if game and prefs["only_recompiled"] and game["kind"] != "recompile":
             raise UserError("Aktywny jest tryb tylko rekompilacji. Zmień filtr w ustawieniach, aby użyć innego sposobu uruchamiania.")
         if game and install.get('adapter') == 'steam' and not install.get('local_executable'):
@@ -716,6 +719,8 @@ class Launcher:
                 env = self._engine_env(env, ident.removeprefix("engine-"))
                 if ident == "engine-pcsx2":
                     command += ["-datapath", install.get("user_root", str(self.store.root / "engine-state/pcsx2"))]
+        if game and not setup:
+            command = [*command, *self.game_settings.arguments(ident, install)]
         if not Path(command[0]).is_file() or not os.access(command[0], os.X_OK):
             raise UserError("Program nie istnieje albo nie ma prawa wykonywania.")
         if benchmark:
@@ -858,16 +863,12 @@ class Launcher:
         repo = self.preferences().get("launcher_repo", "")
         if not repo:
             raise UserError("Najpierw podaj repozytorium wydań tego launchera w ustawieniach.")
-        source = {"repo": repo, "asset_pattern": "Recopile-*-linux-x86_64.tar.gz"}
+        source = {"repo": repo, "asset_pattern": "Recopile-*-linux-x86_64.tar.gz", "scan_releases": True, "allow_prerelease": '-' in __version__}
 
         def work(update, cancelled):
             release = latest_release(source)
             release_version = release["version"].lstrip("v")
-            if not re.fullmatch(r"\d+\.\d+\.\d+", release_version):
-                raise UserError("Wydanie launchera musi mieć wersję w formacie v1.2.3.")
-            current = tuple(map(int, __version__.split('-', 1)[0].split('.')))
-            candidate = tuple(map(int, release_version.split('.')))
-            if candidate < current or (candidate == current and '-' not in __version__):
+            if version_key(release_version) <= version_key(__version__):
                 return {"message": "Launcher jest aktualny."}
             base = self.store.root / "launcher-updates"
             base.mkdir(exist_ok=True)

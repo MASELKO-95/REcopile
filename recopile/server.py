@@ -219,6 +219,8 @@ def create_server(launcher, port=4783):
                     result = launcher.import_game(ident, data)
                 elif path == "/api/port-setup":
                     result = launcher.port_setup.prepare(ident, data)
+                elif path == "/api/game-settings":
+                    result = launcher.game_settings.request(ident, data)
                 elif path == "/api/executable":
                     result = launcher.register_executable(ident, data)
                 elif path == "/api/ready":

@@ -20,7 +20,7 @@ class DesktopUpdater {
       if(!available.available || !this.app.isPackaged) return available;
       if(process.platform==='linux' && !process.env.APPIMAGE) return {...available,message:'Automatyczna aktualizacja Linux jest dostępna w wydaniu AppImage. Dla DEB pobierz nowy pakiet.'};
       const [owner,repo]=boot.settings.launcher_repo.split('/');
-      autoUpdater.autoDownload=false; autoUpdater.autoInstallOnAppQuit=false; autoUpdater.allowPrerelease=false; autoUpdater.allowDowngrade=false;
+      autoUpdater.autoDownload=false; autoUpdater.autoInstallOnAppQuit=false; autoUpdater.allowPrerelease=boot.version.includes('-'); autoUpdater.allowDowngrade=false;
       autoUpdater.setFeedURL({provider:'github',owner,repo,private:false});
       let previous={}; try { previous=JSON.parse(fs.readFileSync(this.marker,'utf8')); } catch {}
       const checked=await autoUpdater.checkForUpdates();

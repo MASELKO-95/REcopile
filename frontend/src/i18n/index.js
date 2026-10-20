@@ -1,8 +1,9 @@
 import short from './short.tsv?raw';
 import messages from './messages.tsv?raw';
 import toolMessages from './tools.tsv?raw';
+import gameSettings from './game-settings.tsv?raw';
 const dictionary=new Map();
-for(const line of (short+'\n'+messages+'\n'+toolMessages).split('\n')) { const parts=line.split('\t'); if(parts.length===3) dictionary.set(parts[0],parts.slice(1)); }
+for(const line of (short+'\n'+messages+'\n'+toolMessages+'\n'+gameSettings).split('\n')) { const parts=line.split('\t'); if(parts.length===3) dictionary.set(parts[0],parts.slice(1)); }
 let language='pl';
 try { language=localStorage.getItem('recopile-language') || 'pl'; } catch {}
 const patterns=[...dictionary].filter(([key])=>/\{\d+\}/.test(key)).map(([key,values])=>{

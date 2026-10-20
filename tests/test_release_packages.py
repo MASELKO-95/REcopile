@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from recopile.network import extract, latest_release
+from recopile.network import extract, latest_release, version_key
 from recopile.registry import validate_registry
 from recopile.service import Launcher
 from recopile.storage import game_id
@@ -16,6 +16,23 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ComponentReleaseTests(unittest.TestCase):
+    def test_beta_and_stable_semver_ordering(self):
+        versions = ['0.2.2-beta.1', '0.2.2-beta.2', '0.2.2-beta.10', '0.2.2', '0.2.3-beta.1', '0.2.3']
+        self.assertEqual(sorted(reversed(versions), key=version_key), versions)
+        self.assertEqual(version_key('v0.2.2'), version_key('0.2.2'))
+
+    def test_launcher_ignores_a_newer_port_tools_release(self):
+        asset = lambda name: {'name': name, 'size': 123, 'browser_download_url': 'https://github.com/MASELKO-95/recopile/releases/download/fixture/'+name}
+        releases = [
+            {'tag_name': 'pinyon-v0.6.0-recopile.1', 'html_url': 'https://github.com/MASELKO-95/recopile/releases', 'assets': [asset('Pinyon-tools.tar.gz')]},
+            {'tag_name': 'v0.2.2-beta.2', 'prerelease': True, 'html_url': 'https://github.com/MASELKO-95/recopile/releases', 'assets': [asset('Recopile-0.2.2-beta.2-linux-x86_64.AppImage')]},
+            {'tag_name': 'v0.2.1', 'html_url': 'https://github.com/MASELKO-95/recopile/releases', 'assets': [asset('Recopile-0.2.1-linux-x86_64.AppImage')]},
+        ]
+        source = {'repo': 'MASELKO-95/recopile', 'asset_pattern': 'Recopile-*-linux-x86_64.AppImage', 'scan_releases': True}
+        with patch('recopile.network.fetch_json', return_value=releases):
+            self.assertEqual(latest_release(source)['version'], 'v0.2.1')
+            self.assertEqual(latest_release({**source, 'allow_prerelease': True})['version'], 'v0.2.2-beta.2')
+
     def test_pinned_component_is_not_confused_with_the_hub_release(self):
         release = {'tag_name': 'pinyon-v0.6.0-recopile.1', 'html_url': 'https://github.com/MASELKO-95/recopile/releases/tag/pinyon-v0.6.0-recopile.1',
                    'assets': [{'name': 'Pinyon-tools.tar.gz', 'browser_download_url': 'https://github.com/MASELKO-95/recopile/releases/download/pinyon-v0.6.0-recopile.1/Pinyon-tools.tar.gz', 'size': 123}]}

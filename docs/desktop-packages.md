@@ -1,13 +1,13 @@
 # Desktop packages
 
-Version 0.2.2-beta.1 has public beta Linux x86-64 packages in [GitHub Releases](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.1), built in `artifacts/desktop/`:
+Version 0.2.2-beta.2 has public beta Linux x86-64 packages in [GitHub Releases](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.2), built in `artifacts/desktop/`:
 
-- `Recopile-0.2.2-beta.1-linux-x64.pkg.tar.xz`: Arch / Manjaro package, installed by
+- `Recopile-0.2.2-beta.2-linux-x64.pkg.tar.xz`: Arch / Manjaro package, installed by
   the system package manager with an application menu entry.
-- `Recopile-0.2.2-beta.1-linux-amd64.deb`: Debian / Ubuntu package, installed by the
+- `Recopile-0.2.2-beta.2-linux-amd64.deb`: Debian / Ubuntu package, installed by the
   system package manager with an application menu entry.
-- `Recopile-0.2.2-beta.1-linux-x86_64.AppImage`: executable portable Linux application.
-- `Recopile-0.2.2-beta.1-source.zip`: explicit source/build inputs, notices, licenses
+- `Recopile-0.2.2-beta.2-linux-x86_64.AppImage`: executable portable Linux application.
+- `Recopile-0.2.2-beta.2-source.zip`: explicit source/build inputs, notices, licenses
   and a SHA-256 inventory. It excludes game data, local state and cover caches.
 
 The bundled Linux runtime requires glibc 2.38 or later, GTK 3 and a desktop
