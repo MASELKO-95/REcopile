@@ -1,0 +1,119 @@
+{
+  "name": "recopile-games-hub",
+  "productName": "Recopile",
+  "version": "0.2.2-beta.1",
+  "description": "RE:COPILE game library and local performance measurements",
+  "author": "MASELKO-95",
+  "license": "GPL-3.0-only",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --publish never"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "io.github.maselko95.recopile",
+    "asar": true,
+    "fileAssociations": [
+      {
+        "ext": "recopilemod",
+        "name": "RE:COPILE mod package",
+        "mimeType": "application/x-recopile-mod",
+        "role": "Editor"
+      }
+    ],
+    "directories": {
+      "output": "../artifacts/desktop"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "updater.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../.local/backend-dist/recopile-service",
+        "to": "backend"
+      }
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "pacman"
+      ],
+      "category": "Game",
+      "artifactName": "Recopile-${version}-linux-${arch}.${ext}",
+      "icon": "build/icon.png",
+      "maintainer": "MASELKO-95 <noreply@github.com>",
+      "desktop": {
+        "entry": {
+          "Name": "RE:COPILE",
+          "Comment": "Game library and port launcher",
+          "Categories": "Game;Utility;"
+        }
+      },
+      "syncDesktopName": true,
+      "synopsis": "RE:COPILE game library and port launcher"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "Recopile-${version}-windows-${arch}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": false,
+      "deleteAppDataOnUninstall": false
+    },
+    "pacman": {
+      "artifactName": "Recopile-${version}-linux-${arch}.pkg.tar.xz",
+      "depends": [
+        "glibc",
+        "gtk3",
+        "nss",
+        "alsa-lib",
+        "libxss",
+        "libxtst",
+        "xdg-utils",
+        "at-spi2-core",
+        "libsecret",
+        "gcc-libs"
+      ],
+      "compression": "xz"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MASELKO-95",
+        "repo": "recopile"
+      }
+    ],
+    "deb": {
+      "depends": [
+        "libc6 (>= 2.38)",
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1",
+        "libsecret-1-0"
+      ]
+    },
+    "electronDist": "node_modules/electron/dist"
+  },
+  "homepage": "https://github.com/MASELKO-95/recopile",
+  "desktopName": "recopile.desktop"
+}

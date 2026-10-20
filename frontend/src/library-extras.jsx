@@ -1,0 +1,69 @@
+import React, { useEffect, useState } from 'react';
+import { ArrowLeft, ArrowRight, Books, Check, DownloadSimple, FolderOpen, GameController, GithubLogo, Info, Play, PuzzlePiece, Wrench } from '@phosphor-icons/react';
+import { Badge, Cover, Empty, External, Modal, Spinner, platforms } from './ui.jsx';
+import {SteamLibraryPanel} from './steam-library.jsx';
+
+export function Collections({boot,onOpen,action,invoke,onAdd,onRequestCovers,go}) {
+  const [selected,setSelected]=useState(null), [collections,setCollections]=useState(boot.collections || []);
+  useEffect(()=>{
+    let live=true;
+    fetch('/api/collections').then(r=>{if(!r.ok)throw new Error('collections');return r.json();}).then(value=>{if(live)setCollections(value);}).catch(()=>{});
+    return ()=>{live=false;};
+  },[boot.media_revision,boot.collections]);
+  const representativeIds=(boot.collections || []).map(c=>c.cover_game?.id).filter(Boolean).join(',');
+  useEffect(()=>{if(representativeIds)onRequestCovers(representativeIds.split(','));},[representativeIds]);
+  const c=collections.find(item=>item.id===selected);
+  function select(id){setSelected(id);document.querySelector('.main-content')?.scrollTo(0,0);}
+  if(!c)return <div className="collections-page collection-overview"><SteamLibraryPanel boot={boot} action={action} compact onSettings={()=>go('settings')}/><div className="collection-tiles">{collections.map(collection=><button type="button" className="collection-tile" key={collection.id} onClick={()=>select(collection.id)}><Cover game={collection.cover_game || {id:collection.id,title:collection.title}}/><div className="collection-tile-caption"><Books size={20}/><div><h2>{collection.tile_title || collection.title}</h2><span>Otwórz kolekcję</span></div><ArrowRight size={19}/></div></button>)}</div></div>;
+  const titles=[...c.entries.map(item=>({...item,edition:'console'})),...(c.pc_titles || []).map(item=>({...item,edition:'pc'}))].sort((a,b)=>a.year-b.year);
+  const stats=new Map((boot.profile.games || []).map(item=>[item.game_id,item]));
+  return <div className="collections-page collection-detail" data-collection={c.id}>
+    <button type="button" className="text-link collection-back" onClick={()=>select(null)}><ArrowLeft size={18}/>Wszystkie kolekcje</button>
+    <section className="panel collection-heading"><Books size={30}/><div><h2>{c.tile_title || c.title}</h2><p>{c.description}</p></div></section>
+    <SteamLibraryPanel boot={boot} action={action} compact onSettings={()=>go('settings')}/>
+    <section className="panel"><div className="panel-title"><GameController size={25}/><div><h2>Gry w kolejności serii</h2><p>Przygotuj port lub podłącz swoją instalację PC. Gotową grę uruchomisz przyciskiem Graj.</p></div></div>
+      <div className="collection-series-games">{titles.map(item=>{
+        const game=item.game, install=game?.install, pc=item.edition==='pc';
+        const experimental=game?.sources?.some(source=>source.origin==='development');
+        const ready=Boolean(install?.ready || (install?.experimental && install?.local_executable));
+        const running=boot.running.some(session=>session.id===game?.id);
+        const steam=install?.adapter==='steam' && !install?.local_executable;
+        const activity=stats.get(game?.id);
+        return <article className={'collection-pc-game collection-series-game '+(pc?'official-pc-game':'console-port-game')} data-title={item.title} key={item.edition+item.title}>
+          <div className="collection-pc-info"><h3>{item.title}</h3><small>{pc?'PC · Windows':platforms[item.platform]} · {item.year}{pc && item.store_name && ' · '+item.store_name}</small>
+            <Badge kind={experimental?'warning':pc?'native':'muted'}>{experimental?'Projekt eksperymentalny':pc?'Oficjalna wersja PC':game?.kind==='recompile'?'Projekt rekompilacji':'Emulacja / własna instalacja'}</Badge>
+            {pc && item.availability==='delisted' && <Badge kind="warning">Wycofana ze sprzedaży</Badge>}
+            {pc && item.availability==='delisted' && <p>Zakup cyfrowy niedostępny. Wcześniej kupioną wersję pobierz ze swojej biblioteki sklepu.</p>}
+            {experimental && <p>Stan prac i wymagania sprawdź przy grze. Gotową własną kompilację możesz podłączyć w szczegółach.</p>}
+            {game?.steam_detected && <Badge kind="muted">Wykryto w Steam</Badge>}
+            {steam ? <p className="collection-game-stats"><span>Czas i osiągnięcia Steam · integracja planowana</span></p> : <p className="collection-game-stats"><span>Twój czas w tej grze</span><strong>{((activity?.seconds || 0)/3600).toFixed(1)} h</strong><span>{activity?.launches || 0} uruchomień</span></p>}
+          </div>
+          <div className="collection-pc-actions">
+            {running?<button type="button" className="primary" disabled><GameController size={17}/>W trakcie gry</button>:ready?<button type="button" className="primary collection-play" onClick={()=>invoke('/api/launch',{game_id:game.id},'Uruchamianie gry…')}><Play size={17}/>{steam?'Uruchom w Steam':install?.experimental?'Uruchom eksperyment Linux':'Graj'}</button>:pc?<button type="button" className="primary" onClick={()=>onAdd({title:item.title,platform:'other',mode:'local'})}><FolderOpen size={17}/>Podłącz instalację PC</button>:<button type="button" className="primary" disabled={!game} onClick={()=>onOpen(game.id)}><Wrench size={17}/>Przygotuj grę</button>}
+            {game && <button type="button" className="outline" onClick={()=>onOpen(game.id)}>Otwórz szczegóły</button>}
+            {pc && item.store_url && <External className="outline" href={item.store_url}>{item.steam_app_id?(item.availability==='available' && !game?.steam_detected?'Kup na Steam':'Strona Steam'):'Microsoft Store / Xbox'}</External>}
+            {pc && item.availability_url && <External className="text-link" href={item.availability_url}>Informacja wydawcy</External>}
+          </div>
+        </article>;
+      })}</div>
+      {c.platform_note && <p className="form-help">{c.platform_note}</p>}
+      <p className="form-help">Czas lokalnych programów zapisujemy w aktywnym profilu po zakończeniu sesji. Czas i osiągnięcia Steam wymagają osobnej integracji.</p>
+      <button type="button" className="outline collection-profile-link" onClick={()=>go('profile')}>Zobacz kartę gracza</button>
+      <p className="form-help">Wydanie Windows nie potwierdza zgodności z Linuxem. Na Linuxie sprawdź wymagania gry i obsługę Proton / Wine.</p>
+    </section>
+    {c.id==='ratchet-and-clank' && <div className="notice-panel"><Info size={22}/><div><strong>Ratchet 3 · własny projekt eksperymentalny</strong><p>Linux, PAL SCES-52456. Intro i ekran tytułowy; rozgrywka i Windows niepotwierdzone. Pozostałe części nie dziedziczą statusu tego portu.</p><button className="text-link" onClick={()=>invoke('/api/project-info',{source_id:'ratchet3-local'})}>Dokumentacja projektu</button></div></div>}
+    {c.additional_titles?.length>0 && <section className="panel"><h2 className="collection-future-heading">Pozostałe platformy i wydania</h2>{c.additional_titles.map(item=><div className="collection-game future-game" key={item.title}><GameController size={20}/><div><strong>{item.title}</strong><small>{item.platform}</small></div><Badge kind="muted">{item.status}</Badge></div>)}</section>}
+  </div>;
+}
+
+export function WorkshopPage({boot,action,invoke,pendingPackage,onPackageHandled}) {
+  const [state,setState]=useState(null),[path,setPath]=useState(''),[review,setReview]=useState(null),[busy,setBusy]=useState(false),[trusted,setTrusted]=useState(false),[overwrite,setOverwrite]=useState(false),[tab,setTab]=useState('readme'),[licenseViewed,setLicenseViewed]=useState(false),[licenseAccepted,setLicenseAccepted]=useState(false);
+  async function load() { const response=await fetch('/api/workshop'); setState(await response.json()); }
+  useEffect(() => { load().catch(() => {}); },[]);
+  useEffect(() => { if(pendingPackage) { setPath(pendingPackage); inspect(pendingPackage); onPackageHandled?.(); } },[pendingPackage]);
+  async function browse() { try { const picked=await action('/api/pick',{mode:'file'}); if(picked.path) setPath(picked.path); } catch {} }
+  async function inspect(selected=path) { setBusy(true); setTrusted(false); setOverwrite(false); setLicenseViewed(false); setLicenseAccepted(false); try { setReview(await action('/api/mod/inspect',{path:selected})); setTab('readme'); } catch {} finally { setBusy(false); } }
+  async function install() { setBusy(true); try { await action('/api/mod/install',{path:review.path,fingerprint:review.fingerprint,trusted,overwrite,license_accepted:licenseAccepted,license_hash:review.license_hash},'Paczka moda zapisana w bibliotece.'); setReview(null); await load(); } catch {} finally { setBusy(false); } }
+  async function template(game_id) { try { const data=await action('/api/mod/template',{game_id}); const link=document.createElement('a'); link.download=data.filename; link.href='data:application/zip;base64,'+data.base64; link.click(); } catch {} }
+  return <div className="workshop-page"><section className="panel"><div className="panel-title"><PuzzlePiece size={28}/><div><h2>Warsztat społeczności</h2><p>Paczki modów z dokumentacją i sprawdzonymi sumami plików.</p></div></div><p className="detail-note">Opisy i linki publikujemy na Discordzie. Pliki mogą pochodzić z GitHub Releases; autor, licencja, gra i wersja portu są zapisane w manifeście.</p>{boot.settings.discord_url ? <External className="outline" href={boot.settings.discord_url}>Otwórz warsztat na Discordzie</External> : <p className="form-help">Wydawca nie dodał jeszcze zaproszenia Discorda. Lokalny instalator i szablony działają niezależnie.</p>}<form className="mod-import" onSubmit={e => {e.preventDefault();inspect();}}><label>Paczka .recopilemod lub ZIP<div className="inline-field"><input required value={path} onChange={e => setPath(e.target.value)} placeholder="Ścieżka do pobranego moda"/><button type="button" className="outline" onClick={browse}><FolderOpen size={17}/>Wybierz</button></div></label><button className="primary" disabled={busy}>{busy ? <Spinner/> : <Wrench size={17}/>}Przejrzyj instalację</button></form></section><section className="panel"><h2>Twoje mody</h2>{state?.installed.length ? state.installed.map(mod => <div className="installed-mod" key={mod.id}><PuzzlePiece size={23}/><div><strong>{mod.name}</strong><small>{mod.author} · {mod.version} · port {mod.port_version}</small></div><Badge kind={mod.active ? 'recompile' : 'muted'}>{mod.active ? 'Aktywny' : 'Przygotowany — brak adaptera'}</Badge><button className="text-link" onClick={async () => {try {await action('/api/mod/remove',{mod_id:mod.id},'Mod usunięty.');await load();} catch {}}}>Usuń</button></div>) : <Empty icon={PuzzlePiece} title="Miejsce na nowe pomysły" text="Dodaj paczkę przeznaczoną dla konkretnej wersji Twojego portu. Nie ma tu przykładowych, udawanych modów."/>}</section><section className="panel"><h2>Tworzysz moda?</h2><p className="detail-note">Pobierz szablon dla podłączonej gry. Zawiera manifest, README, miejsce na własną licencję i wzór posta na Discorda. Narzędzie build_mod.py tworzy paczkę oraz instalatory dla Linuxa i Windows.</p>{state?.games.length ? state.games.map(game => <div className="template-row" key={game.id}><strong>{game.title}</strong><button className="outline" onClick={() => template(game.id)}><DownloadSimple size={16}/>Pobierz szablon</button></div>) : <p className="form-help">Podłącz grę, aby przygotować szablon dla jej identyfikatora i wersji.</p>}<p className="form-help">Mod nie zacznie działać tylko dlatego, że został pobrany. Aktywacja wymaga folderu / adaptera obsługiwanego przez ten port. Instalator nie wykonuje skryptów z paczki.</p></section>{review && <Modal wide title={review.manifest.name} subtitle={`${review.manifest.author} · ${review.manifest.version} · ${review.game}`} onClose={() => setReview(null)}><div className="tabs modal-tabs">{[['readme','README'],['license','Licencja'],['files','Pliki instalacji']].map(([key,label]) => <button key={key} className={tab===key?'active':''} onClick={() => {setTab(key);if(key==='license' && review.license_text.trim())setLicenseViewed(true);}}>{label}</button>)}</div>{tab==='files' ? <div className="mod-targets">{review.targets.map(t => <p key={t.file}><code>{t.file}</code><Badge kind={t.exists?'warning':'muted'}>{t.exists?'Zastąpi plik — z kopią zapasową':'Nowy plik'}</Badge></p>)}</div> : <pre className="document-text">{tab==='readme'?review.readme:review.license_text}</pre>}<div className="notice-panel"><Info size={22}/><p>{review.message}</p></div><label className="checkbox-label"><input type="checkbox" checked={trusted} onChange={e => setTrusted(e.target.checked)}/>Przeczytałem README i ufam tej paczce.</label><label className="checkbox-label project-license-consent"><input type="checkbox" checked={licenseAccepted} disabled={!licenseViewed || !review.license_text.trim()} onChange={e=>setLicenseAccepted(e.target.checked)}/>Akceptuję warunki licencji tego projektu.</label><p className="form-help">{review.license_text.trim()?'Otwórz zakładkę Licencja i zaakceptuj jej warunki osobno. Zmiana licencji wymaga ponownej zgody.':'Instalacja zablokowana: licencja tego wydania jest niedostępna.'}</p>{review.targets.some(t=>t.exists) && <label className="checkbox-label"><input type="checkbox" checked={overwrite} onChange={e => setOverwrite(e.target.checked)}/>Zezwalam na zastąpienie pokazanych plików z zachowaniem kopii zapasowej.</label>}<div className="modal-actions"><button className="outline" onClick={() => setReview(null)}>Anuluj</button><button className="primary" disabled={busy||!trusted||!licenseAccepted||!review.license_text.trim()||(review.targets.some(t=>t.exists)&&!overwrite)} onClick={install}>{busy?<Spinner/>:<Check size={17}/>} {review.can_activate?'Zainstaluj mod':'Zapisz przygotowaną paczkę'}</button></div></Modal>}</div>;
+}

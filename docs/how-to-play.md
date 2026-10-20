@@ -75,6 +75,20 @@ selecting an arbitrary ISO does not produce a finished native game.
 Xbox One catalog entries need an actual port or existing PC installation.
 PSP and PS Vita support is deferred.
 
+Collections list each series in release order, combining available port
+projects with official PC editions. Use **Prepare game** to open a port's setup
+and documentation, or **Connect a PC installation** for an existing local
+executable or suitable startup script. Ready installations have **Play** in
+the collection. Buying through a store link and connecting an installation
+are separate steps.
+
+The player card records hours and launch counts separately for each game and
+profile after the launched program exits. The profile selected at launch owns
+that session, even if you switch profiles while playing. Choose the game
+program or a startup script that stays active for the session. In-game
+achievement counts require a future adapter; launcher activity badges are
+shown separately.
+
 ## Troubleshooting
 
 Check your copy's edition and completeness, the project requirements and the

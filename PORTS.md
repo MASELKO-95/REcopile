@@ -17,7 +17,7 @@ Read each project's original README and license inside the launcher before downl
 | Minecraft PS3 own-disc / ISO integration | MASELKO-95 (planned integration) | No declared package | No declared package | Planned; no ready port | No public release |
 | Forza Horizon 2 Recompiled (original) | fabioap-cpu | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp) · [Releases](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp#readme) |
 | Forza Horizon 2 Recompiled (fork) | ShreyashDesai | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp) · [Releases](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp#readme) |
-| Forza Horizon 2 Recompiled (research fork) | MASELKO-95 | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp) · [Releases](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme) |
+| Forza Horizon 2 Recompiled (research fork) | MASELKO-95 | Experiment only; no package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp) · [Releases](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme) |
 
 ## Porting tools and emulators
 
@@ -49,15 +49,9 @@ independent fixes or game tests yet. It retains the same limitations. No game
 files are available for local gameplay validation. Creating a fork does not
 establish working gameplay.
 
-## Adding a project
+## Catalog updates
 
-Use the launcher's publisher form, export the entry, then run:
-
-```sh
-python3 tools/register_game.py recopile-game-entry.json
-python3 tools/update_port_list.py --check
-```
-
-Publish the changed catalog and port list with a release or catalog update.
-Updates to a listed game come from its original author's GitHub Releases; its
-binaries do not need to be copied into the launcher repository.
+Game metadata is maintained in `data/registry.json`. Players receive catalog updates
+without replacing launcher code or reinstalling the application.
+This project list and the author profile list are generated from that catalog.
+Updates to game programs come from their authors' GitHub Releases.

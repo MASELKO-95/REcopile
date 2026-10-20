@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "collections": [
+    {
+      "id": "forza-horizon",
+      "title": "Forza Horizon",
+      "tile_title": "Forza Collection",
+      "description": "Forza Horizon 1, 2, 3 i kolejne części. Przygotuj lub podłącz grę, uruchom ją tutaj i zapisuj czas w swoim profilu.",
+      "entries": [
+        {
+          "title": "Forza Horizon",
+          "year": 2012,
+          "platform": "xbox360",
+          "match": "Forza Horizon"
+        },
+        {
+          "title": "Forza Horizon 2",
+          "year": 2014,
+          "platform": "xbox360",
+          "match": "Forza Horizon 2"
+        }
+      ],
+      "pc_titles": [
+        {
+          "title": "Forza Horizon 3",
+          "year": 2016,
+          "system": "windows",
+          "store_name": "Microsoft Store",
+          "availability": "delisted",
+          "delisted_at": "2020-09-27",
+          "availability_url": "https://support.forzamotorsport.net/hc/en-us/articles/360052097274-End-of-Life-for-Forza-Horizon-3",
+          "checked_at": "2026-10-15",
+          "store_url": "https://www.xbox.com/pl-PL/games/store/forza-horizon-3/9NBLGGH1Z7TW"
+        },
+        {
+          "title": "Forza Horizon 4",
+          "year": 2018,
+          "system": "windows",
+          "store_name": "Steam / Microsoft Store",
+          "steam_app_id": 1293830,
+          "store_url": "https://store.steampowered.com/app/1293830/",
+          "availability": "delisted",
+          "delisted_at": "2024-12-15",
+          "availability_url": "https://forza.net/news/forza-horizon-4-delisting",
+          "checked_at": "2026-10-15"
+        },
+        {
+          "title": "Forza Horizon 5",
+          "year": 2021,
+          "system": "windows",
+          "store_name": "Steam",
+          "steam_app_id": 1551360,
+          "store_url": "https://store.steampowered.com/app/1551360/",
+          "availability": "available",
+          "checked_at": "2026-10-15"
+        },
+        {
+          "title": "Forza Horizon 6",
+          "year": 2026,
+          "system": "windows",
+          "store_name": "Steam",
+          "steam_app_id": 2483190,
+          "store_url": "https://store.steampowered.com/app/2483190/",
+          "availability": "available",
+          "checked_at": "2026-10-15"
+        }
+      ],
+      "additional_titles": [],
+      "platform_note": "Forza Horizon 3: PC z Microsoft Store / Xbox. Wydania Steam zaczynają się od Forza Horizon 4."
+    },
+    {
+      "id": "ratchet-and-clank",
+      "title": "Ratchet & Clank",
+      "description": "Wszystkie części w jednym miejscu: porty, emulacja i oficjalne wydania PC.",
+      "entries": [
+        {
+          "title": "Ratchet & Clank",
+          "year": 2002,
+          "platform": "ps2",
+          "match": "Ratchet & Clank",
+          "wiki_title": "Ratchet & Clank (2002 video game)"
+        },
+        {
+          "title": "Ratchet & Clank 2 / Going Commando",
+          "year": 2003,
+          "platform": "ps2",
+          "match": "Ratchet & Clank 2"
+        },
+        {
+          "title": "Ratchet & Clank: Up Your Arsenal (Ratchet & Clank 3)",
+          "year": 2004,
+          "platform": "ps2",
+          "match": "Ratchet & Clank 3"
+        },
+        {
+          "title": "Ratchet: Gladiator / Deadlocked",
+          "year": 2005,
+          "platform": "ps2",
+          "match": "Ratchet - Gladiator"
+        },
+        {
+          "title": "Ratchet & Clank: Size Matters",
+          "year": 2007,
+          "platform": "ps2",
+          "match": "Ratchet & Clank - Size Matters"
+        },
+        {
+          "title": "Secret Agent Clank",
+          "year": 2008,
+          "platform": "ps2",
+          "match": "Secret Agent Clank"
+        },
+        {
+          "title": "Ratchet & Clank: Tools of Destruction",
+          "year": 2007,
+          "platform": "ps3",
+          "match": "Ratchet & Clank Future - Tools of Destruction"
+        },
+        {
+          "title": "Ratchet & Clank: Quest for Booty",
+          "year": 2008,
+          "platform": "ps3",
+          "match": "Ratchet & Clank - Quest for Booty"
+        },
+        {
+          "title": "Ratchet & Clank: A Crack in Time",
+          "year": 2009,
+          "platform": "ps3",
+          "match": "Ratchet & Clank - A Crack in Time"
+        },
+        {
+          "title": "Ratchet & Clank: All 4 One",
+          "year": 2011,
+          "platform": "ps3",
+          "match": "Ratchet & Clank - All 4 One"
+        },
+        {
+          "title": "Ratchet & Clank: QForce / Full Frontal Assault",
+          "year": 2012,
+          "platform": "ps3",
+          "match": "Ratchet & Clank - QForce"
+        },
+        {
+          "title": "Ratchet & Clank: Into the Nexus",
+          "year": 2013,
+          "platform": "ps3",
+          "match": "Ratchet & Clank - Into the Nexus"
+        },
+        {
+          "title": "Ratchet & Clank Collection / Trilogy",
+          "year": 2012,
+          "platform": "ps3",
+          "match": "Ratchet & Clank Collection"
+        },
+        {
+          "title": "Ratchet: Deadlocked HD",
+          "year": 2013,
+          "platform": "ps3",
+          "match": "Ratchet - Deadlocked HD"
+        }
+      ],
+      "additional_titles": [
+        {
+          "title": "Ratchet & Clank: Going Mobile",
+          "platform": "Java / telefony",
+          "status": "Poza obecnymi platformami"
+        },
+        {
+          "title": "Ratchet & Clank: Before the Nexus",
+          "platform": "Android / iOS",
+          "status": "Na później"
+        },
+        {
+          "title": "Ratchet & Clank (2016)",
+          "platform": "PS4",
+          "status": "Na później — PS4"
+        }
+      ],
+      "tile_title": "Ratchet & Clank Collection",
+      "pc_titles": [
+        {
+          "title": "Ratchet & Clank: Rift Apart",
+          "year": 2023,
+          "system": "windows",
+          "steam_app_id": 1895880,
+          "store_url": "https://store.steampowered.com/app/1895880/",
+          "store_name": "Steam",
+          "availability": "available",
+          "checked_at": "2026-10-15"
+        }
+      ]
+    }
+  ]
+}

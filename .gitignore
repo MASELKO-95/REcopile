@@ -1,0 +1,15 @@
+.local/
+.venv/
+artifacts/
+android/.gradle/
+android/local.properties
+*.keystore
+*.jks
+Games/
+RecopileLibrary/
+node_modules/
+**/node_modules
+frontend/dist/
+__pycache__/
+*.pyc
+.DS_Store

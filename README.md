@@ -4,7 +4,7 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Development preview.** Linux is the current validation platform. Windows packaging is being prepared and needs testing on Windows before a public release. Android is deferred.
+**Public beta 0.2.2-beta.1.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.1) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
 
 ## Languages
 
@@ -18,10 +18,13 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 - Keep a **recompilations only** view, or include emulation and other local games.
 - Install project releases from their authors' GitHub repositories. Edit each source or follow its manual installation instructions.
 - See separate **Linux / Windows package** labels and **device compatibility** reports. A downloadable program does not guarantee a working game.
+- See declared technologies on search cards and game details. Undeclared graphics features remain unknown.
+- Use **Measurements** to detect local CPU/GPU/RAM information, record a timed direct game session with MangoHud (Linux) or console PresentMon (Windows), or import their CSV logs. Summaries show measured FPS, frame times, duration, game version and the graphics settings you enter. Results remain local until you choose to export or publish a report.
 - Use **On this PC** to filter declared packages and local executables for the host system. Linux also lists Windows packages with an explicit **Proton / Wine · untested** label; these packages can be installed manually and linked as local games.
 - Add existing programs like a non-Steam game. On Linux, select an installed **Proton** version or **Wine** for Windows executables. Each game gets a separate compatibility prefix; an installed UMU launcher can also be used.
-- Open Forza and Ratchet & Clank collections from first-game cover tiles. Each series has its own view with console projects, official PC releases and store links. Delisted PC games are labelled separately; connect an existing PC installation to launch it from the library. Projects in development retain their own status.
-- Keep profiles, play history and launcher activity badges local. Export a summary image to share yourself, for example on Discord.
+- Optionally connect installed **Steam** PC games from RE:COPILE collections. This feature is **off by default**: enable it in **Collections** or Settings. Only declared collection App IDs are checked, including registered libraries on other drives; unrelated Steam titles are not imported. While enabled, startup checks and **Scan Steam** refresh the matches, and Settings accepts an extra SteamLibrary folder. Linux (including Flatpak) and Windows discovery are supported. Scanning leaves game files in place and does not download artwork or require Steam sign-in. **Launch in Steam** delegates to the installed client. Steam hours and achievements are not synchronized, and the client handoff is not counted as a game session.
+- Open Forza and Ratchet & Clank collections from first-game cover tiles. Each series lists its console projects and official PC releases together in release order. Prepare a port or connect an existing PC installation, then launch a ready game with **Play**. Store links retain availability labels; projects in development retain their own status.
+- Keep profiles, per-game hours and launch counts, play history and launcher activity badges local. Sessions are recorded for the profile selected when the program starts. Each game's player card can reopen its details or launch its connected installation. In-game achievement integration is planned and has no reported count yet. Export a summary image to share yourself, for example on Discord.
 - Review mod packages with a manifest, README, license and file hashes. Activation requires an explicit mod folder or adapter supported by the port. Creator templates and the package builder provide Linux / Windows installation helpers.
 
 ## Sources and updates
@@ -29,6 +32,16 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 **A port supplies software; you supply your own game data.** RE:COPILE does not distribute console game images, BIOS files, firmware, copyrighted game assets or unpublished commercial game source code. Follow each project's instructions to prepare your own copy. There is no universal automatic “ISO to native game” conversion.
 
 Before downloading, the launcher presents the project's actual **README, license, release information and author support links**. Open the License tab and accept its terms separately from the README acknowledgment. Installation is blocked if the license is unavailable. Documentation and the accepted license hash stay with the installed version. Automatic updates require prior consent; a changed license requires fresh acceptance. Updates are checked at startup, announced, then approved updates are downloaded at the next startup. Previous port versions and user data are retained.
+
+Game additions and metadata edits update a single runtime file, `data/registry.json`.
+The launcher fetches this catalog without replacing application code or reinstalling.
+Generated public project lists follow the same catalog.
+
+The launcher's own license appears automatically on first launch and after a
+launcher version update. Acceptance is remembered for ordinary restarts.
+An unchanged game license with prior automatic-update consent needs an update
+notification; it does not repeatedly open the license dialog. Changes or missing
+license documents pause automatic installation.
 
 The in-app **How to play** page explains the shared Xbox 360 / PS2 workflow:
 choose a project, review its README and accept its license, prepare your own copy,
@@ -75,7 +88,7 @@ A new default library affects future installations. Existing installations retai
 
 ## Development
 
-Python 3.11 or later and Node 22 or later are recommended for building. Players will not need Python or Node in a packaged desktop release.
+Python 3.11 or later and Node 22 or later are recommended for building. The packaged hub does not require Python or Node. Individual port setup tools may require their own dependencies.
 
 ```sh
 python3 -m venv .venv
@@ -97,9 +110,13 @@ npm ci
 npm run package
 ```
 
-Build the backend on the target operating system. Desktop configuration targets Linux AppImage / DEB and Windows NSIS; configuration alone is not a verified installer. A public release is needed to validate launcher self-updates end to end.
+Build the backend on the target operating system. Linux packaging produces an
+AppImage, a Debian/Ubuntu DEB and an Arch/Manjaro pacman package; the current
+bundled Linux runtime requires x86-64 and glibc 2.38 or later. Windows NSIS needs
+a Windows backend build. See [desktop packages](docs/desktop-packages.md).
+Launcher self-updates between public releases remain unqualified; catalog updates are independent. Beta installers are marked as pre-release on GitHub.
 
-See the [publisher guide](docs/publisher-guide.md), [roadmap](ROADMAP.md), [privacy](PRIVACY.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Distribution and Discord settings live in `data/distribution.json`. An unset Discord invite is shown as unconfigured.
+See the [catalog format](docs/catalog-format.md), [roadmap](ROADMAP.md), [privacy](PRIVACY.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Distribution and Discord settings live in `data/distribution.json`. An unset Discord invite is shown as unconfigured.
 
 The console catalog combines Libretro metadata (Xbox 360 / PS2 / PS3) and attributed Wikipedia game lists (Xbox One), including regional variants, repeated titles and announced entries. Its entry count is not a count of unique, released or playable games. Source URLs and hashes are retained in `data/catalog.json.gz`. “No port assigned” means no confirmed entry in this catalog; it does not establish that no port exists elsewhere.
 

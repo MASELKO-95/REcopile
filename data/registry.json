@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-13",
+  "sources": [
+    {
+      "id": "pinyon-linux",
+      "name": "Pinyon Shift Linux · MASELKO-95",
+      "repo": "MASELKO-95/pinyon-shift-Native-Linux-unofficial",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "PinyonShift-Linux-*.tar.gz",
+      "exclude_pattern": "*source*",
+      "executable": "PinyonShift.sh",
+      "adapter": "pinyon-legacy",
+      "verified": true,
+      "archived": true,
+      "channel": "preview",
+      "supported": false,
+      "auto_update": false,
+      "guide": "https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial#readme",
+      "note": "Pre-release — niewspierana wersja MASELKO-95. Archiwalny, niezależny port Linux dostępny jako alternatywa. Grę budujesz z własnego, obsługiwanego ISO.",
+      "assets_by_system": {
+        "linux": "PinyonShift-Linux-*.tar.gz"
+      },
+      "executables_by_system": {
+        "linux": "PinyonShift.sh"
+      },
+      "technologies": [
+        "static-recompilation"
+      ]
+    },
+    {
+      "id": "pinyon",
+      "name": "Pinyon Shift",
+      "repo": "arcanite24/pinyon-shift",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "PinyonShift-Launcher-linux-x86_64.tar.gz",
+      "executable": "PinyonShiftLauncher",
+      "adapter": "pinyon",
+      "verified": true,
+      "channel": "final",
+      "supported": true,
+      "guide": "https://github.com/arcanite24/pinyon-shift/blob/main/docs/LINUX.md",
+      "note": "Pinyon Shift: wspólny panel w RE:COPILE wyboru własnego ISO lub folderu gry, weryfikacji, budowania i uruchamiania bez osobnego okna launchera. Silnik i narzędzia pochodzą z oryginalnego arcanite24/pinyon-shift; prawa i autorzy pozostają oryginalne. Pobranie narzędzi nie oznacza gotowej gry. Przygotowanie uruchamia oryginalny workflow projektu i może pobrać kompilator oraz zależności. Obsługiwane dane gry i stan zgodności sprawdź w README. Linux: pakiet narzędzi 0.6.0 jest udostępniony w Releases RE:COPILE, z przypiętymi oryginalnymi źródłami i licencją BSD. Pliki gry i kompilacja wykonywana z nich pozostają lokalne.",
+      "assets_by_system": {
+        "linux": "PinyonShift-0.6.0-Recopile-linux-x86_64.tar.gz",
+        "windows": "PinyonShift-Launcher.zip"
+      },
+      "executables_by_system": {
+        "linux": "PinyonShift-Recopile.py",
+        "windows": "PinyonShiftLauncher.exe"
+      },
+      "technologies": [
+        "static-recompilation"
+      ],
+      "repos_by_system": {
+        "linux": "MASELKO-95/recopile"
+      },
+      "release_tags_by_system": {
+        "linux": "pinyon-v0.6.0-recopile.1"
+      },
+      "documentation_repo": "arcanite24/pinyon-shift",
+      "documentation_ref": "9331e453e9850d0fcc1c1606dee95db834a9d317"
+    },
+    {
+      "id": "skate3",
+      "name": "Skate 3 Recompiled",
+      "repo": "mchughalex/skate3recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "Skate3Recomp-Linux.zip",
+      "executable": "skate3",
+      "adapter": "native-wizard",
+      "verified": true,
+      "guide": "https://github.com/mchughalex/skate3recomp#linux",
+      "note": "Wbudowany instalator projektu importuje pliki z własnej kopii Xbox 360. Wybór platformy źródłowej ma znaczenie.",
+      "assets_by_system": {
+        "linux": "Skate3Recomp-Linux.zip",
+        "windows": "Skate3Recomp-Windows.zip"
+      },
+      "executables_by_system": {
+        "linux": "skate3",
+        "windows": "skate3.exe"
+      },
+      "technologies": [
+        "static-recompilation"
+      ]
+    },
+    {
+      "id": "unleashed",
+      "name": "Unleashed Recompiled",
+      "repo": "hedge-dev/UnleashedRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "UnleashedRecomp-Flatpak.zip",
+      "executable": "",
+      "adapter": "flatpak",
+      "flatpak_id": "io.github.hedge_dev.unleashedrecomp",
+      "verified": true,
+      "guide": "https://github.com/hedge-dev/UnleashedRecomp#how-to-install",
+      "note": "Linux: pakiet Flatpak. Wymaga Flatpak i plików z własnej wersji Xbox 360; kopia PS3 nie jest obsługiwana przez ten port.",
+      "assets_by_system": {
+        "linux": "UnleashedRecomp-Flatpak.zip",
+        "windows": "UnleashedRecomp-Windows.zip"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "UnleashedRecomp.exe"
+      },
+      "technologies": [
+        "static-recompilation"
+      ]
+    },
+    {
+      "id": "pcsx2",
+      "name": "PCSX2",
+      "repo": "PCSX2/pcsx2",
+      "platform": "ps2",
+      "kind": "emulator",
+      "asset_pattern": "pcsx2-*-linux-appimage-x64-Qt.AppImage",
+      "executable": "",
+      "adapter": "appimage",
+      "verified": true,
+      "guide": "https://pcsx2.net/docs/category/setup/",
+      "note": "Silnik PS2 zarządzany przez launcher. Wymaga BIOS-u z własnej konsoli i obrazu własnej gry.",
+      "assets_by_system": {
+        "linux": "pcsx2-*-linux-appimage-x64-Qt.AppImage",
+        "windows": "pcsx2-*-windows-x64-Qt.7z"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "pcsx2-qt.exe"
+      }
+    },
+    {
+      "id": "rpcs3",
+      "name": "RPCS3",
+      "repo": "RPCS3/rpcs3-binaries-linux",
+      "platform": "ps3",
+      "kind": "emulator",
+      "asset_pattern": "*_linux64.AppImage",
+      "executable": "",
+      "adapter": "appimage",
+      "verified": true,
+      "guide": "https://rpcs3.net/quickstart",
+      "note": "Silnik PS3 zarządzany przez launcher. Firmware instalujesz w RPCS3; gry na płytach importuj jako przygotowany folder gry, zgodnie z przewodnikiem RPCS3.",
+      "assets_by_system": {
+        "linux": "*_linux64.AppImage",
+        "windows": "*_win64*.7z"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "rpcs3.exe"
+      },
+      "repos_by_system": {
+        "linux": "RPCS3/rpcs3-binaries-linux",
+        "windows": "RPCS3/rpcs3-binaries-win"
+      },
+      "documentation_repo": "RPCS3/rpcs3",
+      "documentation_ref": "master"
+    },
+    {
+      "id": "wanderer",
+      "name": "Wanderer · Farkle",
+      "repo": "MASELKO-95/Wanderer-dice-farkle-game",
+      "platform": "other",
+      "kind": "native",
+      "asset_pattern": "*linux*.zip",
+      "executable": "",
+      "adapter": "native",
+      "verified": false,
+      "guide": "https://github.com/MASELKO-95/Wanderer-dice-farkle-game",
+      "note": "Twój projekt. Dostępność paczki dla Linuxa sprawdzana jest w Releases. Możesz wskazać własny plik wykonywalny.",
+      "assets_by_system": {
+        "linux": "*linux*.zip"
+      },
+      "executables_by_system": {
+        "linux": ""
+      }
+    },
+    {
+      "id": "scp-vulkan",
+      "name": "SCP · Vulkan Edition",
+      "repo": "MASELKO-95/SCP-Vulkan-edition",
+      "platform": "other",
+      "kind": "native",
+      "asset_pattern": "*linux*.zip",
+      "executable": "",
+      "adapter": "native",
+      "verified": false,
+      "guide": "https://github.com/MASELKO-95/SCP-Vulkan-edition",
+      "note": "Twój projekt. Bez wydania binarnego użyj lokalnej kompilacji i wskaż jej plik wykonywalny.",
+      "assets_by_system": {
+        "linux": "*linux*.zip"
+      },
+      "executables_by_system": {
+        "linux": ""
+      },
+      "public_listing": false
+    },
+    {
+      "id": "ratchet3-local",
+      "name": "Ratchet & Clank: Up Your Arsenal (3) · RE:COPILE Edition",
+      "repo": "MASELKO-95/ratchet-3-recopile-edition",
+      "platform": "ps2",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "in_progress",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "note": "Rekompilacja w trakcie prac. Lokalny eksperyment Linux, PAL SCES-52456: intro i ekran Press START; pełna rozgrywka i Windows nie są potwierdzone. Kod EE jest rekompilowany, a runtime obejmuje elementy obsługi/emulacji PS2. Nie jest to ukończony port bez emulacji wszystkich podsystemów.",
+      "experimental_systems": [
+        "linux"
+      ],
+      "edition": "recopile",
+      "guide": "https://github.com/MASELKO-95/ratchet-3-recopile-edition#requirements-and-build",
+      "technologies": [
+        "static-recompilation",
+        "vulkan"
+      ]
+    },
+    {
+      "id": "minecraft-ps3-iso",
+      "name": "Minecraft PS3 · import z własnej płyty / ISO (plan)",
+      "repo": "",
+      "platform": "ps3",
+      "kind": "native",
+      "origin": "development",
+      "development_status": "planned",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "",
+      "note": "Planowany port z przygotowaniem własnej kopii płyty lub ISO. Brak gotowej paczki i zweryfikowanej procedury budowania. Minecraft i jego kod należą do właściwych właścicieli praw. Recopile i MASELKO-95 nie są autorami Minecrafta ani nie są powiązani z Mojang/Microsoft. Prywatne archiwa kodu nie są źródłem pobierania w publicznym katalogu."
+    },
+    {
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "in_progress",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "executable": "",
+      "adapter": "native",
+      "verified": false,
+      "supported": false,
+      "auto_update": false,
+      "experimental_systems": [
+        "windows"
+      ],
+      "id": "fh2-recomp",
+      "name": "Forza Horizon 2 Recompiled · fabioap-cpu (oryginał)",
+      "repo": "fabioap-cpu/Forza-Horizon-2-Recomp",
+      "guide": "https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp#readme",
+      "note": "Eksperymentalna rekompilacja Forza Horizon 2 z Xbox 360. README autora: Windows AMD64 dochodzi do ekranu ładowania i zatrzymuje się na semaforze; rozgrywka niepotwierdzona. Brak gotowych wydań i paczek Linux/Windows. Własne pliki gry są wymagane do samodzielnego budowania; wersja Xbox One nie jest obsługiwana przez ten projekt. README deklaruje BSD-3-Clause dla własnego kodu i SDK; plik LICENSE znajduje się w rexglue-sdk/, bez osobnego LICENSE w katalogu głównym.",
+      "technologies": [
+        "static-recompilation"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "in_progress",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "executable": "",
+      "adapter": "native",
+      "verified": false,
+      "supported": false,
+      "auto_update": false,
+      "experimental_systems": [
+        "windows"
+      ],
+      "id": "fh2-recomp-shreyash",
+      "name": "Forza Horizon 2 Recompiled · ShreyashDesai (fork)",
+      "repo": "ShreyashDesai/Forza-Horizon-2-Recomp",
+      "guide": "https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp#readme",
+      "note": "Fork projektu fabioap-cpu dla Forza Horizon 2 z Xbox 360, z dodatkowym workflow CI. README ma tę samą treść co w oryginale: eksperyment Windows AMD64 zatrzymuje się na ekranie ładowania, rozgrywka niepotwierdzona. Brak wydań i gotowych paczek Linux/Windows; obecność CI nie potwierdza działającego portu. Linux i wersja Xbox One niepotwierdzone. README deklaruje BSD-3-Clause dla własnego kodu i SDK; osobny LICENSE jest tylko w rexglue-sdk/.",
+      "technologies": [
+        "static-recompilation"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "in_progress",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "executable": "",
+      "adapter": "native",
+      "verified": false,
+      "supported": false,
+      "auto_update": false,
+      "experimental_systems": [
+        "windows",
+        "linux"
+      ],
+      "id": "fh2-recomp-maselko",
+      "name": "Forza Horizon 2 Recompiled · MASELKO-95 (fork badawczy)",
+      "repo": "MASELKO-95/Forza-Horizon-2-Recomp",
+      "guide": "https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme",
+      "note": "Fork badawczy MASELKO-95 oryginalnego projektu fabioap-cpu. Lokalny eksperyment Linux AMD64/Vulkan: potwierdzone intro, ekran PRESS START, ustawienia i ładowanie. Po Start pozostają błędy pamięci; jazda jest niepotwierdzona. Brak gotowej publicznej paczki. Windows zachowuje wcześniejsze ograniczenie ekranu ładowania i nie został sprawdzony tymi testami. Projekt dotyczy Xbox 360, nie Xbox One. Zachowano README, prawa autorów i prywatność danych gry.",
+      "technologies": [
+        "static-recompilation"
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "platform": "xbox360",
+      "match": "Halo 3",
+      "title": "Halo 3",
+      "cover": "halo-3.jpg",
+      "year": 2007,
+      "genre": "Akcja",
+      "rank": 1
+    },
+    {
+      "platform": "xbox360",
+      "match": "Forza Horizon",
+      "title": "Forza Horizon",
+      "cover": "forza-horizon.jpg",
+      "year": 2012,
+      "genre": "Wyścigi",
+      "rank": 2,
+      "source_ids": [
+        "pinyon",
+        "pinyon-linux"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Gears of War 2",
+      "title": "Gears of War 2",
+      "cover": "gears-of-war-2.jpg",
+      "year": 2008,
+      "genre": "Akcja",
+      "rank": 3
+    },
+    {
+      "platform": "xbox360",
+      "match": "Red Dead Redemption",
+      "title": "Red Dead Redemption",
+      "cover": "red-dead-redemption.jpg",
+      "year": 2010,
+      "genre": "Przygoda",
+      "rank": 4
+    },
+    {
+      "platform": "ps2",
+      "match": "Shadow of the Colossus",
+      "title": "Shadow of the Colossus",
+      "cover": "shadow-of-the-colossus.jpg",
+      "year": 2005,
+      "genre": "Przygoda",
+      "rank": 5
+    },
+    {
+      "platform": "ps2",
+      "match": "God of War",
+      "title": "God of War",
+      "cover": "god-of-war.jpg",
+      "year": 2005,
+      "genre": "Akcja",
+      "rank": 6
+    },
+    {
+      "platform": "ps3",
+      "match": "Demon's Souls",
+      "title": "Demon’s Souls",
+      "cover": "demons-souls.png",
+      "year": 2009,
+      "genre": "RPG",
+      "rank": 7
+    },
+    {
+      "platform": "ps3",
+      "match": "LittleBigPlanet",
+      "title": "LittleBigPlanet",
+      "cover": "littlebigplanet.png",
+      "year": 2008,
+      "genre": "Platformowe",
+      "rank": 8
+    },
+    {
+      "platform": "xbox360",
+      "match": "Skate 3",
+      "title": "Skate 3",
+      "cover": "skate-3.jpg",
+      "year": 2010,
+      "genre": "Sport",
+      "rank": 9,
+      "source_ids": [
+        "skate3"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Sonic Unleashed",
+      "title": "Sonic Unleashed",
+      "cover": "sonic-unleashed.jpg",
+      "year": 2008,
+      "genre": "Platformowe",
+      "rank": 10,
+      "source_ids": [
+        "unleashed"
+      ]
+    },
+    {
+      "platform": "other",
+      "match": "Wanderer",
+      "title": "Wanderer: Farkle",
+      "year": 2026,
+      "genre": "Twoje gry",
+      "rank": 11,
+      "source_ids": [
+        "wanderer"
+      ]
+    },
+    {
+      "platform": "other",
+      "match": "SCP: Vulkan Edition",
+      "title": "SCP: Vulkan Edition",
+      "year": 2026,
+      "genre": "Twoje gry",
+      "rank": 12,
+      "source_ids": [
+        "scp-vulkan"
+      ]
+    },
+    {
+      "platform": "ps2",
+      "match": "Ratchet & Clank 3",
+      "title": "Ratchet & Clank: Up Your Arsenal (Ratchet & Clank 3)",
+      "year": 2004,
+      "genre": "Przygoda",
+      "rank": 13,
+      "source_ids": [
+        "ratchet3-local"
+      ],
+      "development_status": "in_progress",
+      "collection_id": "ratchet-and-clank",
+      "wiki_title": "Ratchet & Clank: Up Your Arsenal"
+    },
+    {
+      "platform": "ps3",
+      "match": "Minecraft - PlayStation 3 Edition",
+      "title": "Minecraft: PlayStation 3 Edition",
+      "genre": "Sandbox",
+      "rank": 14,
+      "source_ids": [
+        "minecraft-ps3-iso"
+      ],
+      "development_status": "planned"
+    },
+    {
+      "platform": "xbox360",
+      "match": "Forza Horizon 2",
+      "title": "Forza Horizon 2",
+      "year": 2014,
+      "genre": "Wyścigi",
+      "rank": 3,
+      "source_ids": [
+        "fh2-recomp",
+        "fh2-recomp-shreyash",
+        "fh2-recomp-maselko"
+      ],
+      "development_status": "in_progress"
+    }
+  ],
+  "porting_tools": [
+    {
+      "id": "shiftglue",
+      "name": "ShiftGlue SDK",
+      "repo": "arcanite24/shiftglue-sdk",
+      "platform": "xbox360",
+      "kind": "sdk",
+      "guide": "https://github.com/arcanite24/shiftglue-sdk",
+      "note": "Narzędzia rekompilacji PowerPC → C++ dla twórców portów Xbox 360."
+    },
+    {
+      "id": "xenia",
+      "name": "Xenia",
+      "repo": "xenia-project/xenia",
+      "platform": "xbox360",
+      "kind": "emulator",
+      "guide": "https://github.com/xenia-project/xenia/wiki/Quickstart",
+      "note": "Emulator Xbox 360. Przygotowanie własnej kopii, konfiguracja i zgodność gier."
+    },
+    {
+      "id": "ps2recomp",
+      "name": "PS2Recomp",
+      "repo": "ran-j/PS2Recomp",
+      "platform": "ps2",
+      "kind": "sdk",
+      "guide": "https://github.com/ran-j/PS2Recomp",
+      "note": "Eksperymentalny rekompilator ELF → C++ i runtime do tworzenia portów PS2."
+    },
+    {
+      "id": "pcsx2",
+      "name": "PCSX2",
+      "repo": "PCSX2/pcsx2",
+      "platform": "ps2",
+      "kind": "emulator",
+      "guide": "https://pcsx2.net/docs/category/setup/",
+      "note": "Emulator PS2. Konfiguracja własnego BIOS-u i przygotowanej kopii gry."
+    },
+    {
+      "id": "rpcs3",
+      "name": "RPCS3",
+      "repo": "RPCS3/rpcs3",
+      "platform": "ps3",
+      "kind": "emulator",
+      "guide": "https://rpcs3.net/quickstart",
+      "note": "Emulator PS3. Firmware i przygotowanie plików z własnej kopii."
+    }
+  ],
+  "catalog_version": "2026-10-20.1",
+  "catalog_notes": "Pinyon Shift 0.6.0: Linux tools package hosted by RE:COPILE; original upstream README and BSD license. FH2 remains experimental, gameplay unverified."
+}

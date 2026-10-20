@@ -5,6 +5,39 @@ compatibility report drafts are stored on your device. RE:COPILE does not
 send them to its developer or Discord automatically. Exporting a profile
 summary creates an image that you choose whether and where to share.
 
+Measurements is optional. When requested, hardware detection reads CPU/GPU
+models, RAM, operating system and available graphics driver information locally.
+It does not collect serial numbers, account credentials or a machine name.
+An installed MangoHud or user-selected console PresentMon records local FPS
+logs. RE:COPILE uses a private MangoHud configuration with uploads disabled.
+Test records retain the game/port version, launch profile, time, manually entered
+graphics settings, hardware snapshot and calculated results. CSV imports require
+confirmation of the hardware used to record them; importing an external log does
+not identify that hardware automatically. Exported reports omit the launch
+profile, process ID, local paths and raw CSV. You choose whether to share them. The player launcher has no catalog publication
+controls or owner publishing service.
+
+
+Steam game discovery is optional and **off by default**. Only after you enable
+collection matching does RE:COPILE check installed PC editions declared in its
+collections, at startup or when you select **Scan Steam**. It reads client
+installation locations, `libraryfolders.vdf` and only the `appmanifest_*.acf`
+files for those collection App IDs. Windows discovery reads client installation
+paths from the registry. Matched titles, app IDs and paths are stored locally;
+unrelated Steam games are not imported. You may select an extra library folder.
+Disabling the option stops game discovery and disconnects automatic Steam links,
+while preserving manually connected programs and recorded profile history.
+Scanning does not read passwords, login tokens or purchase history, contact a
+Steam web service, download artwork or modify game files. Finding installed
+files does not prove account ownership. The ordinary visible-game artwork and
+description requests below still apply when you browse matched entries.
+Finding installed Proton tools for manually connected Windows programs can also
+read Steam library locations; this does not import Steam games.
+**Launch in Steam** sends the selected numeric app ID to the installed Steam
+client. Steam handles sign-in, licensing, updates and its own network activity.
+Steam hours and achievements are not synchronized; the client forwarding
+process is not measured as game playtime.
+
 Checking releases, catalogs and project documentation, and downloading programs,
 connects to GitHub and its file servers. GitHub receives ordinary connection
 data, such as your IP address. You do not need a GitHub account to use the

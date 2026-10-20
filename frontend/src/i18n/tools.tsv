@@ -1,0 +1,76 @@
+Pomiary	Measurements	Mérések
+Sprzęt, FPS i ustawienia Twoich sesji testowych.	Hardware, FPS and settings from your test sessions.	A tesztjeid hardvere, FPS értékei és beállításai.
+Technologie projektu	Project technologies	A projekt technológiái
+Technologie: brak deklaracji	Technologies: not declared	Technológiák: nincs adat
+Wyniki testów na sprzęcie	Hardware test results	Hardveres teszteredmények
+Sprzęt tego komputera	This computer's hardware	A számítógép hardvere
+Odczytaj sprzęt	Detect hardware	Hardver felismerése
+Zapis lokalny: CPU, GPU, RAM, system i dostępny sterownik. Wybierasz, który raport udostępnić.	Stored locally: CPU, GPU, RAM, OS and available driver. You choose which report to share.	Helyben tárolva: CPU, GPU, RAM, rendszer és elérhető illesztőprogram. Te választod ki a megosztandó jelentést.
+Sterownik	Driver	Illesztőprogram
+Nowy pomiar gry	New game measurement	Új játékmérés
+Gra do pomiaru	Game to measure	Mérendő játék
+Wybierz grę	Choose a game	Válassz játékot
+Podłącz lokalną instalację gry, aby uruchomić pomiar.	Connect a local game installation to start measuring.	A méréshez csatlakoztass egy helyi játéktelepítést.
+Czas pomiaru (s)	Measurement duration (s)	Mérés időtartama (mp)
+Rozgrzewka (s)	Warm-up (s)	Bemelegítés (mp)
+Rozdzielczość	Resolution	Felbontás
+Ustawienia grafiki	Graphics settings	Grafikai beállítások
+High / własne	High / custom	Magas / egyéni
+API grafiki	Graphics API	Grafikus API
+Upscaling / generowanie klatek	Upscaling / frame generation	Felskálázás / képkockagenerálás
+Wyłączone / FSR Quality…	Off / FSR Quality…	Kikapcsolva / FSR Quality…
+Scena testowa i uwagi	Test scene and notes	Tesztjelenet és megjegyzések
+Program PresentMon	PresentMon executable	PresentMon program
+Ustawienia wpisujesz zgodnie z grą. Nagrywanie kończy się po wybranym czasie; gra pozostaje uruchomiona. Dla Steam / Flatpak użyj importu logu.	Enter the settings used in the game. Recording ends after the selected duration; the game keeps running. For Steam / Flatpak, import a log.	Add meg a játékban használt beállításokat. A felvétel a megadott idő után véget ér; a játék tovább fut. Steam / Flatpak esetén importálj naplót.
+Uruchom grę i pomiar	Launch game and measure	Játék és mérés indítása
+MangoHud nie jest zainstalowany	MangoHud is not installed	A MangoHud nincs telepítve
+Importuj pomiar MangoHud / PresentMon (CSV)	Import a MangoHud / PresentMon measurement (CSV)	MangoHud / PresentMon mérés importálása (CSV)
+Plik CSV	CSV file	CSV fájl
+Wybierz powyżej grę. Podaj sprzęt z nagrania; log może pochodzić z innego komputera.	Choose a game above. Enter the hardware used for the recording; the log may come from another computer.	Válassz fent egy játékot. Add meg a felvételhez használt hardvert; a napló másik számítógépről is származhat.
+Użyj sprzętu tego komputera	Use this computer's hardware	E számítógép hardverének használata
+System nagrania	Recorded operating system	A felvétel operációs rendszere
+RAM (GB)	RAM (GB)	RAM (GB)
+Wersja gry / portu	Game / port version	Játék / port verziója
+Proces / swapchain	Process / swapchain	Folyamat / swapchain
+Wybierz strumień	Choose a stream	Válassz adatfolyamot
+Potwierdzam grę, sprzęt i ustawienia tego nagrania.	I confirm the game, hardware and settings for this recording.	Megerősítem a felvétel játékát, hardverét és beállításait.
+Importuj CSV	Import CSV	CSV importálása
+Historia pomiarów	Measurement history	Mérési előzmények
+Brak pomiarów	No measurements yet	Még nincsenek mérések
+Uruchom test lub zaimportuj log CSV.	Run a test or import a CSV log.	Futtass tesztet vagy importálj CSV naplót.
+Zakończ pomiar	Finish measurement	Mérés befejezése
+Eksportuj raport	Export report	Jelentés exportálása
+Zakończony	Completed	Befejezve
+Nagrywanie	Recording	Felvétel
+Uruchamianie	Starting	Indítás
+Zapisywanie	Saving	Mentés
+Brak próbek FPS	No FPS samples	Nincsenek FPS minták
+Pomiar w toku…	Measurement in progress…	Mérés folyamatban…
+Średnie FPS	Average FPS	Átlagos FPS
+1% low FPS	1% low FPS	1% low FPS
+P99 klatki	P99 frame time	P99 képkockaidő
+Czas nagrania	Recorded duration	Felvétel hossza
+Przebieg FPS	FPS over time	FPS időbeli alakulása
+Statystyki z czasów poszczególnych klatek.	Statistics from individual frame times.	Statisztikák az egyes képkockák idejéből.
+Próbkowane FPS; 1% low jest niedostępne.	Sampled FPS; 1% low is unavailable.	Mintavételezett FPS; az 1% low nem érhető el.
+próbek	 samples	 minta
+Wczytywanie pomiarów…	Loading measurements…	Mérések betöltése…
+Nowa wersja gry: {0} · {1}. Aktualizacja przy kolejnym starcie.	New game version: {0} · {1}. Updating on next startup.	Új játékverzió: {0} · {1}. Frissítés a következő indításkor.
+Akcja	Action	Akció
+Przygodowa	Adventure	Kaland
+Wyścigi	Racing	Verseny
+Platformowa	Platformer	Platformjáték
+Łamigłówki	Puzzle	Fejtörő
+Sport	Sports	Sport
+Symulacja	Simulation	Szimuláció
+Strategia	Strategy	Stratégia
+Relaks	Casual	Alkalmi
+Jeden gracz	Single player	Egyjátékos
+Wielu graczy	Multiplayer	Többjátékos
+Eksperymentalna	Experimental	Kísérleti
+Tylko źródła	Source only	Csak forráskód
+Nowa wersja gry: {0} · {1}. Automatyczne aktualizacje są wyłączone.	New game version: {0} · {1}. Automatic updates are disabled.	Új játékverzió: {0} · {1}. Az automatikus frissítések ki vannak kapcsolva.
+Dane katalogu zaktualizowane bez reinstalacji launchera.	Catalog data updated without reinstalling the launcher.	A katalógus adatai az indító újratelepítése nélkül frissültek.
+Nowe wydania · automatyczne aktualizacje wyłączone	New releases · automatic updates disabled	Új kiadások · automatikus frissítés kikapcsolva
+Paczki dla wielu urządzeń	Packages for multiple devices	Csomagok több eszközhöz
+Źródło zostanie dodane do Twojej lokalnej biblioteki.	This source will be added to your local library.	A forrás a helyi könyvtáradhoz lesz hozzáadva.

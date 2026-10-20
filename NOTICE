@@ -11,3 +11,14 @@ to the extent permitted by law. Third-party terms are in THIRD_PARTY_NOTICES.md.
 license draft; added Xbox One metadata, on-demand artwork, experimental FH2
 sources, RE:COPILE Edition setup and a text guide for Xbox 360 ports.
 Further project changes are recorded in CHANGELOG.md.
+
+2026-10-19 — MASELKO-95: added declared
+technology labels, opt-in local hardware/FPS measurements, update notifications,
+per-version launcher license acceptance and Linux installer packaging.
+
+2026-10-19 — MASELKO-95: removed owner publishing UI and service from player
+packages; catalog readers accept bounded custom technology and tag labels.
+
+2026-10-20 — MASELKO-95: public Linux beta, pinned component-release downloads
+and original Pinyon Shift 0.6.0 source-tools integration. Upstream Pinyon code
+retains its BSD-2-Clause license; see THIRD_PARTY_NOTICES.md.

@@ -19,7 +19,12 @@ Related repositories: [REPOSITORIES.md](REPOSITORIES.md).
 - Google Mobile Ads / UMP: Google's terms; only a future Android variant
   configured for advertising. https://developers.google.com/admob/android/privacy
 
-Ports and emulators are downloaded directly from their projects' GitHub Releases.
+Ports and emulators are downloaded from their configured GitHub Releases.
+Pinyon Shift 0.6.0 Linux source tools are hosted in RE:COPILE Releases, pinned
+to arcanite24/pinyon-shift commit 9331e453e9850d0fcc1c1606dee95db834a9d317.
+Pinyon Shift and the two included save-test helpers retain BSD-2-Clause terms;
+see `ports/pinyon/UPSTREAM-LICENSE`, the package's `UPSTREAM-LICENSE`, and its
+embedded source `LICENSE`. `SOURCE-CHANGES.md` records the added helpers.
 The launcher retrieves the actual README and LICENSE for the selected release,
 shows them before downloading the program, keeps them in `Recopile-project-info`
 and displays funding links declared in FUNDING.yml. It does not repackage ISO,
