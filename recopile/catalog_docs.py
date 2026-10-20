@@ -66,4 +66,3 @@ def render_repositories(catalog):
         for repo in [source.get('repo',''),source.get('documentation_repo',''),*source.get('repos_by_system',{}).values()]:
             if repo: authors.add(repo.split('/')[0])
     return '# Project authors\n\n'+'\n'.join(f'- [{author}](https://github.com/{author})' for author in sorted(authors,key=str.casefold))+'\n'
-

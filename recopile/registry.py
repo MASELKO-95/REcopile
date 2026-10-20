@@ -84,4 +84,3 @@ def validate_registry(value):
 def entry(source, game):
     return validate_registry({"schema_version": 1, "sources": [{k:v for k,v in source.items() if k in FIELDS}],
         "featured": [{"title": game["title"], "match": game["title"], "platform": game["platform"], "rank": game.get("rank", 100), "source_ids": [source["id"]]}]})
-
