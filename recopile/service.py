@@ -32,6 +32,7 @@ from .port_setup import PortSetup
 from .steam import SteamLibrary
 from .performance import Performance
 from .game_settings import GameSettings
+from .launch_options import LaunchOptions
 
 
 class Launcher:
@@ -46,6 +47,7 @@ class Launcher:
         self.media = GameMedia(self.store)
         self.port_setup = PortSetup(self)
         self.game_settings = GameSettings(self)
+        self.launch_options = LaunchOptions(self)
         self.running = {}
         self.process_lock = threading.RLock()
         self.stop = threading.Event()
@@ -245,6 +247,7 @@ class Launcher:
     def describe_game(self, game):
         game["port_setup"] = self.port_setup.information(game)
         game["game_settings"] = self.game_settings.information(game)
+        game["launch_options"] = self.launch_options.information(game['id'], game.get('install') or {})
         if any(s['id']=='ratchet3-local' for s in game.get('sources',[])):
             game['local_project']=self.store.get('settings','project:ratchet3-local',{})
         if (game["port_setup"] and game.get("install")
@@ -652,13 +655,20 @@ class Launcher:
         with self.process_lock:
             return [{"id": ident, "title": info["title"], "started_at": info["started_at"], "pid": info["process"].pid} for ident, info in self.running.items()]
 
-    def launch(self, ident, setup=False, *, benchmark=None):
+    def launch(self, ident, setup=False, *, benchmark=None, launch_mode=None, remember=None):
         game = self.require_game(ident) if not ident.startswith("engine-") else None
         install = self.store.get("installs", ident)
         prefs = self.preferences()
         if not install:
             raise UserError("Najpierw zainstaluj port albo dodaj swoją kopię gry.")
+        original_launcher = False
         if game and not setup:
+            selected, choice = self.launch_options.select(
+                ident, game, install, 'game' if benchmark else launch_mode, remember)
+            if choice:
+                return choice
+            original_launcher = selected == 'launcher'
+        if game and not setup and not original_launcher:
             install = self.game_settings.launch_install(ident, install)
         if game and prefs["only_recompiled"] and game["kind"] != "recompile":
             raise UserError("Aktywny jest tryb tylko rekompilacji. Zmień filtr w ustawieniach, aby użyć innego sposobu uruchamiania.")
@@ -670,7 +680,9 @@ class Launcher:
         cwd.mkdir(parents=True, exist_ok=True)
         env = os.environ.copy()
         env["APPIMAGE_EXTRACT_AND_RUN"] = "1"
-        if game and install.get("local_executable") and not setup:
+        if original_launcher:
+            command, cwd, env = self.launch_options.command(install, env)
+        elif game and install.get("local_executable") and not setup:
             command,env = runners.command(install,prefs,env,self.system_key())
             cwd = Path(install["local_executable"]).parent
         elif game and install.get("source_id") == "pinyon" and self.port_setup.supports(self.source("pinyon")):
@@ -719,7 +731,7 @@ class Launcher:
                 env = self._engine_env(env, ident.removeprefix("engine-"))
                 if ident == "engine-pcsx2":
                     command += ["-datapath", install.get("user_root", str(self.store.root / "engine-state/pcsx2"))]
-        if game and not setup:
+        if game and not setup and not original_launcher:
             command = [*command, *self.game_settings.arguments(ident, install)]
         if not Path(command[0]).is_file() or not os.access(command[0], os.X_OK):
             raise UserError("Program nie istnieje albo nie ma prawa wykonywania.")
@@ -742,9 +754,11 @@ class Launcher:
                 raise
             title = game["title"] if game else self.source(ident.removeprefix("engine-"))["name"]
             self.running[ident] = {"process": process, "started_at": time.time(), "started_mono":time.monotonic(), "title": title, "engine": install.get("engine")}
+            if game and not setup:
+                self.launch_options.remember(ident, 'launcher' if original_launcher else 'game', remember)
             if game and setup:
                 self.save_install(ident, {**install, "setup_started_at": time.time()})
-            threading.Thread(target=self._watch, args=(ident, process, log, bool(game) and not setup, self.profiles.active()["id"]), daemon=True).start()
+            threading.Thread(target=self._watch, args=(ident, process, log, bool(game) and not setup and not original_launcher, self.profiles.active()["id"]), daemon=True).start()
         return {"ok": True, "pid": process.pid}
 
     def _engine_env(self, env, engine):

@@ -1,5 +1,19 @@
 # Historia zmian
 
+## 0.2.2-beta.3 — 2026-10-21
+
+- On Linux, Play for prepared Pinyon Shift 0.6 installations offers direct play
+  or the original upstream desktop launcher, with an optional remembered choice.
+  Launch options can change or forget the preference later.
+- Game settings for this integration opens the original Avalonia launcher with
+  the same prepared build, game files and state. Opening the launcher does not
+  count as game time; sessions started inside it are not separately timed.
+- The Pinyon tools component `pinyon-v0.6.0-recopile.2` includes that launcher,
+  its sources, a source-location adapter and dependency notices. It contains
+  no game data or compiled guest game. Other integrations keep their settings.
+- Keep the original launcher's own update check disabled during managed handoff
+  so reviewed tools updates remain under RE:COPILE's installation workflow.
+
 ## 0.2.2-beta.2 — 2026-10-20
 
 - Opcjonalne Ustawienia gry: wspólny panel dla integracji, argumenty uruchamiania i wybór zgodności Windows na Linuxie. Graj nadal uruchamia grę bez dodatkowego ekranu.

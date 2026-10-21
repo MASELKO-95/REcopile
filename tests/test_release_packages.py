@@ -51,7 +51,7 @@ class ComponentReleaseTests(unittest.TestCase):
                 with patch.object(app, 'system_key', return_value='linux'):
                     linux = app.target_source(source)
                 self.assertEqual(linux['repo'], 'MASELKO-95/recopile')
-                self.assertEqual(linux['release_tag'], 'pinyon-v0.6.0-recopile.1')
+                self.assertEqual(linux['release_tag'], 'pinyon-v0.6.0-recopile.2')
                 self.assertEqual(linux['documentation_repo'], 'arcanite24/pinyon-shift')
                 with patch.object(app, 'system_key', return_value='windows'):
                     windows = app.target_source(source)

@@ -226,7 +226,8 @@ def create_server(launcher, port=4783):
                 elif path == "/api/ready":
                     result = launcher.mark_ready(ident)
                 elif path == "/api/launch":
-                    result = launcher.launch(ident or data.get("target"), setup=bool(data.get("setup")))
+                    result = launcher.launch(ident or data.get("target"), setup=bool(data.get("setup")),
+                        launch_mode=data.get('launch_mode'), remember=data.get('remember'))
                 elif path == "/api/updates":
                     result = launcher.check_updates(auto=bool(data.get("apply")))
                 elif path == "/api/launcher-update":

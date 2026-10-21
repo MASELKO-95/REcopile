@@ -87,5 +87,6 @@
   "tools/title-update-profile.py",
   "tools/manage-title-update.ps1",
   "tools/build-v4.ps1",
-  "tools/verify-codegen-log.py"
+  "tools/verify-codegen-log.py",
+  "launcher"
 ]

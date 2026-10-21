@@ -20,7 +20,7 @@ FORBIDDEN = {'.exe', '.dll', '.obj', '.lib', '.pdb', '.iso', '.xex', '.dxil', '.
              '.so', '.apk', '.aab', '.idsig', '.keystore', '.jks', '.dex', '.pyc'}
 
 
-def build(upstream, output):
+def build(upstream, output, launcher):
     inputs = ROOT / 'ports/pinyon'
     selected = json.loads((inputs / 'payload-inputs.json').read_text())
     # Git archive reads committed inputs only, excluding local game/build state.
@@ -55,14 +55,24 @@ def build(upstream, output):
             info.create_system = 3
             info.external_attr = 0o100644 << 16
             archive.writestr(info, data)
-    manifest = {'schema_version': 1, 'version': '0.6.0-recopile.1', 'kind': 'source-tools',
+    launcher_bytes = launcher.read_bytes()
+    if not launcher_bytes.startswith(b'\x7fELF'):
+        raise RuntimeError('Expected the self-contained Linux launcher executable')
+    manifest = {'schema_version': 1, 'version': '0.6.0-recopile.2', 'kind': 'source-tools',
                 'upstream_commit': PIN, 'source_sha256': hashlib.sha256(payload.getvalue()).hexdigest(),
-                'game_data_included': False, 'compiled_game_included': False, 'source_changes': changes}
+                'game_data_included': False, 'compiled_game_included': False, 'source_changes': changes,
+                'launcher': {'filename': 'PinyonShiftLauncher', 'sha256': hashlib.sha256(launcher_bytes).hexdigest(),
+                             'upstream_commit': PIN, 'source_location_adapter': 1}}
     outer = {'pinyon-shift-source.zip': payload.getvalue(),
              'package.json': (json.dumps(manifest, indent=2) + '\n').encode(),
-             'RECOPILE-LICENSE': (ROOT / 'LICENSE').read_bytes()}
+             'RECOPILE-LICENSE': (ROOT / 'LICENSE').read_bytes(),
+             'PinyonShiftLauncher': launcher_bytes}
     for name in ('PinyonShift-Recopile.py', 'README.md', 'UPSTREAM-LICENSE', 'SOURCE-CHANGES.md'):
         outer[name] = (inputs / name).read_bytes()
+    for path in sorted((inputs / 'launcher-notices').iterdir()):
+        if not path.is_file() or path.is_symlink():
+            raise RuntimeError('Unexpected launcher notice input: ' + path.name)
+        outer['launcher-notices/' + path.name] = path.read_bytes()
     output.mkdir(parents=True, exist_ok=True)
     destination = output / NAME
     with destination.open('wb') as file, gzip.GzipFile(fileobj=file, mode='wb', mtime=1792454400) as compressed:
@@ -70,7 +80,7 @@ def build(upstream, output):
             for name, data in sorted(outer.items()):
                 info = tarfile.TarInfo('PinyonShift/' + name)
                 info.size = len(data)
-                info.mode = 0o755 if name.endswith('.py') else 0o644
+                info.mode = 0o755 if name.endswith('.py') or name == 'PinyonShiftLauncher' else 0o644
                 info.mtime = 1792454400
                 archive.addfile(info, io.BytesIO(data))
     digest = hashlib.sha256(destination.read_bytes()).hexdigest()
@@ -83,5 +93,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--upstream', required=True, type=Path)
     parser.add_argument('--output', type=Path, default=ROOT / 'artifacts/desktop')
+    parser.add_argument('--launcher', required=True, type=Path,
+                        help='Original Linux desktop launcher built with the source-location adapter')
     args = parser.parse_args()
-    build(args.upstream.resolve(strict=True), args.output)
+    build(args.upstream.resolve(strict=True), args.output, args.launcher.resolve(strict=True))

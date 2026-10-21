@@ -42,7 +42,7 @@
       "channel": "final",
       "supported": true,
       "guide": "https://github.com/arcanite24/pinyon-shift/blob/main/docs/LINUX.md",
-      "note": "Pinyon Shift: wspólny panel w RE:COPILE wyboru własnego ISO lub folderu gry, weryfikacji, budowania i uruchamiania bez osobnego okna launchera. Silnik i narzędzia pochodzą z oryginalnego arcanite24/pinyon-shift; prawa i autorzy pozostają oryginalne. Pobranie narzędzi nie oznacza gotowej gry. Przygotowanie uruchamia oryginalny workflow projektu i może pobrać kompilator oraz zależności. Obsługiwane dane gry i stan zgodności sprawdź w README. Linux: pakiet narzędzi 0.6.0 jest udostępniony w Releases RE:COPILE, z przypiętymi oryginalnymi źródłami i licencją BSD. Pliki gry i kompilacja wykonywana z nich pozostają lokalne.",
+      "note": "Pinyon Shift: wspólny panel w RE:COPILE wyboru własnego ISO lub folderu gry, weryfikacji, budowania i uruchamiania. Przed startem na Linuxie można wybrać grę albo oryginalny launcher Pinyon Shift i zapamiętać wybór. Silnik i narzędzia pochodzą z oryginalnego arcanite24/pinyon-shift; prawa i autorzy pozostają oryginalne. Pobranie narzędzi nie oznacza gotowej gry. Przygotowanie uruchamia oryginalny workflow projektu i może pobrać kompilator oraz zależności. Obsługiwane dane gry i stan zgodności sprawdź w README. Linux: pakiet narzędzi 0.6.0 jest udostępniony w Releases RE:COPILE, z przypiętymi oryginalnymi źródłami i licencją BSD. Pliki gry i kompilacja wykonywana z nich pozostają lokalne.",
       "assets_by_system": {
         "linux": "PinyonShift-0.6.0-Recopile-linux-x86_64.tar.gz",
         "windows": "PinyonShift-Launcher.zip"
@@ -58,7 +58,7 @@
         "linux": "MASELKO-95/recopile"
       },
       "release_tags_by_system": {
-        "linux": "pinyon-v0.6.0-recopile.1"
+        "linux": "pinyon-v0.6.0-recopile.2"
       },
       "documentation_repo": "arcanite24/pinyon-shift",
       "documentation_ref": "9331e453e9850d0fcc1c1606dee95db834a9d317"

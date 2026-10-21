@@ -9,6 +9,7 @@ import { SourceEditor, ManualSource,PlatformBadges } from './source-tools.jsx';
 import { Collections,WorkshopPage } from './library-extras.jsx';
 import { configure,currentLanguage } from './i18n/index.js';
 import {LanguageSelect} from './i18n/LanguageSelect.jsx';
+import {LaunchOptionsDialog} from './launch-options.jsx';
 
 export function App() {
   const [boot, setBoot] = useState(null), [online, setOnline] = useState(true);
@@ -21,6 +22,7 @@ export function App() {
   const [review, setReview] = useState(null);
   const [editSource,setEditSource]=useState(null),[manualSource,setManualSource]=useState(null),[showLicense,setShowLicense]=useState(false);
   const [pendingPackage,setPendingPackage]=useState(null);
+  const [launchChoice,setLaunchChoice]=useState(null);
   const [requestingCovers,setRequestingCovers]=useState(false);
   configure(boot?.settings.language || currentLanguage());
   const shownUpdates = useRef(new Set());
@@ -34,6 +36,10 @@ export function App() {
       if (url === '/api/pick' && window.recopile?.pickPath) return await window.recopile.pickPath(body);
       const data = await json(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Recopile-Token': boot.token }, body: JSON.stringify(body) });
       if (data.review_required) setReview(data);
+      if (data.launch_choice_required) {
+        setLaunchChoice({...data,request:body});
+        return data;
+      }
       if (url === '/api/project-info') setReview({ documents:data, readonly:true });
       await refresh(); setRevision(v => v + 1); if (message && !data.review_required) notice(message); return data;
     }
@@ -129,6 +135,7 @@ export function App() {
     <footer className={`download-footer ${currentJob ? 'downloading' : ''}`}><button className="footer-task" onClick={() => go('downloads')}>{currentJob ? <><DownloadSimple size={21} /><div><strong>{currentJob.title}</strong><span>{currentJob.message}{currentJob.total > 0 && ` · ${bytes(currentJob.downloaded)} / ${bytes(currentJob.total)}`}</span></div></> : <><CheckCircle size={20} weight="duotone" /><div><strong>{boot.pending_updates?.length ? `${boot.pending_updates.length} aktualizacji po restarcie` : 'Biblioteka jest gotowa'}</strong><span>{boot.running?.length ? `${boot.running[0].title} · uruchomiona` : 'Twoje gry, w jednym miejscu.'}</span></div></>}</button>{currentJob ? <><div className="footer-progress"><div><span style={{ width: currentJob.progress + '%' }} /></div><small>{Math.round(currentJob.progress)}%</small></div><button className="icon-button" aria-label="Anuluj bieżące zadanie" onClick={() => invoke('/api/cancel', { job_id: currentJob.id })}><X size={18} /></button></> : <div className="footer-status"><span className={`status-dot ${!online ? 'offline' : ''}`} />{online ? 'Połączenie lokalne' : 'Brak połączenia'}<span className="footer-sep" />{boot.host.system} · v{boot.version}</div>}</footer>
     {detail && <GameDetail game={detail} boot={boot} action={action} invoke={invoke} onClose={() => setDetail(null)} openGame={openGame} go={go} onEdit={setEditSource} onManual={setManualSource} onCovers={downloadCovers} requestingCovers={requestingCovers} />}{add && <AddGame initialGame={typeof add==='object'?add:null} boot={boot} action={action} onClose={() => setAdd(false)} onAdded={id => { setAdd(false); go('library'); openGame(id); }} />}
     {review && <ProjectReview key={review.documents.fingerprint} review={review} boot={boot} action={action} onClose={() => setReview(null)}/>}
+    {launchChoice && <LaunchOptionsDialog choice={launchChoice} action={action} onClose={()=>setLaunchChoice(null)}/>}
     {editSource && <SourceEditor source={editSource} action={action} onClose={() => setEditSource(null)}/>}
     {manualSource && <ManualSource source={manualSource} invoke={invoke} onClose={() => setManualSource(null)}/>}
     {(showLicense || boot.app_notice?.required || boot.app_notice?.updated) && <AppNotice boot={boot} action={action} onFinish={() => setShowLicense(false)}/>}
