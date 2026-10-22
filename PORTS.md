@@ -4,7 +4,7 @@ Generated from `data/registry.json`. This list is updated with catalog changes.
 Packages are declared by catalog entries; package availability is separate from tested gameplay.
 Read each project's original README and license inside the launcher before downloading.
 
-| Project | GitHub owner | Linux | Windows | Channel / status | Links |
+| Project | Author | Linux | Windows | Channel / status | Links |
 | --- | --- | --- | --- | --- | --- |
 | Pinyon Shift Linux alternative | MASELKO-95 | Declared package | No declared package | Pre-release; unsupported / archived | [Project](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial) · [Releases](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial/releases) · [Guide](https://github.com/MASELKO-95/pinyon-shift-Native-Linux-unofficial#readme) |
 | Pinyon Shift | arcanite24 | Declared package | Declared package | Final catalog channel; see upstream status | [Project](https://github.com/arcanite24/pinyon-shift) · [Releases](https://github.com/arcanite24/pinyon-shift/releases) · [Guide](https://github.com/arcanite24/pinyon-shift/blob/main/docs/LINUX.md) |
@@ -18,6 +18,7 @@ Read each project's original README and license inside the launcher before downl
 | Forza Horizon 2 Recompiled (original) | fabioap-cpu | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp) · [Releases](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/fabioap-cpu/Forza-Horizon-2-Recomp#readme) |
 | Forza Horizon 2 Recompiled (fork) | ShreyashDesai | No declared package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp) · [Releases](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/ShreyashDesai/Forza-Horizon-2-Recomp#readme) |
 | Forza Horizon 2 Recompiled (research fork) | MASELKO-95 | Experiment only; no package | Experiment only; no package | In development; gameplay unverified | [Project](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp) · [Releases](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp/releases) · [Guide](https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme) |
+| Azimuth | Almost There Games | Windows via Proton; unverified locally | Manual download from author | External wrapper; local gameplay unverified | [Author download](https://almost-there-games.itch.io/azimuth) · [Guide](https://almost-there-games.itch.io/azimuth) |
 
 ## Porting tools and emulators
 
@@ -44,14 +45,25 @@ a CI workflow do not establish working gameplay. These sources are not assigned
 to the Xbox One edition. The README declares BSD-3-Clause for project source and SDK;
 the reviewed license file is `rexglue-sdk/LICENSE`, with no separate root LICENSE.
 
-MASELKO-95 research fork: created from fabioap-cpu on 2026-10-15, with no
-independent fixes or game tests yet. It retains the same limitations. No game
-files are available for local gameplay validation. Creating a fork does not
-establish working gameplay.
+MASELKO-95 research fork: Linux manual driving and festival arrival observed
+on 2026-10-22. An isolated profile test reaches car selection and the first race
+start. Graphics artifacts, soft output, low frame rates and stutters remain.
+The renderer uses the Xenia-derived Xenos Vulkan backend; FSR is disabled in
+the tested build. Race completion, career progression and a complete save/reload
+cycle remain unverified. No ready public game package is available.
+
+Azimuth is a separate wrapper for the **Xbox One** edition, by Almost There Games.
+RE:COPILE opens the official itch.io download page. Download and extract the
+wrapper there, then connect `azimuth.exe` as a local program. Follow the author’s
+instructions and terms; the wrapper and game files are not redistributed here.
+The author lists Windows 10/11 and Linux through Proton; local gameplay is
+unverified. FH2 1.0.0.64 requires the player’s game folder containing `era.vbi`,
+`Mount/` and `EmbeddedXvd/`. Updates are obtained from the author.
 
 ## Catalog updates
 
 Game metadata is maintained in `data/registry.json`. Players receive catalog updates
 without replacing launcher code or reinstalling the application.
 This project list and the author profile list are generated from that catalog.
-Updates to game programs come from their authors' GitHub Releases.
+Updates to game programs come from their authors' GitHub Releases or official
+manual download pages. New launcher features require an application update.

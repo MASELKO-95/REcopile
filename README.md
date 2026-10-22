@@ -4,7 +4,7 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Public beta 0.2.2-beta.3.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.3) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
+**Public beta 0.2.2-beta.4.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.4) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
 
 ## Languages
 
@@ -17,6 +17,7 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 - Read game descriptions independently of artwork. Covers download for visible search results, **Download covers** for the current page / selected game, and the first game representing each visible collection tile. Text and artwork are cached locally; catalog browsing does not download new covers. Wikipedia descriptions currently use English source text.
 - Keep a **recompilations only** view, or include emulation and other local games.
 - Install project releases from their authors' GitHub repositories. Edit each source or follow its manual installation instructions.
+- Open official author download pages for externally distributed projects, then connect the downloaded executable. Requirements and terms remain with the author; these downloads are manual.
 - See separate **Linux / Windows package** labels and **device compatibility** reports. A downloadable program does not guarantee a working game.
 - See declared technologies on search cards and game details. Undeclared graphics features remain unknown.
 - Use **Measurements** to detect local CPU/GPU/RAM information, record a timed direct game session with MangoHud (Linux) or console PresentMon (Windows), or import their CSV logs. Summaries show measured FPS, frame times, duration, game version and the graphics settings you enter. Results remain local until you choose to export or publish a report.

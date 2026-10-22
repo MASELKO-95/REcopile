@@ -312,9 +312,34 @@
       "name": "Forza Horizon 2 Recompiled · MASELKO-95 (fork badawczy)",
       "repo": "MASELKO-95/Forza-Horizon-2-Recomp",
       "guide": "https://github.com/MASELKO-95/Forza-Horizon-2-Recomp#readme",
-      "note": "Fork badawczy MASELKO-95 oryginalnego projektu fabioap-cpu. Lokalny eksperyment Linux AMD64/Vulkan: potwierdzone intro, ekran PRESS START, ustawienia i ładowanie. Po Start pozostają błędy pamięci; jazda jest niepotwierdzona. Brak gotowej publicznej paczki. Windows zachowuje wcześniejsze ograniczenie ekranu ładowania i nie został sprawdzony tymi testami. Projekt dotyczy Xbox 360, nie Xbox One. Zachowano README, prawa autorów i prywatność danych gry.",
+      "note": "Fork badawczy MASELKO-95 projektu fabioap-cpu dla Xbox 360. Linux/Vulkan, 2026-10-22: zaobserwowano ręczną jazdę i dojazd na festiwal; osobna próba z kopią profilu osiągnęła wybór samochodu i start pierwszego wyścigu. Nadal występują błędy materiałów/oświetlenia, miękki obraz, niskie FPS i stuttery. Backend Xenos/Vulkan pochodzi z Xenii; natywny renderer FH2 nie jest ukończony. FSR jest wyłączone. Ukończenie wyścigów, kariera i pełny cykl zapisu/odczytu niepotwierdzone. Brak gotowej publicznej paczki; Windows nie był ponownie testowany.",
       "technologies": [
         "static-recompilation"
+      ]
+    },
+    {
+      "id": "fh2-azimuth",
+      "name": "Azimuth · Forza Horizon 2 (Xbox One)",
+      "repo": "",
+      "platform": "xboxone",
+      "kind": "native",
+      "origin": "external",
+      "author": "Almost There Games",
+      "download_page": "https://almost-there-games.itch.io/azimuth",
+      "guide": "https://almost-there-games.itch.io/azimuth",
+      "manual_systems": [
+        "windows"
+      ],
+      "assets_by_system": {},
+      "asset_pattern": "",
+      "executable": "azimuth.exe",
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "note": "Azimuth autorstwa Almost There Games uruchamia wydanie Xbox One. Pobierz wrapper na oficjalnej stronie autora, wypakuj i podłącz azimuth.exe. Windows 10/11; na Linuksie Proton, lokalna rozgrywka niepotwierdzona. Wymagana własna gra FH2 1.0.0.64: folder z era.vbi, Mount/ i EmbeddedXvd/. Wrapper nie zawiera gry. Obsługuje też Storm Island 1.0.0.36 i eksperymentalne Fast & Furious 1.0.0.6. Warunki i aktualizacje pobierasz u autora.",
+      "technologies": [
+        "Direct3D 12",
+        "compatibility-layer"
       ]
     }
   ],
@@ -478,7 +503,20 @@
         "fh2-recomp-shreyash",
         "fh2-recomp-maselko"
       ],
-      "development_status": "in_progress"
+      "development_status": "in_progress",
+      "test_notes": "Linux, 2026-10-22: manual driving and festival arrival observed in the research fork. Material/lighting artifacts, soft output, low frame rates and stutters remain. Race completion, sustained career play and a complete save/reload cycle are unverified."
+    },
+    {
+      "platform": "xboxone",
+      "match": "Forza Horizon 2",
+      "title": "Forza Horizon 2",
+      "year": 2014,
+      "genre": "Wyścigi",
+      "rank": 4,
+      "source_ids": [
+        "fh2-azimuth"
+      ],
+      "test_notes": "Azimuth is a separate Xbox One wrapper, downloaded from Almost There Games. The author lists Windows 10/11 and Linux through Proton. Local gameplay has not been validated in RE:COPILE."
     }
   ],
   "porting_tools": [
@@ -528,6 +566,7 @@
       "note": "Emulator PS3. Firmware i przygotowanie plików z własnej kopii."
     }
   ],
-  "catalog_version": "2026-10-20.1",
-  "catalog_notes": "Pinyon Shift 0.6.0: Linux tools package hosted by RE:COPILE; original upstream README and BSD license. FH2 remains experimental, gameplay unverified."
+  "catalog_version": "2026-10-22.1",
+  "catalog_notes": "Added official Azimuth download for Forza Horizon 2 (Xbox One), separate from the Xbox 360 recompilation. Updated the 360 research status: manual driving observed; graphics and performance issues remain. Game files are not included.",
+  "catalog_updated_at": "2026-10-22"
 }

@@ -155,7 +155,7 @@ class Launcher:
         fields = {"repo", "name", "assets_by_system", "executables_by_system", "asset_pattern", "executable", "mod_root"}
         candidate = {**old, **{k:v for k,v in data.items() if k in fields}}
         repo = validate_repo(candidate.get("repo", "")) if candidate.get("repo") else ''
-        if not repo and old.get('origin')!='development': raise UserError('Podaj repozytorium GitHub.')
+        if not repo and old.get('origin') not in {'development', 'external'}: raise UserError('Podaj repozytorium GitHub.')
         candidate["repo"] = repo
         if old.get("origin") == "development" and repo and any(candidate.get("assets_by_system", {}).values()):
             candidate.pop("origin",None)
@@ -176,6 +176,8 @@ class Launcher:
             source = self.launcher_source()
             return self.documents.get(source, latest_release(source))
         source = self.source(source_id)
+        if source.get('origin') == 'external':
+            raise UserError('Instrukcja i warunki pobrania są na stronie autora: ' + source['download_page'])
         if source.get("origin") == "development" and not source.get("repo"): return self.local_project_information(source)
         try:
             target = self.target_source(source)
@@ -330,6 +332,8 @@ class Launcher:
         return "android" if os.environ.get("RECOPILE_ANDROID") else {"Linux":"linux", "Windows":"windows"}.get(host_platform.system(), "unknown")
 
     def target_source(self, source):
+        if source.get('origin') == 'external':
+            raise UserError('Pobierz program ze strony autora i podłącz gotowy plik wykonywalny: ' + source['download_page'])
         if source.get("origin") == "development":
             raise UserError("Projekt jest w trakcie prac. Użyj dokumentacji lub podłącz dostępny lokalny eksperyment; gotowej paczki do pobrania jeszcze nie ma.")
         key = self.system_key()
@@ -800,8 +804,8 @@ class Launcher:
                 if cancelled():
                     raise Cancelled("Anulowano sprawdzanie aktualizacji.")
                 update(message="Sprawdzanie: " + source["name"], progress=round(index / max(len(sources), 1) * 95))
-                if source.get("origin") == "development":
-                    results.append({"source_id":source["id"],"development":True})
+                if source.get("origin") in {"development", "external"}:
+                    results.append({"source_id":source["id"],source['origin']:True})
                     continue
                 try:
                     release = self.release(source, refresh=True)

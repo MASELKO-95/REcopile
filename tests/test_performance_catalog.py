@@ -130,7 +130,10 @@ class PerformanceAndCatalogTests(unittest.TestCase):
         result=self.app.query(q='Vulkan',limit=100)
         ratchet=next(g for g in result['games'] if g['id']==game_id('ps2','Ratchet & Clank 3'))
         self.assertIn({'id':'vulkan','label':'Vulkan'},ratchet['declared_technologies'])
-        unsupported=self.app.query(q='Forza Horizon',platform='xboxone',limit=100)['games']
+        xboxone=self.app.query(q='Forza Horizon',platform='xboxone',limit=100)['games']
+        azimuth=next(g for g in xboxone if g['id']==game_id('xboxone','Forza Horizon 2'))
+        self.assertIn({'id':'Direct3D 12','label':'Direct3D 12'},azimuth['declared_technologies'])
+        unsupported=[g for g in xboxone if g['id']!=azimuth['id']]
         self.assertTrue(all(not g['declared_technologies'] for g in unsupported))
 
     def test_single_runtime_catalog_sync_survives_offline_restart_without_app_onboarding(self):

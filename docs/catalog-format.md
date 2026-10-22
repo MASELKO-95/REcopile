@@ -31,6 +31,18 @@ Automatic installation requires prior consent and a visible update notice;
 changed or missing licenses pause unattended updates. New launcher functionality
 requires an application update.
 
+## Official manual downloads
+
+`origin: "external"` describes software distributed on an author's own page.
+It requires `download_page` (a permanent HTTPS page without credentials or
+query tokens), `author`, `manual_systems` and `auto_update: false`. GitHub
+asset patterns and release routing are empty. RE:COPILE opens the author's
+page; the player reviews its terms, downloads and extracts the program there,
+then connects the executable. These sources never enter the automatic
+GitHub installer or update queue. Windows downloads appear as manual options
+on Windows and through Proton/Wine on Linux, without claiming tested gameplay.
+The wrapper does not provide the player's commercial game data.
+
 ## Separate component releases
 
 `repos_by_system` can select a package host for each operating system.

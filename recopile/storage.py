@@ -90,7 +90,7 @@ class Store:
             elif not current.get("user_override") and not current.get('catalog_repo'):
                 # Shipped channel labels follow the maintained registry; release
                 # cache and a user's asset/executable configuration remain intact.
-                labels = {k: v for k, v in source.items() if k in {"name", "repo", "guide", "note", "channel", "supported", "auto_update", "archived", "assets_by_system", "executables_by_system", "repos_by_system", "release_tags_by_system", "documentation_repo", "documentation_ref", "development_status", "experimental_systems", "edition", "technologies"}}
+                labels = {k: v for k, v in source.items() if k in {"name", "repo", "guide", "note", "channel", "supported", "auto_update", "archived", "assets_by_system", "executables_by_system", "repos_by_system", "release_tags_by_system", "documentation_repo", "documentation_ref", "development_status", "experimental_systems", "edition", "technologies", "origin", "download_page", "author", "manual_systems"}}
                 self.put("sources", source["id"], {**current, **labels})
         for featured in registry["featured"]:
             ident = game_id(featured["platform"], featured["match"])

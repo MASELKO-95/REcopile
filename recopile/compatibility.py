@@ -67,6 +67,7 @@ class Compatibility:
         options = device_options(game, system_key)
         if game["kind"] == "catalog": support = "Brak integracji uruchamiania w katalogu"
         elif game["kind"] == "emulation": support = "Przez zewnętrzny emulator" if system_key == "android" else "Przez emulator"
+        elif options and all(o.get('manual') for o in options): support = "Ręczne pobranie od autora" if system_key == 'windows' else "Windows przez Proton / Wine · działanie niepotwierdzone"
         elif any(o["via"] == "native" for o in options): support = "Paczka lub lokalny program dla " + self.device["system"]
         elif options: support = "Windows przez Proton / Wine · działanie niepotwierdzone"
         else: support = "Brak paczki dla " + self.device["system"]

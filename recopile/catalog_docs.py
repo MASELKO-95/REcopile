@@ -5,7 +5,7 @@ def render(catalog):
         'Generated from `data/registry.json`. This list is updated with catalog changes.',
         'Packages are declared by catalog entries; package availability is separate from tested gameplay.',
         'Read each project\'s original README and license inside the launcher before downloading.','',
-        '| Project | GitHub owner | Linux | Windows | Channel / status | Links |',
+        '| Project | Author | Linux | Windows | Channel / status | Links |',
         '| --- | --- | --- | --- | --- | --- |']
     labels={'pinyon':'Pinyon Shift','pinyon-linux':'Pinyon Shift Linux alternative',
         'fh2-recomp':'Forza Horizon 2 Recompiled (original)', 'fh2-recomp-shreyash':'Forza Horizon 2 Recompiled (fork)',
@@ -13,9 +13,10 @@ def render(catalog):
         'ratchet3-local':'Ratchet & Clank: Up Your Arsenal (Ratchet & Clank 3)','minecraft-ps3-iso':'Minecraft PS3 own-disc / ISO integration'}
     for source in catalog['sources']:
         if source.get('public_listing') is False: continue
-        repo=source.get('repo',''); author=repo.split('/')[0] if repo else 'MASELKO-95 (planned integration)'
+        repo=source.get('repo',''); author=source.get('author') or (repo.split('/')[0] if repo else 'MASELKO-95 (planned integration)')
         assets=source.get('assets_by_system',{})
-        if source.get('development_status')=='planned': status='Planned; no ready port'
+        if source.get('origin')=='external': status='External wrapper; local gameplay unverified'
+        elif source.get('development_status')=='planned': status='Planned; no ready port'
         elif source.get('development_status')=='in_progress': status='In development; gameplay unverified'
         elif source.get('channel')=='preview': status='Pre-release; unsupported / archived'
         elif source.get('channel')=='final': status='Final catalog channel; see upstream status'
@@ -23,11 +24,11 @@ def render(catalog):
         else: status='Catalogued project; check author documentation'
         name=labels.get(source['id'],source['name'].split(' · ')[0])
         if source.get('edition')=='recopile': name+=' · RE:COPILE Edition'
-        links=f'[Project](https://github.com/{repo}) · [Releases](https://github.com/{repo}/releases)' if repo else 'No public release'
+        links=f'[Author download]({source["download_page"]})' if source.get('origin')=='external' else f'[Project](https://github.com/{repo}) · [Releases](https://github.com/{repo}/releases)' if repo else 'No public release'
         if source.get('guide'): links+=f" · [Guide]({source['guide']})"
         systems=[]
         for system in ['linux','windows']:
-            systems.append('Declared package' if assets.get(system) else 'Experiment only; no package' if system in source.get('experimental_systems',[]) and source.get('development_status')=='in_progress' else 'No declared package')
+            systems.append('Manual download from author' if system in source.get('manual_systems',[]) else 'Windows via Proton; unverified locally' if system=='linux' and 'windows' in source.get('manual_systems',[]) else 'Declared package' if assets.get(system) else 'Experiment only; no package' if system in source.get('experimental_systems',[]) and source.get('development_status')=='in_progress' else 'No declared package')
         lines.append('| '+' | '.join([name,author,*systems,status,links])+' |')
     if catalog.get('porting_tools'):
         lines += ['', '## Porting tools and emulators', '',
@@ -48,15 +49,25 @@ def render(catalog):
         'a CI workflow do not establish working gameplay. These sources are not assigned',
         'to the Xbox One edition. The README declares BSD-3-Clause for project source and SDK;',
         'the reviewed license file is `rexglue-sdk/LICENSE`, with no separate root LICENSE.','',
-        'MASELKO-95 research fork: created from fabioap-cpu on 2026-10-15, with no',
-        'independent fixes or game tests yet. It retains the same limitations. No game',
-        'files are available for local gameplay validation. Creating a fork does not',
-        'establish working gameplay.','',
+        'MASELKO-95 research fork: Linux manual driving and festival arrival observed',
+        'on 2026-10-22. An isolated profile test reaches car selection and the first race',
+        'start. Graphics artifacts, soft output, low frame rates and stutters remain.',
+        'The renderer uses the Xenia-derived Xenos Vulkan backend; FSR is disabled in',
+        'the tested build. Race completion, career progression and a complete save/reload',
+        'cycle remain unverified. No ready public game package is available.','',
+        'Azimuth is a separate wrapper for the **Xbox One** edition, by Almost There Games.',
+        'RE:COPILE opens the official itch.io download page. Download and extract the',
+        'wrapper there, then connect `azimuth.exe` as a local program. Follow the author’s',
+        'instructions and terms; the wrapper and game files are not redistributed here.',
+        'The author lists Windows 10/11 and Linux through Proton; local gameplay is',
+        'unverified. FH2 1.0.0.64 requires the player’s game folder containing `era.vbi`,',
+        '`Mount/` and `EmbeddedXvd/`. Updates are obtained from the author.','',
         '## Catalog updates','',
         'Game metadata is maintained in `data/registry.json`. Players receive catalog updates',
         'without replacing launcher code or reinstalling the application.',
         'This project list and the author profile list are generated from that catalog.',
-        'Updates to game programs come from their authors\' GitHub Releases.','']
+        'Updates to game programs come from their authors\' GitHub Releases or official',
+        'manual download pages. New launcher features require an application update.','']
     return '\n'.join(lines)
 
 def render_repositories(catalog):

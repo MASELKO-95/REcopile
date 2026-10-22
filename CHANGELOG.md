@@ -1,5 +1,15 @@
 # Historia zmian
 
+## 0.2.2-beta.4 — 2026-10-22
+
+- Add a separate FH2 Xbox One entry with the official Azimuth download page.
+  Download and extract the wrapper at the author's site, then connect its EXE.
+  Windows and Linux through Proton retain unverified local gameplay status.
+- External downloads preserve the author's distribution and terms and remain
+  outside automatic GitHub installation and update jobs. No game data is included.
+- Update FH2 Xbox 360 research status: manual driving and festival arrival
+  observed on Linux; graphics artifacts, low FPS and stutters remain open.
+
 ## 0.2.2-beta.3 — 2026-10-21
 
 - On Linux, Play for prepared Pinyon Shift 0.6 installations offers direct play

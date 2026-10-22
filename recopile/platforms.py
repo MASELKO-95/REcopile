@@ -17,6 +17,12 @@ def device_options(game, system):
     for source in game.get("sources", []):
         if source.get("origin") == "development" or source.get("kind") == "emulator":
             continue
+        if source.get('origin') == 'external':
+            for target in (["linux", "windows"] if system == "linux" else [system]):
+                if target in source.get('manual_systems', []):
+                    options.append({'system': target, 'via': 'proton' if target != system else 'native',
+                                    'source_id': source['id'], 'manual': True})
+            continue
         patterns = source.get("assets_by_system", {"linux": source.get("asset_pattern")})
         for target in (["linux", "windows"] if system == "linux" else [system]):
             if patterns.get(target):

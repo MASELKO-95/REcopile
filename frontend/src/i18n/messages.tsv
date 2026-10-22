@@ -380,3 +380,15 @@ Wykrywanie gier z kolekcji włączone.	Collection game discovery enabled.	A gyű
 Wykrywanie gier z kolekcji wyłączone.	Collection game discovery disabled.	A gyűjteményjátékok felismerése kikapcsolva.
 Najpierw włącz opcjonalne wykrywanie gier z kolekcji w Steam.	First enable optional Steam discovery for collection games.	Először kapcsold be a gyűjteményjátékok opcionális Steam-felismerését.
 Wykrywanie Steam obejmuje tylko gry z kolekcji RE:COPILE.	Steam discovery covers only games from RE:COPILE collections.	A Steam-felismerés csak a RE:COPILE gyűjteményeiben szereplő játékokra vonatkozik.
+Pobieranie ze strony autora	Download from the author	Letöltés a szerzőtől
+Pobierz ze strony autora	Download from the author	Letöltés a szerzőtől
+Pobieranie na stronie autora	Download on the author's page	Letöltés a szerző oldalán
+Pobieranie u autora	Download from the author	Letöltés a szerzőtől
+pobranie u autora	author download	letöltés a szerzőtől
+Proton · niezweryfikowane	Proton · unverified	Proton · nem ellenőrzött
+Projekt zewnętrzny	External project	Külső projekt
+Jak pobrać i podłączyć	How to download and connect	Letöltés és csatlakoztatás
+Ręczne pobranie od autora	Manual download from the author	Kézi letöltés a szerzőtől
+źródeł	sources	forrás
+Przeczytaj instrukcję i warunki autora, pobierz oraz wypakuj program. Następnie wybierz „Podłącz gotową grę” w szczegółach gry i wskaż plik EXE. Dane własnej gry wybierzesz w pobranym programie.	Read the author's instructions and terms, then download and extract the program. Choose “Connect a ready game” in the game details and select its EXE. Select your own game data in the downloaded program.	Olvasd el a szerző útmutatóját és feltételeit, majd töltsd le és csomagold ki a programot. A játék adatlapján válaszd a „Kész játék csatlakoztatása” lehetőséget, és jelöld ki az EXE-fájlt. Saját játékadataidat a letöltött programban választhatod ki.
+Na Linuksie plik EXE wymaga Protona lub Wine. Działanie na Twoim urządzeniu pozostaje niepotwierdzone.	On Linux the EXE requires Proton or Wine. Gameplay on your device remains unverified.	Linuxon az EXE Proton vagy Wine használatát igényli. A működés az eszközödön még nem ellenőrzött.

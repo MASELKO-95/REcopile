@@ -35,8 +35,8 @@ class ForzaHorizonTwoTests(unittest.TestCase):
         self.assertEqual([s["id"] for s in game["sources"]], list(SOURCES))
         self.assertGreater(game["variant_count"], 0)
         xbox_one = self.app.detail(game_id("xboxone", "Forza Horizon 2"))
-        self.assertEqual(xbox_one["kind"], "catalog")
-        self.assertFalse(xbox_one["sources"])
+        self.assertEqual(xbox_one["kind"], "native")
+        self.assertEqual([s['id'] for s in xbox_one['sources']], ['fh2-azimuth'])
 
     def test_experiments_have_no_installable_package_or_host_view_entry(self):
         with patch("recopile.service.latest_release") as release:
