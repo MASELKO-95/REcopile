@@ -11,11 +11,28 @@ FIELDS = {"id", "name", "repo", "platform", "kind", "asset_pattern", "assets_by_
 FIELDS.add('technologies')
 FIELDS.add('release_tags_by_system')
 FIELDS.update({'download_page', 'author', 'manual_systems'})
+FIELDS.update({'setup_launcher', 'allow_prerelease', 'scan_releases'})
+FIELDS.update({'discover_packages', 'auto_executable'})
 
 def validate_registry(value):
     if not isinstance(value, dict) or value.get("schema_version") != 1:
         raise UserError("Nieobsługiwana wersja katalogu.")
     sources, games = value.get("sources"), value.get("featured")
+    from .catalog_lists import LISTS, checked_entries
+    snapshots = value.get('tracked_lists', [])
+    if not isinstance(snapshots, list) or len(snapshots) > len(LISTS):
+        raise UserError('Niepoprawne śledzone listy projektów.')
+    seen_lists = set()
+    for snapshot in snapshots:
+        if not isinstance(snapshot, dict) or snapshot.get('id') in seen_lists or not any(
+                snapshot.get('id') == spec['id'] and snapshot.get('url') == spec['url'] for spec in LISTS):
+            raise UserError('Niepoprawne śledzone listy projektów.')
+        seen_lists.add(snapshot['id'])
+        entries = snapshot.get('entries', [])
+        if not isinstance(entries, list) or len(entries) > 1000 or any(not isinstance(e, dict)
+                or not isinstance(e.get('title'), str) or not isinstance(e.get('repo'), str) for e in entries):
+            raise UserError('Niepoprawne wpisy śledzonej listy.')
+        if entries: checked_entries(entries)
     if not isinstance(value.get('catalog_version',''),str) or len(value.get('catalog_version',''))>80 or not isinstance(value.get('catalog_notes',''),str) or len(value.get('catalog_notes',''))>16000:
         raise UserError('Niepoprawna wersja lub opis aktualizacji katalogu.')
     if not isinstance(sources, list) or not isinstance(games, list) or max(len(sources), len(games)) > 2000:
@@ -75,11 +92,11 @@ def validate_registry(value):
         executables = [source.get("executable", ""), *source.get("executables_by_system", {}).values()]
         if any(not isinstance(p, str) or Path(p).is_absolute() or ".." in Path(p).parts or "\\" in p or ':' in p for p in executables):
             raise UserError("Niepoprawna ścieżka pliku startowego.")
-        if source.get("adapter", "native") not in {"native", "native-wizard", "pinyon", "pinyon-legacy", "flatpak", "appimage", "apk"}:
+        if source.get("adapter", "native") not in {"native", "native-wizard", "pinyon", "pinyon-legacy", "flatpak", "appimage", "apk", "installer"}:
             raise UserError("Nieobsługiwany adapter portu.")
         if source.get("channel", "final") not in {"final", "preview"}:
             raise UserError("Niepoprawny kanał źródła.")
-        for flag in ["verified", "archived", "supported", "auto_update", "public_listing"]:
+        for flag in ["verified", "archived", "supported", "auto_update", "public_listing", "setup_launcher", "allow_prerelease", "scan_releases", "discover_packages", "auto_executable"]:
             if flag in source and not isinstance(source[flag], bool):
                 raise UserError("Niepoprawna flaga źródła.")
         if not 1 <= len(source.get("name", "")) <= 150 or len(source.get("note", "")) > 4000:

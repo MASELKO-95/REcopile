@@ -1,5 +1,28 @@
 # Historia zmian
 
+## 0.2.2-beta.5 — 2026-10-31
+
+- Newly added games and ports have not been gameplay-tested by RE:COPILE.
+  Catalog entries and package availability do not establish 100% compatibility.
+- Add 104 Xbox 360 project sources and 93 game entries from the requested
+  lists and titles, with reviewed package definitions for 16 sources.
+- Show tracked lists in Sources, including search, pagination, source links
+  and whether each project is already in the catalog. Update checks add new
+  metadata automatically; cached lists and sources survive offline restarts.
+- Resolve unambiguous community release packages when the player requests a
+  download. Use the existing README/license review and installer. Ambiguous
+  packages or entry points require source configuration; no game files are fetched.
+- Support author-provided Windows setup EXEs without treating an installer as
+  a prepared game. Preserve existing installations, user source edits and profiles.
+- Fix English update-check titles, Downloads text and the Xbox 360 engine name;
+  include the same list controls and task messages in Polish and Hungarian.
+- Install declared Windows-only game packages on Linux through the same managed
+  download flow, with a clear Windows label and the existing Proton/Wine settings.
+  Setup uses the selected runner without recording gameplay; compatibility still
+  depends on the title and runtime installed by the player.
+- Keep legitimate Crash/Test Drive executables during entry-point discovery,
+  reject ARM packages on x86-64 and retain OS-specific adapter selection.
+
 ## 0.2.2-beta.4 — 2026-10-22
 
 - Add a separate FH2 Xbox One entry with the official Azimuth download page.

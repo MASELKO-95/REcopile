@@ -70,11 +70,14 @@ def create_server(launcher, port=4783):
                         "sources": launcher.store.list("sources"), "engines": launcher.engines(), "last_update_check": launcher.store.get("settings", "last_update_check"),
                         "launcher_update": launcher.store.get("settings", "launcher_update"), "libraries": launcher.libraries(),
                         'catalog_sync':launcher.store.get('settings','catalog_sync'),
+                        "catalog_lists":launcher.catalog_lists.state(),
                         "pending_updates":launcher.store.get("settings", "pending_updates", []), "profile":launcher.profiles.summary()})
                 elif path == "/api/profile":
                     self.send_json(launcher.profiles.summary())
                 elif path == "/api/collections":
                     self.send_json(launcher.collections())
+                elif path == '/api/catalog-lists':
+                    self.send_json(launcher.catalog_lists.state(details=True))
                 elif path == "/api/steam":
                     self.send_json(launcher.steam.state())
                 elif path == "/api/workshop":
@@ -167,6 +170,10 @@ def create_server(launcher, port=4783):
                     result = launcher.compatibility.submit_local(launcher.require_game(ident), data, launcher.preferences())
                 elif path == "/api/sync-catalog":
                     result = launcher.sync_catalog()
+                elif path == '/api/catalog-lists/check':
+                    result = launcher.catalog_lists.check()
+                elif path == '/api/catalog-lists/include':
+                    result = launcher.catalog_lists.add_cached(data)
                 elif path == "/api/sources":
                     result = launcher.add_source(data)
                 elif path == '/api/performance/hardware':

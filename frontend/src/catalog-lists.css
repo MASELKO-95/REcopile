@@ -1,0 +1,13 @@
+.catalog-list-summaries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}
+.catalog-list-summaries>div{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;border:1px solid #393045;border-radius:8px;padding:14px}
+.catalog-list-summaries a{font-size:12px;overflow-wrap:anywhere}
+.catalog-list-summaries span,.catalog-list-summaries small{color:#b3a0c2;font-size:11px}
+.catalog-list-search{display:block;margin:20px 0}
+.catalog-list-search input{display:block;width:100%;margin-top:8px;box-sizing:border-box}
+.catalog-list-entries article{display:flex;align-items:center;gap:12px;border-bottom:1px solid #393045;padding:13px 0}
+.catalog-list-entries article>div{flex:1;min-width:0}
+.catalog-list-entries strong{display:block;font-size:12px;overflow-wrap:anywhere;margin-bottom:6px}
+.catalog-list-entries a{font-size:10px;overflow-wrap:anywhere}
+.catalog-list-entries .text-link{font-size:11px;flex-shrink:0}
+.catalog-lists .pagination{margin-bottom:0}
+@media(max-width:600px){.catalog-list-summaries{grid-template-columns:1fr}.catalog-list-entries article{flex-wrap:wrap}.catalog-list-entries article>div{flex-basis:100%}.catalog-lists>.outline{white-space:normal}.catalog-list-entries .badge{max-width:100%}}

@@ -87,7 +87,11 @@ def latest_release(source: dict):
         matches = [a for a in candidate.get("assets", []) if fnmatch.fnmatchcase(a.get("name", ""), source.get("asset_pattern", "")) and
                    not (source.get("exclude_pattern") and fnmatch.fnmatchcase(a["name"], source["exclude_pattern"]))]
         if matches: eligible.append((candidate, matches))
-    if scan:
+    if scan and source.get('kind') == 'recompile':
+        # Port projects use tags such as "recomp" or "1.5" as well as SemVer.
+        # GitHub returns newest releases first; prefer publication time when set.
+        eligible.sort(key=lambda item: item[0].get('published_at') or '', reverse=True)
+    elif scan:
         eligible.sort(key=lambda item: version_key(item[0]["tag_name"]), reverse=True)
     release, assets = eligible[0] if eligible else ({}, [])
     if len(assets) != 1:

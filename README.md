@@ -4,7 +4,11 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Public beta 0.2.2-beta.4.** [Download Linux packages](https://github.com/MASELKO-95/recopile/releases/tag/v0.2.2-beta.4) or the matching source archive. Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
+**Public beta 0.2.2-beta.5.** [Download Linux packages](https://github.com/MASELKO-95/REcopile/releases/tag/v0.2.2-beta.5) or the [matching GPL source archive](https://github.com/MASELKO-95/REcopile/releases/download/v0.2.2-beta.5/Recopile-0.2.2-beta.5-source.zip). Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
+
+[![Downloads](https://img.shields.io/github/downloads/MASELKO-95/REcopile/total?style=for-the-badge&logo=github&label=Downloads)](https://github.com/MASELKO-95/REcopile/releases) [![Visitors](https://hits.sh/github.com/MASELKO-95/REcopile.svg?style=for-the-badge&label=Visitors&logo=github)](https://hits.sh/github.com/MASELKO-95/REcopile/)
+
+**New catalog entries are untested in gameplay.** This update adds games and source links from community lists. Their inclusion, download availability or successful installation does not guarantee full gameplay, stability or 100% compatibility. Check each project's README and current status.
 
 ## Languages
 
@@ -21,7 +25,7 @@ The interface currently has three languages: **English, Polish and Hungarian**.
 - See separate **Linux / Windows package** labels and **device compatibility** reports. A downloadable program does not guarantee a working game.
 - See declared technologies on search cards and game details. Undeclared graphics features remain unknown.
 - Use **Measurements** to detect local CPU/GPU/RAM information, record a timed direct game session with MangoHud (Linux) or console PresentMon (Windows), or import their CSV logs. Summaries show measured FPS, frame times, duration, game version and the graphics settings you enter. Results remain local until you choose to export or publish a report.
-- Use **On this PC** to filter declared packages and local executables for the host system. Linux also lists Windows packages with an explicit **Proton / Wine · untested** label; these packages can be installed manually and linked as local games.
+- Use **On this PC** to filter declared packages and local executables for the host system. Linux also lists Windows packages with an explicit **Proton / Wine · untested** label. Supported packages use the normal download and setup flow through your installed runtime; you can also connect an existing installation.
 - Add existing programs like a non-Steam game. On Linux, select an installed **Proton** version or **Wine** for Windows executables. Each game gets a separate compatibility prefix; an installed UMU launcher can also be used.
 - Optionally connect installed **Steam** PC games from RE:COPILE collections. This feature is **off by default**: enable it in **Collections** or Settings. Only declared collection App IDs are checked, including registered libraries on other drives; unrelated Steam titles are not imported. While enabled, startup checks and **Scan Steam** refresh the matches, and Settings accepts an extra SteamLibrary folder. Linux (including Flatpak) and Windows discovery are supported. Scanning leaves game files in place and does not download artwork or require Steam sign-in. **Launch in Steam** delegates to the installed client. Steam hours and achievements are not synchronized, and the client handoff is not counted as a game session.
 - Open Forza and Ratchet & Clank collections from first-game cover tiles. Each series lists its console projects and official PC releases together in release order. Prepare a port or connect an existing PC installation, then launch a ready game with **Play**. Store links retain availability labels; projects in development retain their own status.
@@ -37,6 +41,15 @@ Before downloading, the launcher presents the project's actual **README, license
 Game additions and metadata edits update a single runtime file, `data/registry.json`.
 The launcher fetches this catalog without replacing application code or reinstalling.
 Generated public project lists follow the same catalog.
+
+**Sources** also follows the supported community project lists. Normal update
+checks add new source references automatically, with local search and a status
+showing whether each project is in the catalog. Lists remain available offline.
+When you request a download, the launcher can find an unambiguous package for
+your system and use the existing README/license review and installer. Source
+references, downloaded setup tools and prepared games have separate states;
+individual ports may provide further integration. List tracking can be turned
+off in Settings.
 
 The launcher's own license appears automatically on first launch and after a
 launcher version update. Acceptance is remembered for ordinary restarts.

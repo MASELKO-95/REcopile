@@ -88,9 +88,15 @@ class Store:
             if not current:
                 self.put("sources", source["id"], {**source, "trusted": bool(source.get("verified")), "verified_at": registry["verified_at"]})
             elif not current.get("user_override") and not current.get('catalog_repo'):
+                if current.get('package_resolved') and source.get('development_status') == 'listed':
+                    continue  # Keep an on-demand package resolution after an offline restart.
+                if (current.get('development_status') == 'listed' or current.get('package_resolved')) and source.get('origin') != 'development' and not source.get('discover_packages'):
+                    current = {k: v for k, v in current.items() if k not in {'origin', 'development_status', 'discover_packages',
+                        'auto_executable', 'package_resolved', 'resolved_system', 'release'}}
+                    current.update(adapter=source.get('adapter', 'native'), trusted=bool(source.get('verified')))
                 # Shipped channel labels follow the maintained registry; release
                 # cache and a user's asset/executable configuration remain intact.
-                labels = {k: v for k, v in source.items() if k in {"name", "repo", "guide", "note", "channel", "supported", "auto_update", "archived", "assets_by_system", "executables_by_system", "repos_by_system", "release_tags_by_system", "documentation_repo", "documentation_ref", "development_status", "experimental_systems", "edition", "technologies", "origin", "download_page", "author", "manual_systems"}}
+                labels = {k: v for k, v in source.items() if k in {"name", "repo", "guide", "note", "channel", "supported", "auto_update", "archived", "assets_by_system", "executables_by_system", "repos_by_system", "release_tags_by_system", "documentation_repo", "documentation_ref", "development_status", "experimental_systems", "edition", "technologies", "origin", "download_page", "author", "manual_systems", "setup_launcher", "allow_prerelease", "scan_releases", "discover_packages", "auto_executable"}}
                 self.put("sources", source["id"], {**current, **labels})
         for featured in registry["featured"]:
             ident = game_id(featured["platform"], featured["match"])
@@ -109,7 +115,7 @@ class Store:
         distribution = json.loads(distribution_path.read_text()) if distribution_path.is_file() else {}
         default_library = os.environ.get("RECOPILE_LIBRARY_ROOT", str(self.app_root / "RecopileLibrary"))
         defaults = {"games_dir": default_library, "libraries": [default_library], "only_recompiled": False,
-                "check_updates": True, "auto_update": True, "update_interval_hours": 6,
+                "check_updates": True, "auto_update": True, "update_interval_hours": 6, "track_catalog_lists": True,
                 "bios_path": "", "xenia_path": "", "launcher_repo": distribution.get("repo", ""), "profile_name": "Gracz",
                 "active_profile": "local", "discord_url": distribution.get("discord_url", ""),
                 "onboarding_complete": False, "last_notice_version": "", "accepted_app_license":"", "android_ads": False, "proton_path":"", "umu_path":"", "language":"en", "steam_libraries":[], "steam_enabled":False}

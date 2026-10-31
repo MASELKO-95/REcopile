@@ -6,7 +6,7 @@ export function PlatformBadges({source}) {
   const patterns=source?.assets_by_system || (source?.asset_pattern ? {linux:source.asset_pattern} : {});
   const experiments=source?.origin==='development' && source?.development_status==='in_progress' ? source.experimental_systems || [] : [];
   const manual=source?.origin==='external' ? source.manual_systems || [] : [];
-  return <div className="target-badges" title="Deklaracja źródła; działanie gry sprawdź w raportach urządzeń.">{[['linux','Linux'],['windows','Windows']].map(([key,label]) => <Badge key={key} kind={patterns[key] ? 'recompile' : experiments.includes(key) || manual.includes(key) ? 'warning' : 'muted'}>{label} · {patterns[key] ? 'paczka' : manual.includes(key) ? 'pobranie u autora' : key==='linux' && manual.includes('windows') ? 'Proton · niezweryfikowane' : experiments.includes(key) ? 'eksperyment' : 'brak paczki'}</Badge>)}</div>;
+  return <div className="target-badges" title="Deklaracja źródła; działanie gry sprawdź w raportach urządzeń.">{[['linux','Linux'],['windows','Windows']].map(([key,label]) => <Badge key={key} kind={patterns[key] ? 'recompile' : experiments.includes(key) || manual.includes(key) ? 'warning' : 'muted'}>{label} · {patterns[key] ? 'paczka' : manual.includes(key) ? 'pobranie u autora' : key==='linux' && manual.includes('windows') ? 'Proton · niezweryfikowane' : experiments.includes(key) ? 'eksperyment' : source?.discover_packages ? 'sprawdzenie przy pobraniu' : 'brak paczki'}</Badge>)}</div>;
 }
 export function SourceEditor({source,action,onClose}) {
   const [name,setName]=useState(source.name),[repo,setRepo]=useState(source.repo || ''),[trusted,setTrusted]=useState(false),[busy,setBusy]=useState(false),[modRoot,setModRoot]=useState(source.mod_root || '');

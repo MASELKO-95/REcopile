@@ -31,6 +31,46 @@ Automatic installation requires prior consent and a visible update notice;
 changed or missing licenses pause unattended updates. New launcher functionality
 requires an application update.
 
+## Community project lists
+
+`tracked_lists` stores snapshots of the supported public Xbox 360 project
+lists, with original page links and project repository references. The player
+checks them during normal update checks when `track_catalog_lists` is enabled.
+Sources shows each list, local search, pagination and whether a project has a
+source attached to a game. An offline or unreadable response retains the last
+successful snapshot. These requests fetch text metadata, never artwork or games.
+
+New source references use `development_status: "listed"` and
+`discover_packages: true`. Their operating-system packages and gameplay remain
+unverified. When the player chooses Install port, the service can resolve a
+single matching release asset for the current operating system. AppImages,
+archives and Windows setup EXEs use the existing document review and license
+hash checks. Multiple matching packages or executable entry points require
+explicit source configuration. Discovery never runs instructions from a README.
+Resolved packages remain available after restarting offline. A maintained
+catalog can later replace a reference with a reviewed per-title integration.
+
+`adapter: "installer"` stages an author's original Windows setup executable.
+It can run through the player's existing Proton/Wine on Linux when selected
+as a Windows compatibility package. It does not mark the resulting game ready or locate an arbitrary installation
+elsewhere on the computer. The player supplies their own game data to the
+author's setup and can connect the resulting executable. Normal archive-based
+integrations keep their existing configuration and ready-state workflow.
+
+Linux prefers a declared native package. When only a Windows package is
+available, the normal download flow clearly labels it as Windows and uses the
+player's installed Proton or Wine for setup and launch. The compatibility
+prefix is local to the game and persists between versions. Downloading or
+opening setup does not establish Linux gameplay compatibility. The existing
+per-game settings choose the runner and Proton version; no runtime is silently
+downloaded. Existing local executable bindings and their runner choices survive
+package updates.
+
+`scan_releases` selects compatible assets across recent releases, including
+non-SemVer port tags. `allow_prerelease` permits beta assets; it does not enable
+automatic installation. Publisher catalog versions older than the bundled or
+already downloaded dated catalog do not roll source metadata back.
+
 ## Official manual downloads
 
 `origin: "external"` describes software distributed on an author's own page.

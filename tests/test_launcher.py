@@ -175,7 +175,10 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(self.app.store.query(q="Forza Horizon", platform="xbox360")["games"][0]["kind"], "recompile")
         self.assertTrue(self.app.store.query(q="SCUS-97399", platform="ps2")["games"])
         self.assertEqual(self.app.store.query(q="Sonic Unleashed", platform="ps3")["games"][0]["kind"], "emulation")
-        self.assertEqual(self.app.store.query(mode="recompile")["total"], 5)
+        registry=json.loads((ROOT/'data/registry.json').read_text())
+        recomp_sources={s['id'] for s in registry['sources'] if s['kind']=='recompile'}
+        expected={game_id(g['platform'],g['match']) for g in registry['featured'] if recomp_sources.intersection(g.get('source_ids',[]))}
+        self.assertEqual(self.app.store.query(mode="recompile")["total"], len(expected))
 
     def test_settings_and_custom_source_survive_restart(self):
         ident = game_id("xbox360", "Halo 3")
@@ -424,7 +427,7 @@ class LauncherTests(unittest.TestCase):
             with urlopen(request):
                 pass
             with urlopen(base + "/api/games") as response:
-                self.assertEqual(json.load(response)["total"], 5)
+                self.assertEqual(json.load(response)["total"], self.app.store.query(mode='recompile')['total'])
             for headers in [{"X-Recopile-Token": "bad"}, {"X-Recopile-Token": token, "Origin": "https://evil.example"}, {"X-Recopile-Token": token, "Host": "evil.example"}]:
                 request = Request(base + "/api/settings", data=b"{}", headers={"Content-Type": "application/json", **headers})
                 with self.assertRaises(HTTPError) as raised:

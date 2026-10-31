@@ -27,7 +27,7 @@ class LaunchOptionsTests(unittest.TestCase):
         (self.source / '.local/game/base').mkdir(parents=True)
         (self.source / '.local/game/base/default.xex').write_text('synthetic input marker')
         self.output = self.root / 'observed.json'
-        code = ('#!' + sys.executable + '\nimport json, os, sys\nfrom pathlib import Path\n'
+        code = ('#!' + str(Path(sys.executable).resolve()) + '\nimport json, os, sys\nfrom pathlib import Path\n'
                 'Path(' + repr(str(self.output)) + ').write_text(json.dumps({"args":sys.argv[1:],'
                 '"environment":{key:value for key,value in os.environ.items() '
                 'if key.startswith("PINYON_SHIFT_")}}))\n')

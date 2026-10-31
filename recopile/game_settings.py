@@ -172,8 +172,12 @@ class GameSettings:
             return {**result, "driver": driver or "launch", "fields": fields,
                     "can_restore": driver in {"pinyon", "pinyon-legacy"}, "can_hardware": driver == "pinyon",
                     "launch": self.launcher.store.get("settings", "launch:" + ident, {"arguments": []}),
-                    "can_compatibility": bool(install.get("local_executable") and install.get("local_system") == "windows" and self.launcher.system_key() == "linux"),
+                    "can_compatibility": self.can_compatibility(install),
                     "runner": install.get("runner", "proton"), "proton_path": install.get("proton_path", "")}
+
+    def can_compatibility(self, install):
+        windows = install.get('local_system') == 'windows' if install.get('local_executable') else (install.get('executable') and install.get('package_system') == 'windows')
+        return bool(windows and self.launcher.system_key() == 'linux')
 
     def validate_launch(self, value, install):
         if not isinstance(value, dict) or set(value) - {"arguments", "runner", "proton_path"}: raise UserError("Niepoprawne opcje uruchamiania.")
@@ -181,7 +185,7 @@ class GameSettings:
         if not isinstance(arguments, list) or len(arguments) > 128 or any(not isinstance(arg, str) or not arg or len(arg) > 4096 or "\0" in arg for arg in arguments): raise UserError("Niepoprawne argumenty uruchamiania.")
         result = {"arguments": arguments}
         if "runner" in value or "proton_path" in value:
-            if not (install.get("local_executable") and install.get("local_system") == "windows" and self.launcher.system_key() == "linux"): raise UserError("Zgodność dotyczy programów Windows na Linuxie.")
+            if not self.can_compatibility(install): raise UserError("Zgodność dotyczy programów Windows na Linuxie.")
             if value.get("runner") not in {"proton", "wine"}: raise UserError("Wybierz Proton albo Wine.")
             if not isinstance(value.get("proton_path", ""), str) or len(value.get("proton_path", "")) > 4096: raise UserError("Niepoprawna ścieżka do Protona.")
             result.update(runner=value["runner"], proton_path=value.get("proton_path", ""))

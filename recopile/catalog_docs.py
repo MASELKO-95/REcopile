@@ -18,6 +18,7 @@ def render(catalog):
         if source.get('origin')=='external': status='External wrapper; local gameplay unverified'
         elif source.get('development_status')=='planned': status='Planned; no ready port'
         elif source.get('development_status')=='in_progress': status='In development; gameplay unverified'
+        elif source.get('development_status')=='listed': status='Listed project; package not configured or verified'
         elif source.get('channel')=='preview': status='Pre-release; unsupported / archived'
         elif source.get('channel')=='final': status='Final catalog channel; see upstream status'
         elif source.get('kind')=='emulator': status='Emulator; per-game compatibility varies'
@@ -30,6 +31,11 @@ def render(catalog):
         for system in ['linux','windows']:
             systems.append('Manual download from author' if system in source.get('manual_systems',[]) else 'Windows via Proton; unverified locally' if system=='linux' and 'windows' in source.get('manual_systems',[]) else 'Declared package' if assets.get(system) else 'Experiment only; no package' if system in source.get('experimental_systems',[]) and source.get('development_status')=='in_progress' else 'No declared package')
         lines.append('| '+' | '.join([name,author,*systems,status,links])+' |')
+    if catalog.get('tracked_lists'):
+        lines += ['', '## Tracked project lists', '',
+            'The launcher checks these lists during update checks and adds new source references.',
+            'A list entry does not establish an installable package or verified gameplay.', '']
+        lines += [f"- [{item['name']}]({item['url']})" for item in catalog['tracked_lists']]
     if catalog.get('porting_tools'):
         lines += ['', '## Porting tools and emulators', '',
             '| Tool | Platform | Type | Links |', '| --- | --- | --- | --- |']

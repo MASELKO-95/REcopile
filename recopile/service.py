@@ -33,6 +33,7 @@ from .steam import SteamLibrary
 from .performance import Performance
 from .game_settings import GameSettings
 from .launch_options import LaunchOptions
+from .catalog_lists import CatalogLists
 
 
 class Launcher:
@@ -48,6 +49,7 @@ class Launcher:
         self.port_setup = PortSetup(self)
         self.game_settings = GameSettings(self)
         self.launch_options = LaunchOptions(self)
+        self.catalog_lists = CatalogLists(self)
         self.running = {}
         self.process_lock = threading.RLock()
         self.stop = threading.Event()
@@ -65,6 +67,7 @@ class Launcher:
                 "sources": self.store.list("sources"), "engines": self.engines(), "jobs": self.jobs.list(),
                 "catalog": self.store.get("settings", "catalog"), "running": self.active_processes(),
                 "catalog_sync":self.store.get('settings','catalog_sync'),
+                "catalog_lists":self.catalog_lists.state(),
                 "host": self.compatibility.device, "runners":runners.discover(prefs) if self.system_key()=='linux' else {"proton":[],"wine":None,"umu":None},
                 "collections":self.collections(), "profiles": self.store.list("profiles"), "profile": self.profiles.summary(),
                 "pending_updates": self.store.get("settings", "pending_updates", []), "app_notice":self.documents.app_notice(__version__),
@@ -75,13 +78,13 @@ class Launcher:
         return self.store.get("settings", "preferences")
 
     def save_preferences(self, changes):
-        allowed = {"only_recompiled", "check_updates", "auto_update", "games_dir", "bios_path", "xenia_path", "launcher_repo", "profile_name", "update_interval_hours", "discord_url", "android_ads", "proton_path", "umu_path", "language"}
+        allowed = {"only_recompiled", "check_updates", "auto_update", "track_catalog_lists", "games_dir", "bios_path", "xenia_path", "launcher_repo", "profile_name", "update_interval_hours", "discord_url", "android_ads", "proton_path", "umu_path", "language"}
         prefs = self.preferences()
         for name, value in changes.items():
             if name not in allowed:
                 continue
             if name=='language' and value not in {'pl','en','hu'}: raise UserError('Wybierz język: polski, angielski lub węgierski.')
-            if name in {"only_recompiled", "check_updates", "auto_update", "android_ads"} and not isinstance(value, bool):
+            if name in {"only_recompiled", "check_updates", "auto_update", "track_catalog_lists", "android_ads"} and not isinstance(value, bool):
                 raise UserError("Niepoprawna wartość ustawienia.")
             if name == "android_ads" and self.system_key() != "android":
                 value = False
@@ -335,14 +338,24 @@ class Launcher:
         if source.get('origin') == 'external':
             raise UserError('Pobierz program ze strony autora i podłącz gotowy plik wykonywalny: ' + source['download_page'])
         if source.get("origin") == "development":
+            if source.get('development_status') == 'listed':
+                raise UserError("To źródło nie ma jeszcze skonfigurowanej paczki w RE:COPILE. Sprawdź wydania i instrukcję autora.")
             raise UserError("Projekt jest w trakcie prac. Użyj dokumentacji lub podłącz dostępny lokalny eksperyment; gotowej paczki do pobrania jeszcze nie ma.")
         key = self.system_key()
         patterns = source.get("assets_by_system", {"linux": source.get("asset_pattern")})
+        if key == 'linux' and not patterns.get(key) and patterns.get('windows') and source.get('kind') != 'emulator':
+            key = 'windows'
         pattern = patterns.get(key)
         if not pattern:
             raise UserError("To źródło nie publikuje gotowej paczki dla " + self.compatibility.device["system"] + ". Sprawdź instrukcję projektu.")
         target = {**source, "asset_pattern": pattern, "executable": source.get("executables_by_system", {}).get(key, source.get("executable", "")),
-                  "repo": source.get("repos_by_system", {}).get(key, source["repo"])}
+                  "repo": source.get("repos_by_system", {}).get(key, source["repo"]), 'package_system': key}
+        if source.get('discover_packages'):
+            target['resolved_system'] = key
+            target['auto_executable'] = True
+            target['adapter'] = 'installer' if pattern.lower().endswith('.exe') else 'native'
+            if target['adapter'] == 'installer' and not target['executable']:
+                target['executable'] = pattern
         tag = source.get("release_tags_by_system", {}).get(key)
         if tag: target["release_tag"] = tag
         else: target.pop("release_tag", None)
@@ -358,9 +371,23 @@ class Launcher:
         if payload.get("encoding") != "base64" or payload.get("size", 0) > 2_000_000:
             raise UserError("Niepoprawny katalog wydawcy.")
         registry = validate_registry(json.loads(base64.b64decode(payload["content"])))
+        local_version = json.loads((self.app_root / 'data/registry.json').read_text()).get('catalog_version', '')
+        current_version = (self.store.get('settings', 'catalog_sync') or {}).get('catalog_version') or local_version
+        remote_version = registry.get('catalog_version', '')
+        # An older public catalog must not roll back newer bundled metadata.
+        dated = r'\d{4}-\d{2}-\d{2}\.\d+'
+        if re.fullmatch(dated, current_version) and re.fullmatch(dated, remote_version):
+            key = lambda version: (*map(int, version.split('.')[0].split('-')), int(version.split('.')[1]))
+            if key(remote_version) < key(current_version):
+                return {'catalog_version': current_version, 'older_catalog_ignored': True}
         for source in registry["sources"]:
             old = self.store.get("sources", source["id"], {})
             if old.get("user_override"): continue
+            if old.get('package_resolved') and source.get('development_status') == 'listed': continue
+            if (old.get('development_status') == 'listed' or old.get('package_resolved')) and source.get('origin') != 'development' and not source.get('discover_packages'):
+                old = {k: v for k, v in old.items() if k not in {'origin', 'development_status', 'adapter', 'asset_pattern', 'executable',
+                    'discover_packages', 'auto_executable', 'package_resolved', 'resolved_system', 'release'}}
+                old['trusted'] = bool(source.get('verified'))
             changed = old and any(old.get(k) != source.get(k) for k in ["repo", "asset_pattern", "executable", "assets_by_system"])
             merged = {**old, **source, "trusted": old.get("trusted", bool(source.get("verified"))), "catalog_repo": repo}
             if changed:
@@ -416,6 +443,8 @@ class Launcher:
         install = self.store.get("installs", ident)
         if not install or not install.get("setup_started_at"):
             raise UserError("Najpierw uruchom konfigurację portu i ukończ ją w oknie projektu.")
+        if install.get('adapter') == 'installer':
+            raise UserError('Podłącz gotowy plik gry utworzony przez instalator.')
         if game["kind"] not in {"recompile", "native"}:
             raise UserError("Ten typ gry nie wymaga konfiguracji portu.")
         with self.process_lock:
@@ -441,10 +470,11 @@ class Launcher:
 
     def release(self, source, refresh=False):
         cache = source.get("release")
-        if not refresh and cache and time.time() - source.get("checked_at", 0) < 900:
+        target = self.target_source(source)
+        if not refresh and cache and time.time() - source.get("checked_at", 0) < 900 and cache.get('package_system') in (None, target.get('package_system')):
             return cache
         try:
-            release = latest_release(self.target_source(source))
+            release = {**latest_release(target), 'package_system': target.get('package_system')}
             self.store.put("sources", source["id"], {**source, "release": release, "checked_at": time.time(), "last_error": None})
             return release
         except Exception as exc:
@@ -452,11 +482,27 @@ class Launcher:
             raise
 
     def install(self, source_id, ident=None, review=None, automatic=False, allow_auto=False, *, license_accepted=False, license_hash=None):
-        source = self.target_source(self.source(source_id))
         if self.system_key() not in {"linux", "windows", "android"}:
             raise UserError("Obsługiwane systemy: Linux, Windows i Android.")
         if self.system_key() != "android" and host_platform.machine().lower() not in {"x86_64", "amd64"}:
             raise UserError("Te paczki desktop przeznaczone są dla procesorów x86-64.")
+        original_source = self.source(source_id)
+        patterns = original_source.get('assets_by_system', {})
+        available = patterns.get(self.system_key()) or (self.system_key() == 'linux' and patterns.get('windows'))
+        if original_source.get('discover_packages') and not available:
+            if source_id not in self.require_game(ident).get('source_ids', []):
+                raise UserError('To źródło nie jest przypisane do wybranej gry.')
+            if automatic:
+                raise UserError('Pierwsze pobranie tego portu rozpocznij w szczegółach gry.')
+            from .community_packages import NoCompatiblePackage, resolve
+            try:
+                candidate = resolve(original_source, self.system_key())
+            except NoCompatiblePackage:
+                if self.system_key() != 'linux': raise
+                candidate = resolve(original_source, 'windows')
+            validate_registry({'schema_version': 1, 'sources': [{k:v for k,v in candidate.items() if k in FIELDS}], 'featured': []})
+            self.store.put('sources', source_id, candidate)
+        source = self.target_source(self.source(source_id))
         if not source.get("trusted"):
             raise UserError("Źródło nie zostało zatwierdzone do pobierania programów.")
         if source["kind"] == "emulator":
@@ -507,7 +553,14 @@ class Launcher:
                     raise Cancelled("Anulowano instalację.")
                 update(message="Rozpakowywanie portu", progress=90)
                 extracted = staging / "runtime"
-                extract(package, extracted, asset["name"])
+                if source.get('adapter') == 'installer':
+                    if (source.get('package_system') != 'windows' or not asset['name'].lower().endswith('.exe')
+                            or Path(asset['name']).name != asset['name'] or '\\' in asset['name']):
+                        raise UserError('Ten instalator wymaga Windows. Wybierz paczkę dla swojego systemu.')
+                    extracted.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(package, extracted / asset['name'])
+                else:
+                    extract(package, extracted, asset["name"])
                 info_dir = extracted / "Recopile-project-info"
                 if info_dir.exists(): raise UserError("Paczka używa zastrzeżonego folderu dokumentacji launchera.")
                 info_dir.mkdir()
@@ -536,12 +589,18 @@ class Launcher:
                            "command": command, "sha256": sha, "checksum_verified": bool(checksum), "asset": asset["name"],
                            "installed_at": time.time(), "published_at": release.get("published_at"), "ready": source["kind"] == "emulator",
                            "data_path": (old_install or {}).get("data_path", ""), "play_seconds": (old_install or {}).get("play_seconds", 0),
-                           "previous_version": old_install, "adapter": source.get("adapter", "native"), "project_documents":documents,"origin_repo":source["repo"]}
+                           "previous_version": old_install, "adapter": source.get("adapter", "native"), "project_documents":documents,"origin_repo":source["repo"],
+                           'package_system': source.get('package_system', self.system_key())}
+                if install['package_system'] == 'windows' and self.system_key() == 'linux':
+                    tools = runners.discover(self.preferences())
+                    install['runner'] = 'proton' if tools['proton'] else 'wine' if tools['wine'] else 'proton'
                 # A manually selected built executable remains usable after updating a
                 # project's setup launcher. Never delete/rewrite that executable.
                 if (old_install or {}).get("local_executable"):
                     install["local_executable"] = old_install["local_executable"]
                     install["ready"] = True
+                for field in ('local_system', 'runner', 'proton_path'):
+                    if field in (old_install or {}): install[field] = old_install[field]
                 if (old_install or {}).get("pinyon_state_root"):
                     install["pinyon_state_root"] = old_install["pinyon_state_root"]
                 self.save_install(ident, install)
@@ -566,7 +625,11 @@ class Launcher:
             matches = list(root.rglob("*.AppImage"))
         else:
             name = source.get("executable", "")
-            if not name:
+            if not name and source.get('auto_executable') and not list(root.rglob('*.AppImage')):
+                from .community_packages import find_entrypoint
+                system = 'windows' if source.get('resolved_system') == 'windows' else Launcher.system_key()
+                matches = [find_entrypoint(root, system)]
+            elif not name:
                 matches = list(root.rglob("*.AppImage"))
             elif "/" in name:
                 matches = [root / name] if (root / name).is_file() else []
@@ -672,7 +735,7 @@ class Launcher:
             if choice:
                 return choice
             original_launcher = selected == 'launcher'
-        if game and not setup and not original_launcher:
+        if game and not original_launcher:
             install = self.game_settings.launch_install(ident, install)
         if game and prefs["only_recompiled"] and game["kind"] != "recompile":
             raise UserError("Aktywny jest tryb tylko rekompilacji. Zmień filtr w ustawieniach, aby użyć innego sposobu uruchamiania.")
@@ -735,6 +798,13 @@ class Launcher:
                 env = self._engine_env(env, ident.removeprefix("engine-"))
                 if ident == "engine-pcsx2":
                     command += ["-datapath", install.get("user_root", str(self.store.root / "engine-state/pcsx2"))]
+            elif game and install.get('package_system') == 'windows' and self.system_key() == 'linux':
+                executable, arguments = command[0], command[1:]
+                command, env = runners.command({**install, 'local_executable': executable, 'local_system': 'windows'}, prefs, env, 'linux')
+                command += arguments
+                cwd = Path(executable).parent
+            elif game and install.get('adapter') in {'native', 'installer', 'appimage'} and not install.get('command'):
+                cwd = Path(command[0]).parent
         if game and not setup and not original_launcher:
             command = [*command, *self.game_settings.arguments(ident, install)]
         if not Path(command[0]).is_file() or not os.access(command[0], os.X_OK):
@@ -797,6 +867,8 @@ class Launcher:
                 update(message="Aktualizowanie katalogu wydawcy", progress=0)
                 try: self.sync_catalog()
                 except UserError as exc: self.store.put("settings", "catalog_sync", {"time":time.time(), "error":str(exc)})
+            if self.preferences().get('track_catalog_lists', True):
+                self.catalog_lists.sync(update, cancelled)
             sources = self.store.list("sources")
             results = []
             pending = []
@@ -806,6 +878,10 @@ class Launcher:
                 update(message="Sprawdzanie: " + source["name"], progress=round(index / max(len(sources), 1) * 95))
                 if source.get("origin") in {"development", "external"}:
                     results.append({"source_id":source["id"],source['origin']:True})
+                    continue
+                patterns = source.get('assets_by_system', {"linux": source.get('asset_pattern')})
+                if not patterns.get(self.system_key()) and not (self.system_key() == 'linux' and patterns.get('windows') and source.get('kind') != 'emulator'):
+                    results.append({'source_id': source['id'], 'unavailable_on_host': True})
                     continue
                 try:
                     release = self.release(source, refresh=True)

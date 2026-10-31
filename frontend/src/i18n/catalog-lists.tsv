@@ -1,0 +1,45 @@
+Sprawdzanie aktualizacji	Checking for updates	Frissítések keresése
+Instalacje i aktualizacje, w jednym miejscu.	Installations and updates, all in one place.	Telepítések és frissítések egy helyen.
+Xenia / własny adapter	Xenia / custom adapter	Xenia / saját adapter
+Sprawdzanie aktualizacji dodane do kolejki.	Update check queued.	Frissítéskeresés várólistára helyezve.
+Sprawdzanie: {0}	Checking: {0}	Ellenőrzés: {0}
+Aktualizowanie katalogu wydawcy	Updating the publisher catalog	A kiadói katalógus frissítése
+Sprawdzanie wydania GitHub	Checking the GitHub release	A GitHub-kiadás ellenőrzése
+Sprawdzanie sumy kontrolnej	Checking the checksum	Ellenőrzőösszeg ellenőrzése
+Rozpakowywanie portu	Unpacking the port	A port kicsomagolása
+Pobieranie {0}	Downloading {0}	Letöltés: {0}
+Oczekuje w kolejce	Waiting in the queue	Várakozás a sorban
+Rozpoczynanie	Starting	Indítás
+aktywnych zadań	active tasks	aktív feladat
+Śledzone listy projektów	Tracked project lists	Követett projektlisták
+Nowe gry i źródła pojawiają się automatycznie przy sprawdzaniu aktualizacji.	New games and sources appear automatically when checking for updates.	Az új játékok és források automatikusan megjelennek a frissítések keresésekor.
+projektów	projects	projekt
+w katalogu	in the catalog	a katalógusban
+Status „w katalogu” oznacza dodane źródło. Dostępność paczki i przygotowanie gry sprawdzisz w jej szczegółach.	“In the catalog” means a source has been added. Check the game details for packages and setup.	„A katalógusban” azt jelenti, hogy a forrás hozzá van adva. A csomagokat és a beállítást a játék adatlapján találod.
+Automatyczne śledzenie list jest wyłączone w ustawieniach.	Automatic list tracking is disabled in Settings.	Az automatikus listakövetés ki van kapcsolva a Beállításokban.
+Sprawdź listy i dodaj nowe gry	Check lists and add new games	Listák ellenőrzése és új játékok hozzáadása
+Szukaj na śledzonych listach	Search tracked lists	Keresés a követett listákon
+W katalogu	In the catalog	A katalógusban
+Nowe źródło	New source	Új forrás
+Otwórz grę	Open game	Játék megnyitása
+Dodano grę do katalogu.	Game added to the catalog.	A játék hozzáadva a katalógushoz.
+Sprawdzanie list projektów dodane do kolejki.	Project list check queued.	Projektlisták ellenőrzése várólistára helyezve.
+Sprawdzanie list projektów	Checking project lists	Projektlisták ellenőrzése
+Sprawdzanie listy: {0}	Checking list: {0}	Lista ellenőrzése: {0}
+Szukaj źródła	Search sources	Források keresése
+Źródło ze śledzonej listy	Source from a tracked list	Forrás egy követett listáról
+Paczka nieskonfigurowana w RE:COPILE	Package not configured in RE:COPILE	A csomag nincs beállítva a RE:COPILE-ban
+Śledź listy projektów	Track project lists	Projektlisták követése
+Automatycznie dodawaj nowe gry i źródła ze śledzonych list. Pobieranie portów rozpoczynasz przy grze.	Automatically add new games and sources from tracked lists. Start port downloads from the game details.	Új játékok és források automatikus hozzáadása a követett listákról. A port letöltését a játék adatlapján indíthatod.
+Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.	Project found on a tracked list. Installation instructions and current releases are available from the author. Its RE:COPILE package and gameplay have not been verified.	Követett listán talált projekt. A telepítési útmutató és az aktuális kiadások a szerzőnél érhetők el. A RE:COPILE-csomag és a játékmenet nincs ellenőrizve.
+Nie udało się sprawdzić listy projektów. Zachowano jej lokalną kopię.	Could not check the project list. Its local copy was kept.	A projektlista nem ellenőrizhető. A helyi másolat megmaradt.
+Nie udało się odczytać listy projektów. Zachowano poprzednią listę.	Could not read the project list. The previous list was kept.	A projektlista nem olvasható. Az előző lista megmaradt.
+To źródło nie ma jeszcze skonfigurowanej paczki w RE:COPILE. Sprawdź wydania i instrukcję autora.	This source has no package configured in RE:COPILE yet. Check the author's releases and instructions.	Ehhez a forráshoz még nincs csomag beállítva a RE:COPILE-ban. Nézd meg a szerző kiadásait és útmutatóját.
+Ten instalator wymaga Windows. Wybierz paczkę dla swojego systemu.	This installer requires Windows. Choose a package for your system.	Ez a telepítő Windows rendszert igényel. Válassz a rendszeredhez való csomagot.
+sprawdzenie przy pobraniu	checked when downloading	ellenőrzés letöltéskor
+Gry z przypisanym projektem portu. Dostępność i wymagania w szczegółach.	Games with an assigned port project. See details for availability and requirements.	Hozzárendelt portprojekttel rendelkező játékok. Az elérhetőséget és a követelményeket az adatlapon találod.
+Wydanie ma kilka paczek dla tego systemu. Wybierz paczkę w edycji źródła.	The release has several packages for this system. Choose one in the source editor.	A kiadás több csomagot tartalmaz ehhez a rendszerhez. Válassz egyet a forrásszerkesztőben.
+Autor nie opublikował rozpoznanej paczki dla tego systemu. Sprawdź instrukcję lub podłącz własną kompilację.	No recognized package is published for this system. Check the instructions or connect your own build.	Nincs felismert csomag ehhez a rendszerhez. Nézd meg az útmutatót, vagy csatlakoztasd a saját fordításodat.
+Podłącz gotowy plik gry utworzony przez instalator.	Connect the finished game executable created by the installer.	Csatlakoztasd a telepítő által létrehozott kész játékprogramot.
+Pobierz port Windows	Download Windows port	Windows-port letöltése
+Pakiet Windows · uruchamianie przez zainstalowanego Protona lub Wine. Zgodność tej gry na Linuksie nie została potwierdzona.	Windows package · runs through your installed Proton or Wine. This game's Linux compatibility has not been verified.	Windows-csomag · a telepített Proton vagy Wine segítségével fut. A játék Linux-kompatibilitása nincs igazolva.

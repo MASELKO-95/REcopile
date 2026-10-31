@@ -341,6 +341,2284 @@
         "Direct3D 12",
         "compatibility-layer"
       ]
+    },
+    {
+      "id": "futari",
+      "name": "Mushihimesama Futari Recompiled",
+      "repo": "springah/futari_recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "Mushihimesama-Futari-Deck-v*.zip",
+      "assets_by_system": {
+        "linux": "Mushihimesama-Futari-Deck-v*.zip",
+        "windows": "Mushihimesama-Futari-PC-v*.zip"
+      },
+      "executables_by_system": {
+        "linux": "futari",
+        "windows": "futari.exe"
+      },
+      "executable": "futari",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": false,
+      "guide": "https://github.com/springah/futari_recomp#readme",
+      "note": "Provide your own Ver 1.5 game dump. The Windows bundle includes extract_assets.bat for an ISO or console-install folder; follow RUN.txt. Linux uses the prepared assets folder. Local gameplay has not been tested in RE:COPILE.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "project8",
+      "name": "Tony Hawk's Project 8 Recompiled",
+      "repo": "theokyr/Project8Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "Project8Recomp-*-linux-x86_64.zip",
+      "assets_by_system": {
+        "linux": "Project8Recomp-*-linux-x86_64.zip",
+        "windows": "Project8Recomp-*-windows-x86_64.zip"
+      },
+      "executables_by_system": {
+        "linux": "Project8Recomp",
+        "windows": "Project8Recomp.exe"
+      },
+      "executable": "Project8Recomp",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/theokyr/Project8Recomp#readme",
+      "note": "Open the included launcher and select your own supported Xbox 360 disc image. Native Linux package; the author marks Windows experimental and tested through Proton. Local gameplay has not been tested in RE:COPILE.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "tna-impact",
+      "name": "TNA iMPACT! Recompiled",
+      "repo": "dotGrx/TNA-IMPACT-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "TNA-Impact-Recomp-*-win-x64.zip",
+      "assets_by_system": {
+        "windows": "TNA-Impact-Recomp-*-win-x64.zip"
+      },
+      "executables_by_system": {
+        "windows": "TNAImpactLauncher.exe"
+      },
+      "executable": "TNAImpactLauncher.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/dotGrx/TNA-IMPACT-Recomp#readme",
+      "note": "The original launcher accepts your own supported Xbox 360 ISO or extracted game folder. Windows x64, AVX2 and Direct3D 12. No project license file was found in the reviewed repository; hub installation stays blocked until the author provides one. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "rayman3-hd",
+      "name": "Rayman 3 HD Recompiled",
+      "repo": "MysteriousAeon/rayman3-hd-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "Rayman3HDRecompiled-*-portable.zip",
+      "assets_by_system": {
+        "windows": "Rayman3HDRecompiled-*-portable.zip"
+      },
+      "executables_by_system": {
+        "windows": "r3hd_launcher.exe"
+      },
+      "executable": "r3hd_launcher.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/MysteriousAeon/rayman3-hd-recompiled#readme",
+      "note": "The portable release includes the original settings launcher and its own Xbox 360 package intake. Follow PORTABLE.txt for the first-run Play.cmd setup and your own game package, then use the included launcher. Windows x64; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "madden08",
+      "name": "Madden NFL 08 Recompiled",
+      "repo": "anishchandra24/MaddenNFL08-Recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "MaddenNFL08-Recompiled-Setup.exe",
+      "assets_by_system": {
+        "windows": "MaddenNFL08-Recompiled-Setup.exe"
+      },
+      "executables_by_system": {
+        "windows": "MaddenNFL08-Recompiled-Setup.exe"
+      },
+      "executable": "MaddenNFL08-Recompiled-Setup.exe",
+      "adapter": "installer",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/anishchandra24/MaddenNFL08-Recompiled#readme",
+      "note": "Run the original Windows setup and provide your own supported Xbox 360 copy. The author installer prepares/builds the game; connect its resulting executable afterwards. Pre-release; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "wwe-svr2009",
+      "name": "WWE SmackDown vs. Raw 2009 Recompiled",
+      "repo": "nefariousjosiah/WWE-SVR2009-RECOMP",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "SVR2009-NATIVE.zip",
+      "assets_by_system": {
+        "windows": "SVR2009-NATIVE.zip"
+      },
+      "executables_by_system": {
+        "windows": "svr2009.exe"
+      },
+      "executable": "svr2009.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": false,
+      "guide": "https://github.com/nefariousjosiah/WWE-SVR2009-RECOMP#readme",
+      "note": "Provide your own supported Xbox 360 ISO beside svr2009.exe, as described by the author. The distributed program is Windows; Linux/Steam Deck use Proton. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "wwe-svr2010",
+      "name": "WWE SmackDown vs. Raw 2010 Recompiled",
+      "repo": "nefariousjosiah/WWE-SVR2010-RECOMP",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "SVR2010-NATIVE.zip",
+      "assets_by_system": {
+        "windows": "SVR2010-NATIVE.zip"
+      },
+      "executables_by_system": {
+        "windows": "svr2010.exe"
+      },
+      "executable": "svr2010.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": false,
+      "guide": "https://github.com/nefariousjosiah/WWE-SVR2010-RECOMP#readme",
+      "note": "Provide your own supported Xbox 360 ISO beside svr2010.exe, as described by the author. The distributed program is Windows; Linux/Steam Deck use Proton. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "wwe12",
+      "name": "WWE '12 Recompiled",
+      "repo": "iMrBurn/wwe12-pc",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "WWE12-PC-v*-beta.zip",
+      "assets_by_system": {
+        "windows": "WWE12-PC-v*-beta.zip"
+      },
+      "executables_by_system": {
+        "windows": "WWE12 Launcher.exe"
+      },
+      "executable": "WWE12 Launcher.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/iMrBurn/wwe12-pc#readme",
+      "note": "The original launcher uses your own Xbox 360 ISO or extracted game files in game/. Windows x64 with Vulkan. Android assets are not selected. Beta; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "openjam",
+      "name": "NBA Jam: On Fire Edition Recompiled",
+      "repo": "GTTeancum/OpenJam",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "OpenJam-*-win64.zip",
+      "assets_by_system": {
+        "windows": "OpenJam-*-win64.zip"
+      },
+      "executables_by_system": {
+        "windows": "NBA JAM Mod Manager.exe"
+      },
+      "executable": "NBA JAM Mod Manager.exe",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/GTTeancum/OpenJam#readme",
+      "note": "Open the original mod manager with your own Xbox Live Arcade container. No project license file was found in the reviewed repository; hub installation stays blocked until the author provides one. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "stuntman-ignition",
+      "name": "Stuntman: Ignition Recompiled",
+      "repo": "giangra/stuntdouble-reignition",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "StuntmanSetup-*.exe",
+      "assets_by_system": {
+        "windows": "StuntmanSetup-*.exe"
+      },
+      "executables_by_system": {
+        "windows": "StuntmanSetup-*.exe"
+      },
+      "executable": "StuntmanSetup-*.exe",
+      "adapter": "installer",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/giangra/stuntdouble-reignition#readme",
+      "note": "The original Windows setup accepts your own Xbox 360 ISO and builds the game on your PC. Its build-tool setup can require administrator approval and substantial disk space. Connect the finished game executable afterwards. Early development; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "naruto-rise",
+      "name": "Naruto: Rise of a Ninja Recompiled",
+      "repo": "jorjbarbosa/naruto-rise-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "NarutoRise-*-Linux-x86_64.AppImage",
+      "assets_by_system": {
+        "linux": "NarutoRise-*-Linux-x86_64.AppImage",
+        "windows": "naruto-rise-recomp-win-amd64.zip"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "narutorise.exe"
+      },
+      "executable": "",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/jorjbarbosa/naruto-rise-recomp#readme",
+      "note": "The original program accepts your own supported Xbox 360 ISO or full game folder. The current native Linux AppImage requires glibc 2.43 or newer; Windows ZIP through Proton is an author-documented alternative. Work in progress; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "the-darkness",
+      "name": "The Darkness Recompiled",
+      "repo": "portingpete/The-Darkness-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "The-Darkness-Recomp-*-steam-deck-x86_64.AppImage",
+      "assets_by_system": {
+        "linux": "The-Darkness-Recomp-*-steam-deck-x86_64.AppImage",
+        "windows": "The-Darkness-Recomp-*-windows-x64.zip"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "DarkRecomp.exe"
+      },
+      "executable": "",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": false,
+      "guide": "https://github.com/portingpete/The-Darkness-Recomp#readme",
+      "note": "Uses your own supported extracted Xbox 360 game folder; an ISO alone is insufficient. Follow the original package instructions for the Darkness/ folder and audio launchers. The Steam Deck AppImage is a compatibility package; do not infer a native Linux renderer. Pre-release; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "wet",
+      "name": "WET Recompiled",
+      "repo": "nikolaygorb/WetRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "wet-recomp-lin64.zip",
+      "assets_by_system": {
+        "linux": "wet-recomp-lin64.zip",
+        "windows": "wet-recomp-win64.zip"
+      },
+      "executables_by_system": {
+        "linux": "wetrecomp",
+        "windows": "wetrecomp.exe"
+      },
+      "executable": "wetrecomp",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": false,
+      "guide": "https://github.com/nikolaygorb/WetRecomp#readme",
+      "note": "Requires your own supported Xbox 360 game files extracted into assets/, according to the author README. The published archives are separate Linux and Windows builds. Game-data preparation is currently manual; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "earthworm-jim-hd",
+      "name": "Earthworm Jim HD Recompiled",
+      "repo": "TekRantGaming/earthworm-jim-hd-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "EarthwormJimHD-*-linux-x86_64.AppImage",
+      "assets_by_system": {
+        "linux": "EarthwormJimHD-*-linux-x86_64.AppImage",
+        "windows": "EarthwormJimHD-*-windows-x64.zip"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "earthworm_jim_hd.exe"
+      },
+      "executable": "",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/TekRantGaming/earthworm-jim-hd-recompiled#readme",
+      "note": "The original launcher imports your own exact supported Xbox Live Arcade package. No project license file was found in the reviewed repository; hub installation stays blocked until the author provides one. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "geometry-wars-2",
+      "name": "Geometry Wars: Retro Evolved 2 Recompiled",
+      "repo": "saulob/geometry-wars-retro-evolved-2-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "GeometryWarsRetroEvolved2Recompiled-*-x86_64.AppImage",
+      "assets_by_system": {
+        "linux": "GeometryWarsRetroEvolved2Recompiled-*-x86_64.AppImage",
+        "windows": "GeometryWarsRetroEvolved2-*-windows-x64.zip"
+      },
+      "executables_by_system": {
+        "linux": "",
+        "windows": "geometry_wars_retro_evolved_2.exe"
+      },
+      "executable": "",
+      "adapter": "native",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/saulob/geometry-wars-retro-evolved-2-recompiled#readme",
+      "note": "The original launcher imports your own supported Xbox Live Arcade package. The author marks the native Linux/Steam Deck AppImage experimental. Local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "vigilante8",
+      "name": "Vigilante 8 Arcade Recompiled",
+      "repo": "sp00nznet/vig8",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "asset_pattern": "Vig8-Installer-windows-x64.exe",
+      "assets_by_system": {
+        "windows": "Vig8-Installer-windows-x64.exe"
+      },
+      "executables_by_system": {
+        "windows": "Vig8-Installer-windows-x64.exe"
+      },
+      "executable": "Vig8-Installer-windows-x64.exe",
+      "adapter": "installer",
+      "verified": true,
+      "auto_update": false,
+      "setup_launcher": true,
+      "guide": "https://github.com/sp00nznet/vig8#readme",
+      "note": "The original Windows installer prepares/builds the game from your own Xbox Live Arcade package. Connect its finished game executable afterwards. Alpha; multiplayer has not been fully retested by the author; local gameplay untested.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "scan_releases": true,
+      "allow_prerelease": true
+    },
+    {
+      "id": "list-33ada00548d06ca780b2",
+      "name": "Crazy Taxi",
+      "repo": "sp00nznet/ctxbla",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/sp00nznet/ctxbla",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-686e8a84e7f62e995440",
+      "name": "The Simpsons Arcade",
+      "repo": "sp00nznet/simpsonsarcade",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/sp00nznet/simpsonsarcade",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-cff34a74298d2792f72c",
+      "name": "Naughty Bear",
+      "repo": "MaxDeadBear/NaughtyBear_ReStuff",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/MaxDeadBear/NaughtyBear_ReStuff",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-1f637bd435fe14cd3b07",
+      "name": "Lollipop Chainsaw",
+      "repo": "MaxDeadBear/Re-Cherry",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/MaxDeadBear/Re-Cherry",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-8f1300f2460d8f35c1f9",
+      "name": "Banjo-Kazooie: Nuts & Bolts",
+      "repo": "masterspike52/reNut",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/masterspike52/reNut",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-9b2b8b2b7e0774a2962f",
+      "name": "Viva Piñata: Trouble in Paradise",
+      "repo": "SolarCookies/TiP-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/SolarCookies/TiP-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e1a89444cf979afaace7",
+      "name": "GoldenEye 007",
+      "repo": "SunJaycy/GoldenEye-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/SunJaycy/GoldenEye-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-c48df9d19b1276e45541",
+      "name": "Blue Dragon (re:Blue)",
+      "repo": "zolaware/reblue",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/zolaware/reblue",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e960c7d83a4ea39c0f87",
+      "name": "Lost Odyssey",
+      "repo": "freefrank/LostOdysseyRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/freefrank/LostOdysseyRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-2442854eceec23658edf",
+      "name": "Ninja Gaiden II",
+      "repo": "FermataRest/Ninja-s-Dawn-A-Ninja-Gaiden-2-Recompilation-Project",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/FermataRest/Ninja-s-Dawn-A-Ninja-Gaiden-2-Recompilation-Project",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-63a987a52dfb70cc05c7",
+      "name": "Ace Combat 6: Fires of Liberation",
+      "repo": "sal063/AC6_recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/sal063/AC6_recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-f6a53f73edfae62293cd",
+      "name": "Crackdown",
+      "repo": "Unowa001/crackdown-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Unowa001/crackdown-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e90ca41647748cd97b17",
+      "name": "Crackdown 2",
+      "repo": "matty45/Crackdown2-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/matty45/Crackdown2-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-f079f2d884c5f53e0593",
+      "name": "Dante's Inferno",
+      "repo": "florinp93/hells-gate-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/florinp93/hells-gate-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-cd080910249f3128b78f",
+      "name": "Castlevania: Symphony of the Night",
+      "repo": "birabittoh/NocturneRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/birabittoh/NocturneRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ccee2912cdc5d7b99875",
+      "name": "Fable II",
+      "repo": "Fable2Recomp/Fable2Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Fable2Recomp/Fable2Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-a7fe35b3a25a7552d505",
+      "name": "Project Gotham Racing 4",
+      "repo": "beatrixzy/PGR4-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/beatrixzy/PGR4-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-7d6069946928019af07e",
+      "name": "DoDonPachi SaiDaiOuJou",
+      "repo": "eandis/SDOJ-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/eandis/SDOJ-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-39dbb99ffa7d2110a496",
+      "name": "Silent Hill: Downpour",
+      "repo": "LittleBitUA/DownpourRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/LittleBitUA/DownpourRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-3fc2d5bc48f4351769a9",
+      "name": "Daytona USA",
+      "repo": "Subarasheese/daytona-xbla-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Subarasheese/daytona-xbla-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-2f09b8ebac0b563c97e0",
+      "name": "Condemned 2: Bloodshot",
+      "repo": "psxrestore/Condemned2Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/psxrestore/Condemned2Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-b136d05a5bf9c2983a7c",
+      "name": "Dragon Ball Z: Budokai HD Collection",
+      "repo": "WistfulHopes/DBZ1",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/WistfulHopes/DBZ1",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ffc8e68ddcc6664e38d7",
+      "name": "Dragon Ball: Raging Blast 2",
+      "repo": "WistfulHopes/RB2",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/WistfulHopes/RB2",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-917ceb7dff1834033757",
+      "name": "Halo 3 (cache build)",
+      "repo": "twist84/halo3_cache_release_recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/twist84/halo3_cache_release_recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-83e5e0bda8836c1aac9a",
+      "name": "LEGO Dimensions",
+      "repo": "NeverCookFirst/DimensionsRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/NeverCookFirst/DimensionsRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e88f69992d698446ad2d",
+      "name": "Fable II (ReXGlue)",
+      "repo": "himdo/Fable-2-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/himdo/Fable-2-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-7ca375319653a01599eb",
+      "name": "Deadly Premonition",
+      "repo": "LittleBitUA/DPRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/LittleBitUA/DPRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ab9487dcfdf0ee226779",
+      "name": "Spider-Man: Edge of Time",
+      "repo": "goliathret/EdgeOfTimeRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/goliathret/EdgeOfTimeRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-b2f752a89ad390fbe1c5",
+      "name": "Peter Jackson's King Kong",
+      "repo": "TekRantGaming/king-kong-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/TekRantGaming/king-kong-recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-79310fa419a4e87525ec",
+      "name": "Dragon Ball Z: Budokai 3 HD Collection",
+      "repo": "novapowers0/DBZ-Budokai-3-HD-Collection",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/novapowers0/DBZ-Budokai-3-HD-Collection",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-a3bbf880ac346523e5ce",
+      "name": "Burnout Revenge",
+      "repo": "shipa-2/Xerenge",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/shipa-2/Xerenge",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-d356f105717e54262f3f",
+      "name": "Midnight Club: Los Angeles",
+      "repo": "holdmysocks/mcla-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/holdmysocks/mcla-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-84a5190737768bba71df",
+      "name": "WWE SmackDown vs. Raw 2011",
+      "repo": "KaikoClanworth1/wwe-svr2011-pc",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/KaikoClanworth1/wwe-svr2011-pc",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-2e0d636b701abe8618b8",
+      "name": "Forza Motorsport 4",
+      "repo": "Alexbeav/fm4-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Alexbeav/fm4-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ebd542468e57554db279",
+      "name": "Ridge Racer 6",
+      "repo": "Sirhalo23/RidgeRacer6-Recompilation",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Sirhalo23/RidgeRacer6-Recompilation",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-3eebd1e3c795da2ed0ef",
+      "name": "Grand Theft Auto IV",
+      "repo": "KoreanSeats1/Theft4",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/KoreanSeats1/Theft4",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-27d0d0d236d38d57e8b4",
+      "name": "Army of Two",
+      "repo": "OpenPortroid/ArmyOfTwoRecompilation",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/OpenPortroid/ArmyOfTwoRecompilation",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-59741df312ed9746157a",
+      "name": "Forza Horizon 2",
+      "repo": "Gabrick75/fh2-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Gabrick75/fh2-recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-3da951e91454f0ce7209",
+      "name": "Dragon Ball Z: Burst Limit",
+      "repo": "iExplosiveRage/DBZ-Burst-Limit-Recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/iExplosiveRage/DBZ-Burst-Limit-Recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-980e93142320883d070d",
+      "name": "Need for Speed: Carbon",
+      "repo": "codepdbh/NFS-CARBON-360-ANDROID-RECOMP",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/codepdbh/NFS-CARBON-360-ANDROID-RECOMP",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-c1c9d5770b1e720d2443",
+      "name": "Kameo: Elements of Power",
+      "repo": "MaxDeadBear/KameoRePowered",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/MaxDeadBear/KameoRePowered",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-d46b2c06c0336a26d9e4",
+      "name": "Skate 2",
+      "repo": "christianortel/skate2-recompile-pc",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/christianortel/skate2-recompile-pc",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-4c4380926339ad9b82b1",
+      "name": "GoldenEye 007 Remastered",
+      "repo": "CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-811f447f10ad17c87e45",
+      "name": "Asura's Wrath",
+      "repo": "PauloUbirajara/asuras-wrath-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/PauloUbirajara/asuras-wrath-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-6fffd950edb290fbb404",
+      "name": "Rockstar Games presents Table Tennis",
+      "repo": "davidptrssvea/Table-Tennis-Rockstar-PC",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/davidptrssvea/Table-Tennis-Rockstar-PC",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ba2197deb6f3737d1b9e",
+      "name": "Perfect Dark Zero",
+      "repo": "nikolaygorb/PerfectDarkZeroRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/nikolaygorb/PerfectDarkZeroRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-bf3978ad2e3c9efa8c8e",
+      "name": "50 Cent: Blood on the Sand",
+      "repo": "nlwstein/skullburglar",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/nlwstein/skullburglar",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-bcecbe06c08a1f6d172c",
+      "name": "Super Street Fighter II Turbo HD Remix",
+      "repo": "saulob/ssf2t-hd-remix-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/saulob/ssf2t-hd-remix-recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-84b49a7f14dc233fabe6",
+      "name": "Spider-Man: Web of Shadows",
+      "repo": "toowasmir/WebOfShadowsRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/toowasmir/WebOfShadowsRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-a013db4419724bfcae38",
+      "name": "Hard Corps: Uprising",
+      "repo": "saulob/hard-corps-uprising-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/saulob/hard-corps-uprising-recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-fbacca9b12ea4990ba33",
+      "name": "Gears of War 2",
+      "repo": "santiquiroz/gears-of-war-2-pc-port",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/santiquiroz/gears-of-war-2-pc-port",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-7cc5fc671af719423d3c",
+      "name": "Metal Slug XX",
+      "repo": "FluffyQuack/rexglue-MetalSlugXX",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/FluffyQuack/rexglue-MetalSlugXX",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e82c0f38a05c1b86deee",
+      "name": "WWE All Stars",
+      "repo": "shaneomac1337/WWE-AllStars-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/shaneomac1337/WWE-AllStars-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-4f31f21077080b94971c",
+      "name": "Perfect Dark Remaster",
+      "repo": "nikolaygorb/PerfectDarkRemasterRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/nikolaygorb/PerfectDarkRemasterRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-7de460573cccedb91fa1",
+      "name": "Tekken 6",
+      "repo": "mahmoud-mess/tekken6-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/mahmoud-mess/tekken6-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-a867dbd18467a29f392d",
+      "name": "Minecraft: Xbox 360 Edition",
+      "repo": "DevZer0D4Y/MCX360-EDITION",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/DevZer0D4Y/MCX360-EDITION",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-eb0f43dd218020cba006",
+      "name": "Crash: Mind Over Mutant",
+      "repo": "Maxilure/MindOver-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Maxilure/MindOver-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-48e791d36ffdd58c62d9",
+      "name": "Sonic the Hedgehog (2006)",
+      "repo": "sonicnext-dev/MarathonRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/sonicnext-dev/MarathonRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-d3bc5977e1f98eb861ee",
+      "name": "The Simpsons Game",
+      "repo": "YesterMester/TheSimpsonsGameRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/YesterMester/TheSimpsonsGameRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-aa459175ef65cc064cda",
+      "name": "Test Drive Unlimited",
+      "repo": "testdriveupgrade/TDURecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/testdriveupgrade/TDURecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e167bb768fe332b29253",
+      "name": "Sonic Free Riders",
+      "repo": "YuutaTsubasa/Free-Riders-Recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/YuutaTsubasa/Free-Riders-Recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-4eea4eace001ffb8ac58",
+      "name": "Dead Rising 2: Case Zero",
+      "repo": "wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-1fdc5a839b8f486a8f9b",
+      "name": "Need for Speed: Most Wanted (2005)",
+      "repo": "SpeedBreakerProject/speedbreaker",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/SpeedBreakerProject/speedbreaker",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-16df83643778bb3898c0",
+      "name": "Call of Duty 3",
+      "repo": "FrankHUN88453/CoD3Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/FrankHUN88453/CoD3Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-19c5272b91c527cd5875",
+      "name": "Dead Rising 2: Case West",
+      "repo": "wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-21a3bf9f77a74de21c20",
+      "name": "Tekken Tag Tournament 2",
+      "repo": "shihabal3amri/tekken-tag-tournament-2-pc",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/shihabal3amri/tekken-tag-tournament-2-pc",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-47f0336166268d7f7064",
+      "name": "Splatterhouse (2010)",
+      "repo": "0c0de/splatterhouse-decomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/0c0de/splatterhouse-decomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-2364be60e33704a52de1",
+      "name": "Crash of the Titans",
+      "repo": "VitoMiguelF/crashott-pc",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/VitoMiguelF/crashott-pc",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-75616dc957534f194643",
+      "name": "Eternal Sonata",
+      "repo": "birabittoh/EternalSonataReprise",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/birabittoh/EternalSonataReprise",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-58c7e18397bc9974529f",
+      "name": "Forza Horizon",
+      "repo": "Dyotson/ForzaHorizon1-ReImagined",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Dyotson/ForzaHorizon1-ReImagined",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-28d2fbf28ecbb82464d3",
+      "name": "Forza Motorsport 2",
+      "repo": "0herculabs/hl360-Forza2",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/0herculabs/hl360-Forza2",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-bfba78bf98a9d6e817d0",
+      "name": "Forza Motorsport 3",
+      "repo": "0herculabs/hl360-forza3",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/0herculabs/hl360-forza3",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-3c99c7df358276983591",
+      "name": "Forza Motorsport 4",
+      "repo": "0herculabs/hl360-forza4",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/0herculabs/hl360-forza4",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-7accd1592a812f2f5b3a",
+      "name": "Midnight Club: Los Angeles",
+      "repo": "mzzvxm/LARecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/mzzvxm/LARecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e58a7ef8de6c831f0108",
+      "name": "Naruto Shippuden: Ultimate Ninja Storm Generations",
+      "repo": "Masterllgod/naruto-storm-generations-port-nativo",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Masterllgod/naruto-storm-generations-port-nativo",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-e133bd782765b4242562",
+      "name": "Need for Speed: Most Wanted",
+      "repo": "madelrandel-blip/NFSMW-Recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/madelrandel-blip/NFSMW-Recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-46a01d5c73b5f8e4889e",
+      "name": "The Darkness",
+      "repo": "invinceble55-wq/Estacado-The-Darkness-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/invinceble55-wq/Estacado-The-Darkness-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ced6b5ec8fc67eb06606",
+      "name": "WWE 2K14",
+      "repo": "PromethenDev/wwe2k14-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/PromethenDev/wwe2k14-recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-3e77644d6d6f5cb46357",
+      "name": "Ace Combat 6: Fires of Liberation",
+      "repo": "rapidsamphire/AC6Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/rapidsamphire/AC6Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-715cd3d9d0aeb02abbbb",
+      "name": "Mortal Kombat vs. DC Universe",
+      "repo": "KawaiiBunga/MKVDCU-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/KawaiiBunga/MKVDCU-Recomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-14d2bdf915ee2144a6d4",
+      "name": "Naruto Shippuden: Ultimate Ninja Storm 3 Full Burst",
+      "repo": "Masterllgod/naruto-storm-3-full-burst-port-nativo",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Masterllgod/naruto-storm-3-full-burst-port-nativo",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-cd2b2b60886c8d7584a8",
+      "name": "Ninja Gaiden II",
+      "repo": "TheSaltTrader/Ninja-s-Dawn---A-Ninja-Gaiden-2-Recompilation-Project",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/TheSaltTrader/Ninja-s-Dawn---A-Ninja-Gaiden-2-Recompilation-Project",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ea767c1f917377ec70f4",
+      "name": "Call of Duty: Modern Warfare 2",
+      "repo": "PaulCombal/mw2-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/PaulCombal/mw2-recompiled",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-ebf0d805ed1fa217378e",
+      "name": "Tekken 6",
+      "repo": "Ekspym/Tekken6-native-online",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Ekspym/Tekken6-native-online",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-b79e103fe068fec467af",
+      "name": "Call of Duty 3",
+      "repo": "zenit2893-cmyk/project-1944",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/zenit2893-cmyk/project-1944",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-8ae86e94a140a51640db",
+      "name": "FIFA Street (2012)",
+      "repo": "samuelit0davila/fifa-street-pc-port",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/samuelit0davila/fifa-street-pc-port",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-82f77ddf5cf61c146aa6",
+      "name": "Guitar Hero: Warriors of Rock",
+      "repo": "ronniecloud/re-wor",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/ronniecloud/re-wor",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
+    },
+    {
+      "id": "list-a78c40b8245c96055ec4",
+      "name": "Grand Theft Auto IV",
+      "repo": "OZORDI/LibertyRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/OZORDI/LibertyRecomp",
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "discover_packages": true
     }
   ],
   "featured": [
@@ -363,7 +2641,8 @@
       "rank": 2,
       "source_ids": [
         "pinyon",
-        "pinyon-linux"
+        "pinyon-linux",
+        "list-58c7e18397bc9974529f"
       ]
     },
     {
@@ -373,7 +2652,10 @@
       "cover": "gears-of-war-2.jpg",
       "year": 2008,
       "genre": "Akcja",
-      "rank": 3
+      "rank": 3,
+      "source_ids": [
+        "list-fbacca9b12ea4990ba33"
+      ]
     },
     {
       "platform": "xbox360",
@@ -501,7 +2783,8 @@
       "source_ids": [
         "fh2-recomp",
         "fh2-recomp-shreyash",
-        "fh2-recomp-maselko"
+        "fh2-recomp-maselko",
+        "list-59741df312ed9746157a"
       ],
       "development_status": "in_progress",
       "test_notes": "Linux, 2026-10-22: manual driving and festival arrival observed in the research fork. Material/lighting artifacts, soft output, low frame rates and stutters remain. Race completion, sustained career play and a complete save/reload cycle are unverified."
@@ -517,6 +2800,867 @@
         "fh2-azimuth"
       ],
       "test_notes": "Azimuth is a separate Xbox One wrapper, downloaded from Almost There Games. The author lists Windows 10/11 and Linux through Proton. Local gameplay has not been validated in RE:COPILE."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Mushihimesama Futari Ver 1.5",
+      "title": "Mushihimesama Futari",
+      "rank": 100,
+      "source_ids": [
+        "futari"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Tony Hawk's Project 8",
+      "title": "Tony Hawk's Project 8",
+      "rank": 100,
+      "source_ids": [
+        "project8"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "TNA Impact! Total Nonstop Action Wrestling",
+      "title": "TNA iMPACT!",
+      "rank": 100,
+      "source_ids": [
+        "tna-impact"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Rayman 3 HD",
+      "title": "Rayman 3 HD",
+      "rank": 100,
+      "source_ids": [
+        "rayman3-hd"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Madden NFL 08",
+      "title": "Madden NFL 08",
+      "rank": 100,
+      "source_ids": [
+        "madden08"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE SmackDown vs. Raw 2009",
+      "title": "WWE SmackDown vs. Raw 2009",
+      "rank": 100,
+      "source_ids": [
+        "wwe-svr2009"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE SmackDown vs. Raw 2010",
+      "title": "WWE SmackDown vs. Raw 2010",
+      "rank": 100,
+      "source_ids": [
+        "wwe-svr2010"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE '12",
+      "title": "WWE '12",
+      "rank": 100,
+      "source_ids": [
+        "wwe12"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "NBA JAM - On Fire Edition",
+      "title": "NBA Jam: On Fire Edition",
+      "rank": 100,
+      "source_ids": [
+        "openjam"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Stuntman - Ignition",
+      "title": "Stuntman: Ignition",
+      "rank": 100,
+      "source_ids": [
+        "stuntman-ignition"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Naruto - Rise of a Ninja",
+      "title": "Naruto: Rise of a Ninja",
+      "rank": 100,
+      "source_ids": [
+        "naruto-rise"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Darkness, The",
+      "title": "The Darkness",
+      "rank": 100,
+      "source_ids": [
+        "the-darkness",
+        "list-46a01d5c73b5f8e4889e"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Wet",
+      "title": "WET",
+      "rank": 100,
+      "source_ids": [
+        "wet"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Earthworm Jim HD",
+      "title": "Earthworm Jim HD",
+      "rank": 100,
+      "source_ids": [
+        "earthworm-jim-hd"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Geometry Wars - Retro Evolved 2",
+      "title": "Geometry Wars: Retro Evolved 2",
+      "rank": 100,
+      "source_ids": [
+        "geometry-wars-2"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Vigilante 8 Arcade",
+      "title": "Vigilante 8 Arcade",
+      "rank": 100,
+      "source_ids": [
+        "vigilante8"
+      ],
+      "test_notes": "Catalog/package metadata checked against the author on 2026-10-30. No local gameplay test has been performed."
+    },
+    {
+      "platform": "xbox360",
+      "match": "Crazy Taxi",
+      "title": "Crazy Taxi",
+      "rank": 100,
+      "source_ids": [
+        "list-33ada00548d06ca780b2"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Simpsons Arcade Game, The",
+      "title": "The Simpsons Arcade",
+      "rank": 100,
+      "source_ids": [
+        "list-686e8a84e7f62e995440"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Naughty Bear",
+      "title": "Naughty Bear",
+      "rank": 100,
+      "source_ids": [
+        "list-cff34a74298d2792f72c"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Lollipop Chainsaw",
+      "title": "Lollipop Chainsaw",
+      "rank": 100,
+      "source_ids": [
+        "list-1f637bd435fe14cd3b07"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Banjo-Kazooie - Nuts & Bolts",
+      "title": "Banjo-Kazooie: Nuts & Bolts",
+      "rank": 100,
+      "source_ids": [
+        "list-8f1300f2460d8f35c1f9"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Viva Pinata - Trouble in Paradise",
+      "title": "Viva Piñata: Trouble in Paradise",
+      "rank": 100,
+      "source_ids": [
+        "list-9b2b8b2b7e0774a2962f"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "GoldenEye 007",
+      "title": "GoldenEye 007",
+      "rank": 100,
+      "source_ids": [
+        "list-e1a89444cf979afaace7"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Blue Dragon (re:Blue)",
+      "title": "Blue Dragon (re:Blue)",
+      "rank": 100,
+      "source_ids": [
+        "list-c48df9d19b1276e45541"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Lost Odyssey",
+      "title": "Lost Odyssey",
+      "rank": 100,
+      "source_ids": [
+        "list-e960c7d83a4ea39c0f87"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Ninja Gaiden II",
+      "title": "Ninja Gaiden II",
+      "rank": 100,
+      "source_ids": [
+        "list-2442854eceec23658edf",
+        "list-cd2b2b60886c8d7584a8"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Ace Combat 6 - Fires of Liberation",
+      "title": "Ace Combat 6: Fires of Liberation",
+      "rank": 100,
+      "source_ids": [
+        "list-63a987a52dfb70cc05c7",
+        "list-3e77644d6d6f5cb46357"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Crackdown",
+      "title": "Crackdown",
+      "rank": 100,
+      "source_ids": [
+        "list-f6a53f73edfae62293cd"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Crackdown 2",
+      "title": "Crackdown 2",
+      "rank": 100,
+      "source_ids": [
+        "list-e90ca41647748cd97b17"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dante's Inferno",
+      "title": "Dante's Inferno",
+      "rank": 100,
+      "source_ids": [
+        "list-f079f2d884c5f53e0593"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Castlevania - Symphony of the Night",
+      "title": "Castlevania: Symphony of the Night",
+      "rank": 100,
+      "source_ids": [
+        "list-cd080910249f3128b78f"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Fable II",
+      "title": "Fable II",
+      "rank": 100,
+      "source_ids": [
+        "list-ccee2912cdc5d7b99875"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Project Gotham Racing 4",
+      "title": "Project Gotham Racing 4",
+      "rank": 100,
+      "source_ids": [
+        "list-a7fe35b3a25a7552d505"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "DoDonPachi Saidaioujou",
+      "title": "DoDonPachi SaiDaiOuJou",
+      "rank": 100,
+      "source_ids": [
+        "list-7d6069946928019af07e"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Silent Hill - Downpour",
+      "title": "Silent Hill: Downpour",
+      "rank": 100,
+      "source_ids": [
+        "list-39dbb99ffa7d2110a496"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Daytona USA",
+      "title": "Daytona USA",
+      "rank": 100,
+      "source_ids": [
+        "list-3fc2d5bc48f4351769a9"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Condemned 2 - Bloodshot",
+      "title": "Condemned 2: Bloodshot",
+      "rank": 100,
+      "source_ids": [
+        "list-2f09b8ebac0b563c97e0"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dragon Ball Z - Budokai HD Collection",
+      "title": "Dragon Ball Z: Budokai HD Collection",
+      "rank": 100,
+      "source_ids": [
+        "list-b136d05a5bf9c2983a7c"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dragon Ball - Raging Blast 2",
+      "title": "Dragon Ball: Raging Blast 2",
+      "rank": 100,
+      "source_ids": [
+        "list-ffc8e68ddcc6664e38d7"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Halo 3 (cache build)",
+      "title": "Halo 3 (cache build)",
+      "rank": 100,
+      "source_ids": [
+        "list-917ceb7dff1834033757"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "LEGO Dimensions",
+      "title": "LEGO Dimensions",
+      "rank": 100,
+      "source_ids": [
+        "list-83e5e0bda8836c1aac9a"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Fable II (ReXGlue)",
+      "title": "Fable II (ReXGlue)",
+      "rank": 100,
+      "source_ids": [
+        "list-e88f69992d698446ad2d"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Deadly Premonition",
+      "title": "Deadly Premonition",
+      "rank": 100,
+      "source_ids": [
+        "list-7ca375319653a01599eb"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Spider-Man - Edge of Time",
+      "title": "Spider-Man: Edge of Time",
+      "rank": 100,
+      "source_ids": [
+        "list-ab9487dcfdf0ee226779"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Peter Jackson's King Kong",
+      "title": "Peter Jackson's King Kong",
+      "rank": 100,
+      "source_ids": [
+        "list-b2f752a89ad390fbe1c5"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dragon Ball Z: Budokai 3 HD Collection",
+      "title": "Dragon Ball Z: Budokai 3 HD Collection",
+      "rank": 100,
+      "source_ids": [
+        "list-79310fa419a4e87525ec"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Burnout Revenge",
+      "title": "Burnout Revenge",
+      "rank": 100,
+      "source_ids": [
+        "list-a3bbf880ac346523e5ce"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Midnight Club - Los Angeles",
+      "title": "Midnight Club: Los Angeles",
+      "rank": 100,
+      "source_ids": [
+        "list-d356f105717e54262f3f",
+        "list-7accd1592a812f2f5b3a"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE SmackDown vs. Raw 2011",
+      "title": "WWE SmackDown vs. Raw 2011",
+      "rank": 100,
+      "source_ids": [
+        "list-84a5190737768bba71df"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Forza Motorsport 4",
+      "title": "Forza Motorsport 4",
+      "rank": 100,
+      "source_ids": [
+        "list-2e0d636b701abe8618b8",
+        "list-3c99c7df358276983591"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Ridge Racer 6",
+      "title": "Ridge Racer 6",
+      "rank": 100,
+      "source_ids": [
+        "list-ebd542468e57554db279"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Grand Theft Auto IV",
+      "title": "Grand Theft Auto IV",
+      "rank": 100,
+      "source_ids": [
+        "list-3eebd1e3c795da2ed0ef",
+        "list-a78c40b8245c96055ec4"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Army of Two",
+      "title": "Army of Two",
+      "rank": 100,
+      "source_ids": [
+        "list-27d0d0d236d38d57e8b4"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dragon Ball Z - Burst Limit",
+      "title": "Dragon Ball Z: Burst Limit",
+      "rank": 100,
+      "source_ids": [
+        "list-3da951e91454f0ce7209"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Need for Speed - Carbon",
+      "title": "Need for Speed: Carbon",
+      "rank": 100,
+      "source_ids": [
+        "list-980e93142320883d070d"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Kameo - Elements of Power",
+      "title": "Kameo: Elements of Power",
+      "rank": 100,
+      "source_ids": [
+        "list-c1c9d5770b1e720d2443"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Skate 2",
+      "title": "Skate 2",
+      "rank": 100,
+      "source_ids": [
+        "list-d46b2c06c0336a26d9e4"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "GoldenEye 007 Remastered",
+      "title": "GoldenEye 007 Remastered",
+      "rank": 100,
+      "source_ids": [
+        "list-4c4380926339ad9b82b1"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Asura's Wrath",
+      "title": "Asura's Wrath",
+      "rank": 100,
+      "source_ids": [
+        "list-811f447f10ad17c87e45"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Rockstar Games Presents Table Tennis",
+      "title": "Rockstar Games presents Table Tennis",
+      "rank": 100,
+      "source_ids": [
+        "list-6fffd950edb290fbb404"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Perfect Dark Zero",
+      "title": "Perfect Dark Zero",
+      "rank": 100,
+      "source_ids": [
+        "list-ba2197deb6f3737d1b9e"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "50 Cent - Blood on the Sand",
+      "title": "50 Cent: Blood on the Sand",
+      "rank": 100,
+      "source_ids": [
+        "list-bf3978ad2e3c9efa8c8e"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Super Street Fighter II Turbo - HD Remix",
+      "title": "Super Street Fighter II Turbo HD Remix",
+      "rank": 100,
+      "source_ids": [
+        "list-bcecbe06c08a1f6d172c"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Spider-Man - Web of Shadows",
+      "title": "Spider-Man: Web of Shadows",
+      "rank": 100,
+      "source_ids": [
+        "list-84b49a7f14dc233fabe6"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Hard Corps - Uprising",
+      "title": "Hard Corps: Uprising",
+      "rank": 100,
+      "source_ids": [
+        "list-a013db4419724bfcae38"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Metal Slug XX",
+      "title": "Metal Slug XX",
+      "rank": 100,
+      "source_ids": [
+        "list-7cc5fc671af719423d3c"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE All Stars",
+      "title": "WWE All Stars",
+      "rank": 100,
+      "source_ids": [
+        "list-e82c0f38a05c1b86deee"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Perfect Dark Remaster",
+      "title": "Perfect Dark Remaster",
+      "rank": 100,
+      "source_ids": [
+        "list-4f31f21077080b94971c"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Tekken 6",
+      "title": "Tekken 6",
+      "rank": 100,
+      "source_ids": [
+        "list-7de460573cccedb91fa1",
+        "list-ebf0d805ed1fa217378e"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Minecraft - Xbox 360 Edition",
+      "title": "Minecraft: Xbox 360 Edition",
+      "rank": 100,
+      "source_ids": [
+        "list-a867dbd18467a29f392d"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Crash - Mind over Mutant",
+      "title": "Crash: Mind Over Mutant",
+      "rank": 100,
+      "source_ids": [
+        "list-eb0f43dd218020cba006"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Sonic the Hedgehog (2006)",
+      "title": "Sonic the Hedgehog (2006)",
+      "rank": 100,
+      "source_ids": [
+        "list-48e791d36ffdd58c62d9"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "The Simpsons Game",
+      "title": "The Simpsons Game",
+      "rank": 100,
+      "source_ids": [
+        "list-d3bc5977e1f98eb861ee"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Test Drive Unlimited",
+      "title": "Test Drive Unlimited",
+      "rank": 100,
+      "source_ids": [
+        "list-aa459175ef65cc064cda"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Sonic Free Riders",
+      "title": "Sonic Free Riders",
+      "rank": 100,
+      "source_ids": [
+        "list-e167bb768fe332b29253"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dead Rising 2 - Case Zero",
+      "title": "Dead Rising 2: Case Zero",
+      "rank": 100,
+      "source_ids": [
+        "list-4eea4eace001ffb8ac58"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Need for Speed: Most Wanted (2005)",
+      "title": "Need for Speed: Most Wanted (2005)",
+      "rank": 100,
+      "source_ids": [
+        "list-1fdc5a839b8f486a8f9b"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Call of Duty 3",
+      "title": "Call of Duty 3",
+      "rank": 100,
+      "source_ids": [
+        "list-16df83643778bb3898c0",
+        "list-b79e103fe068fec467af"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dead Rising 2 - Case West",
+      "title": "Dead Rising 2: Case West",
+      "rank": 100,
+      "source_ids": [
+        "list-19c5272b91c527cd5875"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Tekken Tag Tournament 2",
+      "title": "Tekken Tag Tournament 2",
+      "rank": 100,
+      "source_ids": [
+        "list-21a3bf9f77a74de21c20"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Splatterhouse (2010)",
+      "title": "Splatterhouse (2010)",
+      "rank": 100,
+      "source_ids": [
+        "list-47f0336166268d7f7064"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Crash of the Titans",
+      "title": "Crash of the Titans",
+      "rank": 100,
+      "source_ids": [
+        "list-2364be60e33704a52de1"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Eternal Sonata",
+      "title": "Eternal Sonata",
+      "rank": 100,
+      "source_ids": [
+        "list-75616dc957534f194643"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Forza Motorsport 2",
+      "title": "Forza Motorsport 2",
+      "rank": 100,
+      "source_ids": [
+        "list-28d2fbf28ecbb82464d3"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Forza Motorsport 3",
+      "title": "Forza Motorsport 3",
+      "rank": 100,
+      "source_ids": [
+        "list-bfba78bf98a9d6e817d0"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Naruto Shippuden - Ultimate Ninja Storm Generations",
+      "title": "Naruto Shippuden: Ultimate Ninja Storm Generations",
+      "rank": 100,
+      "source_ids": [
+        "list-e58a7ef8de6c831f0108"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Need for Speed - Most Wanted",
+      "title": "Need for Speed: Most Wanted",
+      "rank": 100,
+      "source_ids": [
+        "list-e133bd782765b4242562"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "WWE 2K14",
+      "title": "WWE 2K14",
+      "rank": 100,
+      "source_ids": [
+        "list-ced6b5ec8fc67eb06606"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Mortal Kombat vs. DC Universe",
+      "title": "Mortal Kombat vs. DC Universe",
+      "rank": 100,
+      "source_ids": [
+        "list-715cd3d9d0aeb02abbbb"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Naruto Shippuden - Ultimate Ninja Storm 3 Full Burst",
+      "title": "Naruto Shippuden: Ultimate Ninja Storm 3 Full Burst",
+      "rank": 100,
+      "source_ids": [
+        "list-14d2bdf915ee2144a6d4"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Call of Duty - Modern Warfare 2",
+      "title": "Call of Duty: Modern Warfare 2",
+      "rank": 100,
+      "source_ids": [
+        "list-ea767c1f917377ec70f4"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "FIFA Street (2012)",
+      "title": "FIFA Street (2012)",
+      "rank": 100,
+      "source_ids": [
+        "list-8ae86e94a140a51640db"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Guitar Hero - Warriors of Rock",
+      "title": "Guitar Hero: Warriors of Rock",
+      "rank": 100,
+      "source_ids": [
+        "list-82f77ddf5cf61c146aa6"
+      ]
     }
   ],
   "porting_tools": [
@@ -566,7 +3710,649 @@
       "note": "Emulator PS3. Firmware i przygotowanie plików z własnej kopii."
     }
   ],
-  "catalog_version": "2026-10-22.1",
-  "catalog_notes": "Added official Azimuth download for Forza Horizon 2 (Xbox One), separate from the Xbox 360 recompilation. Updated the 360 research status: manual driving observed; graphics and performance issues remain. Game files are not included.",
-  "catalog_updated_at": "2026-10-22"
+  "catalog_version": "2026-10-31.1",
+  "catalog_notes": "Added 93 game entries and 104 source links from community project lists. Newly added games and ports have not been gameplay-tested by RE:COPILE; catalog inclusion, download availability and installation do not establish full gameplay or 100% compatibility. Includes automatic list tracking, reviewed package definitions for 16 sources, on-demand package discovery and installer/translation improvements. Game data is not included.",
+  "catalog_updated_at": "2026-10-31",
+  "tracked_lists": [
+    {
+      "id": "awesome-x360",
+      "name": "Awesome Xbox 360 Recomps",
+      "url": "https://github.com/abduznik/awesome-x360-recomps",
+      "checked_at": 1793318000.3845344,
+      "entries": [
+        {
+          "title": "Skate 3",
+          "repo": "mchughalex/skate3recomp"
+        },
+        {
+          "title": "Naughty Bear",
+          "repo": "MaxDeadBear/NaughtyBear_ReStuff"
+        },
+        {
+          "title": "Lollipop Chainsaw",
+          "repo": "MaxDeadBear/Re-Cherry"
+        },
+        {
+          "title": "Banjo-Kazooie: Nuts & Bolts",
+          "repo": "masterspike52/reNut"
+        },
+        {
+          "title": "Viva Piñata: Trouble in Paradise",
+          "repo": "SolarCookies/TiP-Recomp"
+        },
+        {
+          "title": "GoldenEye 007",
+          "repo": "SunJaycy/GoldenEye-Recomp"
+        },
+        {
+          "title": "Blue Dragon (re:Blue)",
+          "repo": "zolaware/reblue"
+        },
+        {
+          "title": "Lost Odyssey",
+          "repo": "freefrank/LostOdysseyRecomp"
+        },
+        {
+          "title": "Ninja Gaiden II",
+          "repo": "FermataRest/Ninja-s-Dawn-A-Ninja-Gaiden-2-Recompilation-Project"
+        },
+        {
+          "title": "Ace Combat 6: Fires of Liberation",
+          "repo": "sal063/AC6_recomp"
+        },
+        {
+          "title": "Crackdown",
+          "repo": "Unowa001/crackdown-recomp"
+        },
+        {
+          "title": "Crackdown 2",
+          "repo": "matty45/Crackdown2-Recomp"
+        },
+        {
+          "title": "Dante's Inferno",
+          "repo": "florinp93/hells-gate-recomp"
+        },
+        {
+          "title": "Castlevania: Symphony of the Night",
+          "repo": "birabittoh/NocturneRecomp"
+        },
+        {
+          "title": "Fable II",
+          "repo": "Fable2Recomp/Fable2Recomp"
+        },
+        {
+          "title": "Project Gotham Racing 4",
+          "repo": "beatrixzy/PGR4-Recomp"
+        },
+        {
+          "title": "DoDonPachi SaiDaiOuJou",
+          "repo": "eandis/SDOJ-Recomp"
+        },
+        {
+          "title": "Silent Hill: Downpour",
+          "repo": "LittleBitUA/DownpourRecomp"
+        },
+        {
+          "title": "Daytona USA",
+          "repo": "Subarasheese/daytona-xbla-recomp"
+        },
+        {
+          "title": "Condemned 2: Bloodshot",
+          "repo": "psxrestore/Condemned2Recomp"
+        },
+        {
+          "title": "Dragon Ball Z: Budokai HD Collection",
+          "repo": "WistfulHopes/DBZ1"
+        },
+        {
+          "title": "Dragon Ball: Raging Blast 2",
+          "repo": "WistfulHopes/RB2"
+        },
+        {
+          "title": "Halo 3 (cache build)",
+          "repo": "twist84/halo3_cache_release_recomp"
+        },
+        {
+          "title": "LEGO Dimensions",
+          "repo": "NeverCookFirst/DimensionsRecomp"
+        },
+        {
+          "title": "Fable II (ReXGlue)",
+          "repo": "himdo/Fable-2-Recomp"
+        },
+        {
+          "title": "Deadly Premonition",
+          "repo": "LittleBitUA/DPRecomp"
+        },
+        {
+          "title": "Forza Horizon",
+          "repo": "arcanite24/pinyon-shift"
+        },
+        {
+          "title": "Spider-Man: Edge of Time",
+          "repo": "goliathret/EdgeOfTimeRecomp"
+        },
+        {
+          "title": "Peter Jackson's King Kong",
+          "repo": "TekRantGaming/king-kong-recompiled"
+        },
+        {
+          "title": "Dragon Ball Z: Budokai 3 HD Collection",
+          "repo": "novapowers0/DBZ-Budokai-3-HD-Collection"
+        },
+        {
+          "title": "Burnout Revenge",
+          "repo": "shipa-2/Xerenge"
+        },
+        {
+          "title": "Midnight Club: Los Angeles",
+          "repo": "holdmysocks/mcla-recomp"
+        },
+        {
+          "title": "WWE SmackDown vs. Raw 2011",
+          "repo": "KaikoClanworth1/wwe-svr2011-pc"
+        },
+        {
+          "title": "Forza Motorsport 4",
+          "repo": "Alexbeav/fm4-recomp"
+        },
+        {
+          "title": "Ridge Racer 6",
+          "repo": "Sirhalo23/RidgeRacer6-Recompilation"
+        },
+        {
+          "title": "Grand Theft Auto IV",
+          "repo": "KoreanSeats1/Theft4"
+        },
+        {
+          "title": "Army of Two",
+          "repo": "OpenPortroid/ArmyOfTwoRecompilation"
+        },
+        {
+          "title": "WET",
+          "repo": "nikolaygorb/WetRecomp"
+        },
+        {
+          "title": "Forza Horizon 2",
+          "repo": "Gabrick75/fh2-recompiled"
+        },
+        {
+          "title": "Dragon Ball Z: Burst Limit",
+          "repo": "iExplosiveRage/DBZ-Burst-Limit-Recompiled"
+        },
+        {
+          "title": "Need for Speed: Carbon",
+          "repo": "codepdbh/NFS-CARBON-360-ANDROID-RECOMP"
+        },
+        {
+          "title": "Kameo: Elements of Power",
+          "repo": "MaxDeadBear/KameoRePowered"
+        },
+        {
+          "title": "Skate 2",
+          "repo": "christianortel/skate2-recompile-pc"
+        },
+        {
+          "title": "GoldenEye 007 Remastered",
+          "repo": "CaiusCodes/GoldenEye-007-XBLA-PC-Recomp"
+        },
+        {
+          "title": "Asura's Wrath",
+          "repo": "PauloUbirajara/asuras-wrath-recomp"
+        },
+        {
+          "title": "Rockstar Games presents Table Tennis",
+          "repo": "davidptrssvea/Table-Tennis-Rockstar-PC"
+        },
+        {
+          "title": "Geometry Wars: Retro Evolved 2",
+          "repo": "saulob/geometry-wars-retro-evolved-2-recompiled"
+        },
+        {
+          "title": "Perfect Dark Zero",
+          "repo": "nikolaygorb/PerfectDarkZeroRecomp"
+        },
+        {
+          "title": "50 Cent: Blood on the Sand",
+          "repo": "nlwstein/skullburglar"
+        },
+        {
+          "title": "Super Street Fighter II Turbo HD Remix",
+          "repo": "saulob/ssf2t-hd-remix-recompiled"
+        },
+        {
+          "title": "Spider-Man: Web of Shadows",
+          "repo": "toowasmir/WebOfShadowsRecomp"
+        },
+        {
+          "title": "Hard Corps: Uprising",
+          "repo": "saulob/hard-corps-uprising-recompiled"
+        },
+        {
+          "title": "Gears of War 2",
+          "repo": "santiquiroz/gears-of-war-2-pc-port"
+        },
+        {
+          "title": "Metal Slug XX",
+          "repo": "FluffyQuack/rexglue-MetalSlugXX"
+        },
+        {
+          "title": "WWE All Stars",
+          "repo": "shaneomac1337/WWE-AllStars-Recomp"
+        },
+        {
+          "title": "Perfect Dark Remaster",
+          "repo": "nikolaygorb/PerfectDarkRemasterRecomp"
+        },
+        {
+          "title": "NBA Jam: On Fire Edition",
+          "repo": "GTTeancum/OpenJam"
+        },
+        {
+          "title": "Tekken 6",
+          "repo": "mahmoud-mess/tekken6-recomp"
+        },
+        {
+          "title": "Minecraft: Xbox 360 Edition",
+          "repo": "DevZer0D4Y/MCX360-EDITION"
+        },
+        {
+          "title": "Crash: Mind Over Mutant",
+          "repo": "Maxilure/MindOver-Recomp"
+        },
+        {
+          "title": "Sonic Unleashed",
+          "repo": "hedge-dev/UnleashedRecomp"
+        },
+        {
+          "title": "Sonic the Hedgehog (2006)",
+          "repo": "sonicnext-dev/MarathonRecomp"
+        },
+        {
+          "title": "The Simpsons Game",
+          "repo": "YesterMester/TheSimpsonsGameRecomp"
+        },
+        {
+          "title": "Test Drive Unlimited",
+          "repo": "testdriveupgrade/TDURecomp"
+        },
+        {
+          "title": "Sonic Free Riders",
+          "repo": "YuutaTsubasa/Free-Riders-Recompiled"
+        },
+        {
+          "title": "Dead Rising 2: Case Zero",
+          "repo": "wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp"
+        },
+        {
+          "title": "Need for Speed: Most Wanted (2005)",
+          "repo": "SpeedBreakerProject/speedbreaker"
+        },
+        {
+          "title": "The Darkness",
+          "repo": "portingpete/The-Darkness-Recomp"
+        },
+        {
+          "title": "Call of Duty 3",
+          "repo": "FrankHUN88453/CoD3Recomp"
+        },
+        {
+          "title": "Dead Rising 2: Case West",
+          "repo": "wivi514/Dead_Rising_2_Case_West_Xenon_Recomp"
+        },
+        {
+          "title": "Tekken Tag Tournament 2",
+          "repo": "shihabal3amri/tekken-tag-tournament-2-pc"
+        },
+        {
+          "title": "The Simpsons Arcade",
+          "repo": "sp00nznet/simpsonsarcade"
+        }
+      ]
+    },
+    {
+      "id": "portedgames-x360",
+      "name": "PortedGames · Xbox 360",
+      "url": "https://portedgames.com/recompiled-games/xbox-360/",
+      "checked_at": 1793318000.3845358,
+      "entries": [
+        {
+          "title": "Army of Two",
+          "repo": "OpenPortroid/ArmyOfTwoRecompilation"
+        },
+        {
+          "title": "Burnout Revenge",
+          "repo": "shipa-2/Xerenge"
+        },
+        {
+          "title": "Castlevania: Symphony of the Night (Xbox Live Arcade)",
+          "repo": "birabittoh/NocturneRecomp"
+        },
+        {
+          "title": "Dead Rising 2: Case West",
+          "repo": "wivi514/Dead_Rising_2_Case_West_Xenon_Recomp"
+        },
+        {
+          "title": "Dead Rising 2: Case Zero",
+          "repo": "wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp"
+        },
+        {
+          "title": "DoDonPachi SaiDaiOuJou",
+          "repo": "eandis/SDOJ-Recomp"
+        },
+        {
+          "title": "Dragon Ball Z: Budokai 3 HD Collection",
+          "repo": "novapowers0/DBZ-Budokai-3-HD-Collection"
+        },
+        {
+          "title": "Skate 3",
+          "repo": "mchughalex/skate3recomp"
+        },
+        {
+          "title": "Spider-Man: Edge of Time",
+          "repo": "goliathret/EdgeOfTimeRecomp"
+        },
+        {
+          "title": "Splatterhouse (2010)",
+          "repo": "0c0de/splatterhouse-decomp"
+        },
+        {
+          "title": "Viva Piñata: Trouble in Paradise",
+          "repo": "SolarCookies/TiP-Recomp"
+        },
+        {
+          "title": "WWE SmackDown vs. Raw 2011",
+          "repo": "KaikoClanworth1/wwe-svr2011-pc"
+        },
+        {
+          "title": "Ace Combat 6: Fires of Liberation",
+          "repo": "sal063/AC6_recomp"
+        },
+        {
+          "title": "Banjo-Kazooie: Nuts & Bolts",
+          "repo": "masterspike52/reNut"
+        },
+        {
+          "title": "Condemned 2: Bloodshot",
+          "repo": "psxrestore/Condemned2Recomp"
+        },
+        {
+          "title": "Crash of the Titans",
+          "repo": "VitoMiguelF/crashott-pc"
+        },
+        {
+          "title": "Dragon Ball Z: Burst Limit",
+          "repo": "iExplosiveRage/DBZ-Burst-Limit-Recompiled"
+        },
+        {
+          "title": "Earthworm Jim HD",
+          "repo": "TekRantGaming/earthworm-jim-hd-recompiled"
+        },
+        {
+          "title": "Eternal Sonata",
+          "repo": "birabittoh/EternalSonataReprise"
+        },
+        {
+          "title": "Fable II",
+          "repo": "himdo/Fable-2-Recomp"
+        },
+        {
+          "title": "Forza Horizon",
+          "repo": "Dyotson/ForzaHorizon1-ReImagined"
+        },
+        {
+          "title": "Forza Motorsport 2",
+          "repo": "0herculabs/hl360-Forza2"
+        },
+        {
+          "title": "Forza Motorsport 3",
+          "repo": "0herculabs/hl360-forza3"
+        },
+        {
+          "title": "Forza Motorsport 4",
+          "repo": "0herculabs/hl360-forza4"
+        },
+        {
+          "title": "Gears of War 2",
+          "repo": "santiquiroz/gears-of-war-2-pc-port"
+        },
+        {
+          "title": "Geometry Wars: Retro Evolved 2",
+          "repo": "saulob/geometry-wars-retro-evolved-2-recompiled"
+        },
+        {
+          "title": "Grand Theft Auto IV",
+          "repo": "KoreanSeats1/Theft4"
+        },
+        {
+          "title": "LEGO Dimensions",
+          "repo": "NeverCookFirst/DimensionsRecomp"
+        },
+        {
+          "title": "Lost Odyssey",
+          "repo": "freefrank/LostOdysseyRecomp"
+        },
+        {
+          "title": "Midnight Club: Los Angeles",
+          "repo": "holdmysocks/mcla-recomp"
+        },
+        {
+          "title": "Midnight Club: Los Angeles",
+          "repo": "mzzvxm/LARecomp"
+        },
+        {
+          "title": "Naruto Shippuden: Ultimate Ninja Storm Generations",
+          "repo": "Masterllgod/naruto-storm-generations-port-nativo"
+        },
+        {
+          "title": "Naruto: Rise of a Ninja",
+          "repo": "jorjbarbosa/naruto-rise-recomp"
+        },
+        {
+          "title": "Need for Speed: Most Wanted",
+          "repo": "madelrandel-blip/NFSMW-Recompiled"
+        },
+        {
+          "title": "Peter Jackson's King Kong",
+          "repo": "TekRantGaming/king-kong-recompiled"
+        },
+        {
+          "title": "Project Gotham Racing 4",
+          "repo": "beatrixzy/PGR4-Recomp"
+        },
+        {
+          "title": "Ridge Racer 6",
+          "repo": "Sirhalo23/RidgeRacer6-Recompilation"
+        },
+        {
+          "title": "Sonic Free Riders",
+          "repo": "YuutaTsubasa/Free-Riders-Recompiled"
+        },
+        {
+          "title": "The Darkness",
+          "repo": "portingpete/The-Darkness-Recomp"
+        },
+        {
+          "title": "The Darkness",
+          "repo": "invinceble55-wq/Estacado-The-Darkness-Recomp"
+        },
+        {
+          "title": "The Simpsons Game",
+          "repo": "YesterMester/TheSimpsonsGameRecomp"
+        },
+        {
+          "title": "WWE '12",
+          "repo": "iMrBurn/wwe12-pc"
+        },
+        {
+          "title": "WWE 2K14",
+          "repo": "PromethenDev/wwe2k14-recomp"
+        },
+        {
+          "title": "Ace Combat 6: Fires of Liberation",
+          "repo": "rapidsamphire/AC6Recomp"
+        },
+        {
+          "title": "Crackdown 2",
+          "repo": "matty45/Crackdown2-Recomp"
+        },
+        {
+          "title": "Crazy Taxi",
+          "repo": "sp00nznet/ctxbla"
+        },
+        {
+          "title": "Fable II",
+          "repo": "Fable2Recomp/Fable2Recomp"
+        },
+        {
+          "title": "Forza Horizon 2",
+          "repo": "Gabrick75/fh2-recompiled"
+        },
+        {
+          "title": "Mortal Kombat vs. DC Universe",
+          "repo": "KawaiiBunga/MKVDCU-Recomp"
+        },
+        {
+          "title": "Naruto Shippuden: Ultimate Ninja Storm 3 Full Burst",
+          "repo": "Masterllgod/naruto-storm-3-full-burst-port-nativo"
+        },
+        {
+          "title": "Crackdown",
+          "repo": "Unowa001/crackdown-recomp"
+        },
+        {
+          "title": "Ninja Gaiden II",
+          "repo": "TheSaltTrader/Ninja-s-Dawn---A-Ninja-Gaiden-2-Recompilation-Project"
+        },
+        {
+          "title": "Call of Duty: Modern Warfare 2",
+          "repo": "PaulCombal/mw2-recompiled"
+        },
+        {
+          "title": "Sonic Unleashed",
+          "repo": "hedge-dev/UnleashedRecomp"
+        },
+        {
+          "title": "Tekken 6",
+          "repo": "Ekspym/Tekken6-native-online"
+        },
+        {
+          "title": "Call of Duty 3",
+          "repo": "FrankHUN88453/CoD3Recomp"
+        },
+        {
+          "title": "Call of Duty 3",
+          "repo": "zenit2893-cmyk/project-1944"
+        },
+        {
+          "title": "Dante's Inferno",
+          "repo": "florinp93/hells-gate-recomp"
+        },
+        {
+          "title": "FIFA Street (2012)",
+          "repo": "samuelit0davila/fifa-street-pc-port"
+        },
+        {
+          "title": "Forza Horizon",
+          "repo": "arcanite24/pinyon-shift"
+        },
+        {
+          "title": "Forza Motorsport 4",
+          "repo": "Alexbeav/fm4-recomp"
+        },
+        {
+          "title": "Guitar Hero: Warriors of Rock",
+          "repo": "ronniecloud/re-wor"
+        },
+        {
+          "title": "Need for Speed: Most Wanted (2005)",
+          "repo": "SpeedBreakerProject/speedbreaker"
+        },
+        {
+          "title": "Skate 2",
+          "repo": "christianortel/skate2-recompile-pc"
+        },
+        {
+          "title": "Tekken Tag Tournament 2",
+          "repo": "shihabal3amri/tekken-tag-tournament-2-pc"
+        },
+        {
+          "title": "Grand Theft Auto IV",
+          "repo": "OZORDI/LibertyRecomp"
+        },
+        {
+          "title": "Sonic the Hedgehog (2006)",
+          "repo": "sonicnext-dev/MarathonRecomp"
+        }
+      ],
+      "guides": {
+        "https://portedgames.com/modern-warfare-2-xbox-360-recomp/": [
+          "PaulCombal/mw2-recompiled"
+        ],
+        "https://portedgames.com/sonic-unleashed-pc/": [
+          "hedge-dev/UnleashedRecomp",
+          "hedge-dev/XenonRecomp",
+          "hedge-dev/XenosRecomp"
+        ],
+        "https://portedgames.com/tekken-6-pc/": [
+          "Ekspym/Tekken6-native-online",
+          "mahmoud-mess/tekken6-recomp",
+          "GenryTheFox0/Project-Iron-6",
+          "Ekspym/tekken6-native-online-source",
+          "rexglue/rexglue-sdk"
+        ],
+        "https://portedgames.com/call-of-duty-3-pc/": [
+          "FrankHUN88453/CoD3Recomp",
+          "zenit2893-cmyk/project-1944"
+        ],
+        "https://portedgames.com/dantes-inferno-pc/": [
+          "florinp93/hells-gate-recomp",
+          "rexglue/rexglue-sdk"
+        ],
+        "https://portedgames.com/fifa-street-pc/": [
+          "samuelit0davila/fifa-street-pc-port",
+          "rexglue/rexglue-sdk"
+        ],
+        "https://portedgames.com/forza-horizon-pc/": [
+          "arcanite24/pinyon-shift",
+          "anarqz/InfinityHorizon",
+          "arcanite24/shiftglue-sdk"
+        ],
+        "https://portedgames.com/forza-motorsport-4-pc/": [
+          "Alexbeav/fm4-recomp"
+        ],
+        "https://portedgames.com/guitar-hero-warriors-of-rock-pc/": [
+          "ronniecloud/re-wor",
+          "YoshiCrystal9/re-gh2",
+          "sp00nznet/gh3"
+        ],
+        "https://portedgames.com/need-for-speed-most-wanted-recomp/": [
+          "SpeedBreakerProject/speedbreaker"
+        ],
+        "https://portedgames.com/skate-2-pc/": [
+          "christianortel/skate2-recompile-pc",
+          "rexglue/rexglue-sdk",
+          "mchughalex/skate3recomp",
+          "Skate-2-Team/sk82-recomp",
+          "cookingwithsimon/Skate2Recompiled"
+        ],
+        "https://portedgames.com/tekken-tag-tournament-2-pc/": [
+          "shihabal3amri/tekken-tag-tournament-2-pc",
+          "thatcalikid760/TTT2-Recomp",
+          "Petexy/Tekken-Tag-2-Ultimate-Edition",
+          "hedge-dev/XenonRecomp"
+        ],
+        "https://portedgames.com/gta-iv-xbox-360-recomp/": [
+          "OZORDI/LibertyRecomp",
+          "rexglue/rexglue-sdk",
+          "github/dmca"
+        ],
+        "https://portedgames.com/sonic-06-pc/": [
+          "sonicnext-dev/MarathonRecomp",
+          "sonicnext-dev/XenonRecomp",
+          "sonicnext-dev/XenosRecomp"
+        ]
+      }
+    }
+  ]
 }

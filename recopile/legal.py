@@ -49,7 +49,7 @@ class ProjectDocuments:
         version = release["version"]
         key = repo + "@" + version + ":" + release["asset"]["name"]
         cache = self.store.get("settings", "documents:" + key)
-        if cache and not refresh: return cache
+        if cache and not refresh: return {**cache, 'package_system': source.get('package_system', cache.get('package_system'))}
         base = "https://api.github.com/repos/" + repo
         doc_ref = version
         if source.get("documentation_repo"):
@@ -58,7 +58,7 @@ class ProjectDocuments:
                 doc_ref = fetch_json(base + "/commits/" + quote(doc_ref, safe=""))["sha"]
         ref = "?ref=" + quote(doc_ref, safe="")
         result = {"repo":repo, "source_id":source.get("id"), "name":source.get("name", repo), "version":version,
-                  "release_url":release["url"], "release_notes":release.get("notes", ""), "asset_name":release["asset"]["name"],
+                  "release_url":release["url"], "release_notes":release.get("notes", ""), "asset_name":release["asset"]["name"], 'package_system': source.get('package_system'),
                   "asset_size":release["asset"]["size"], "fetched_at":time.time(), "funding":[], "documentation_ref":doc_ref}
         for kind, endpoint in [("readme", "/readme"), ("license", "/license")]:
             fallback = "https://github.com/" + repo + ("/tree/" + quote(doc_ref, safe="") if kind == "license" else "/blob/" + quote(doc_ref, safe="") + "/README.md")

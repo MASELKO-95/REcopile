@@ -1,5 +1,7 @@
 # RE:COPILE privacy notice
 
+The public GitHub README includes a visitor counter image hosted by [Hits.sh](https://hits.sh). When GitHub renders that badge, the request goes to Hits.sh and may include ordinary connection data required to serve the image. Its displayed count reflects badge requests, not verified unique people or activity inside the RE:COPILE launcher. This counter is separate from launcher data and telemetry.
+
 Profiles, launch history, statistics, launcher activity badges, settings and
 compatibility report drafts are stored on your device. RE:COPILE does not
 send them to its developer or Discord automatically. Exporting a profile
@@ -40,7 +42,11 @@ process is not measured as game playtime.
 
 Checking releases, catalogs and project documentation, and downloading programs,
 connects to GitHub and its file servers. GitHub receives ordinary connection
-data, such as your IP address. You do not need a GitHub account to use the
+data such as your IP address. With project-list tracking enabled, update checks also read the public
+PortedGames Xbox 360 list and its linked project guides. PortedGames receives
+ordinary connection data such as the IP address. These requests contain no
+local game paths, ISO files, saves, profile records or hardware reports. Cached
+lists remain local; tracking can be disabled in Settings. You do not need a GitHub account to use the
 launcher or download public releases.
 
 Game descriptions and image URLs are requested from English Wikipedia for

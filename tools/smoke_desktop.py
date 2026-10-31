@@ -59,6 +59,20 @@ def main():
             except HTTPError as exc:assert exc.code==404,exc.code
             cdp.evaluate("document.querySelector('dialog input[type=checkbox]').click();document.querySelector('dialog .modal-actions .primary').click()")
             cdp.wait("!document.querySelector('dialog[open]')")
+            assert len(boot.get('catalog_lists',{}).get('lists',[]))==2
+            cdp.click('Sources')
+            cdp.wait("document.querySelectorAll('.catalog-list-entries article').length===10")
+            lists=cdp.evaluate("fetch('/api/catalog-lists').then(r=>r.json())")['lists']
+            assert len(lists)==2 and all(item['total']>50 and not item['missing'] for item in lists),lists
+            cdp.input('.catalog-lists input[type=search]',"WWE '12")
+            cdp.wait("document.querySelectorAll('.catalog-list-entries article').length===1")
+            cdp.evaluate("document.querySelector('.catalog-list-entries .text-link').click()")
+            cdp.wait("document.querySelector('dialog[open]')")
+            assert cdp.evaluate("[...document.querySelectorAll('dialog button')].some(b=>b.textContent.includes('Download Windows port'))")
+            cdp.evaluate("document.querySelector('dialog .modal-head .icon-button').click()")
+            cdp.wait("!document.querySelector('dialog[open]')")
+            cdp.click('Downloads')
+            cdp.wait("document.querySelector('.page-heading p')?.textContent==='Installations and updates, all in one place.'")
             cdp.click('Measurements')
             cdp.wait("document.querySelector('.performance-page')")
             cdp.capture(out/(program.name+'.png'))
@@ -68,6 +82,7 @@ def main():
             report={'program':program.name,'version':boot['version'],'catalog_titles':boot['stats']['total'],
                     'steam_enabled':False,'packaged_backend':True,'first_run_consent':True,
                     'measurements_page':True,'console_errors':cdp.errors,
+                    'project_lists':True,'windows_download_option':True,'english_downloads':True,
                     'publisher_absent':True,
                     'updates_disabled_for_smoke':True,'os_install_performed':False,'game_programs_executed':False}
             (out/(program.name+'.json')).write_text(json.dumps(report,indent=2)+'\n')
