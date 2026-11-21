@@ -1,5 +1,28 @@
 # Historia zmian
 
+## 0.2.5 — 2026-11-21
+
+Security and catalog update. Local build only; not published.
+
+- Update security-relevant dependencies: Pillow 13.0.0 (fixes many Pillow
+  advisories; Pillow checks downloaded cover images), Electron 44.11.5
+  (eMudhra certificate mitigation), electron-builder 26.18.0,
+  electron-updater 6.8.11, Vite 6.4.6, React 19.3.1, and patched transitive
+  packages (undici, fast-uri, postcss, nanoid, browserslist, source-map-js).
+  `npm audit` reports 0 frontend vulnerabilities. The 6 remaining moderate
+  desktop findings come from minimatch in electron-builder, which only runs at
+  build time.
+- Cover verification now limits Pillow to the PNG, JPEG and WEBP decoders, so
+  no other image parser runs on downloaded bytes.
+- Add 10 Xbox 360 project sources from the tracked PortedGames list: Dead or
+  Alive Xtreme 2, El Chavo Kart, Ninja Gaiden II (gamboozino/ng2recomp,
+  KamiTK2/openNG2, YaibaKamikaze/IzunaRecomp), Project Gotham Racing 4,
+  Top Spin 4, Pro Evolution Soccer 2017 (author publishes Android packages
+  only), Grand Theft Auto IV (a PS5 homebrew port, not a PC port) and COGBox
+  for Gears of War 2, 3 and Judgment. None of these were gameplay-tested.
+- The tracked list abduznik/awesome-x360-recomps now returns 404 on GitHub.
+  The launcher keeps its saved copy.
+
 ## 0.2.2-beta.5 — 2026-10-31
 
 - Newly added games and ports have not been gameplay-tested by RE:COPILE.

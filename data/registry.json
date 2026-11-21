@@ -2619,6 +2619,226 @@
         "static-recompilation"
       ],
       "discover_packages": true
+    },
+    {
+      "id": "list-f8ce79b0faa4808ffb6d",
+      "name": "Dead or Alive Xtreme 2",
+      "repo": "hibikifukui22/Dead-or-Alive-Xtreme-2-Recompilation",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/hibikifukui22/Dead-or-Alive-Xtreme-2-Recompilation",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-ac37facf412a45a056e0",
+      "name": "El Chavo Kart",
+      "repo": "saulob/el-chavo-kart-recompiled",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/saulob/el-chavo-kart-recompiled",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-05380a38117142ada800",
+      "name": "Grand Theft Auto IV",
+      "repo": "elripalda/gta4-ps5",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/elripalda/gta4-ps5",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane. Projekt autora jest przeznaczony dla PS5 po jailbreaku, nie dla PC.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-658c0c0abca7c3d19973",
+      "name": "Ninja Gaiden II",
+      "repo": "gamboozino/ng2recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/gamboozino/ng2recomp",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-612a067f3b5d520e6288",
+      "name": "Ninja Gaiden II",
+      "repo": "KamiTK2/openNG2",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/KamiTK2/openNG2",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-cf113ad24273b853c16a",
+      "name": "Ninja Gaiden II",
+      "repo": "YaibaKamikaze/IzunaRecomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/YaibaKamikaze/IzunaRecomp",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-b71b802e776b03cc3e6b",
+      "name": "Project Gotham Racing 4",
+      "repo": "zer0ducksgiven/PGR4-ReGPU",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/zer0ducksgiven/PGR4-ReGPU",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-c9e2fd0c5aa6cc271610",
+      "name": "Top Spin 4",
+      "repo": "shaneomac1337/Top-Spin-4-Recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/shaneomac1337/Top-Spin-4-Recomp",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-f83d22804de0cffb148b",
+      "name": "Pro Evolution Soccer 2017",
+      "repo": "dzakyraf/pes2017-recomp",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/dzakyraf/pes2017-recomp",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane. Autor publikuje obecnie tylko pakiety Android.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
+    },
+    {
+      "id": "list-1e9fe7f799067fbef796",
+      "name": "COGBox · Gears of War 2, 3, Judgment",
+      "repo": "Shagg88/COGBox",
+      "platform": "xbox360",
+      "kind": "recompile",
+      "origin": "development",
+      "development_status": "listed",
+      "asset_pattern": "",
+      "assets_by_system": {},
+      "executables_by_system": {},
+      "adapter": "native",
+      "verified": false,
+      "auto_update": false,
+      "guide": "https://github.com/Shagg88/COGBox",
+      "discover_packages": true,
+      "note": "Projekt znaleziony na śledzonej liście. Instrukcja instalacji i aktualne wydania są u autora. Paczka dla RE:COPILE i działanie gry nie zostały zweryfikowane.",
+      "technologies": [
+        "static-recompilation"
+      ],
+      "tracked_list": "portedgames-x360"
     }
   ],
   "featured": [
@@ -2654,7 +2874,8 @@
       "genre": "Akcja",
       "rank": 3,
       "source_ids": [
-        "list-fbacca9b12ea4990ba33"
+        "list-fbacca9b12ea4990ba33",
+        "list-1e9fe7f799067fbef796"
       ]
     },
     {
@@ -3050,7 +3271,10 @@
       "rank": 100,
       "source_ids": [
         "list-2442854eceec23658edf",
-        "list-cd2b2b60886c8d7584a8"
+        "list-cd2b2b60886c8d7584a8",
+        "list-658c0c0abca7c3d19973",
+        "list-612a067f3b5d520e6288",
+        "list-cf113ad24273b853c16a"
       ]
     },
     {
@@ -3114,7 +3338,8 @@
       "title": "Project Gotham Racing 4",
       "rank": 100,
       "source_ids": [
-        "list-a7fe35b3a25a7552d505"
+        "list-a7fe35b3a25a7552d505",
+        "list-b71b802e776b03cc3e6b"
       ]
     },
     {
@@ -3288,7 +3513,8 @@
       "rank": 100,
       "source_ids": [
         "list-3eebd1e3c795da2ed0ef",
-        "list-a78c40b8245c96055ec4"
+        "list-a78c40b8245c96055ec4",
+        "list-05380a38117142ada800"
       ]
     },
     {
@@ -3661,6 +3887,60 @@
       "source_ids": [
         "list-82f77ddf5cf61c146aa6"
       ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Dead or Alive Xtreme 2",
+      "title": "Dead or Alive Xtreme 2",
+      "rank": 100,
+      "source_ids": [
+        "list-f8ce79b0faa4808ffb6d"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Chavo Kart, El (Latin America)",
+      "title": "El Chavo Kart",
+      "rank": 100,
+      "source_ids": [
+        "list-ac37facf412a45a056e0"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Top Spin 4",
+      "title": "Top Spin 4",
+      "rank": 100,
+      "source_ids": [
+        "list-c9e2fd0c5aa6cc271610"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Pro Evolution Soccer 2017",
+      "title": "Pro Evolution Soccer 2017",
+      "rank": 100,
+      "source_ids": [
+        "list-f83d22804de0cffb148b"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Gears of War 3",
+      "title": "Gears of War 3",
+      "rank": 100,
+      "source_ids": [
+        "list-1e9fe7f799067fbef796"
+      ]
+    },
+    {
+      "platform": "xbox360",
+      "match": "Gears of War - Judgment",
+      "title": "Gears of War: Judgment",
+      "rank": 100,
+      "source_ids": [
+        "list-1e9fe7f799067fbef796"
+      ]
     }
   ],
   "porting_tools": [
@@ -3710,9 +3990,9 @@
       "note": "Emulator PS3. Firmware i przygotowanie plików z własnej kopii."
     }
   ],
-  "catalog_version": "2026-10-31.1",
-  "catalog_notes": "Added 93 game entries and 104 source links from community project lists. Newly added games and ports have not been gameplay-tested by RE:COPILE; catalog inclusion, download availability and installation do not establish full gameplay or 100% compatibility. Includes automatic list tracking, reviewed package definitions for 16 sources, on-demand package discovery and installer/translation improvements. Game data is not included.",
-  "catalog_updated_at": "2026-10-31",
+  "catalog_version": "2026-11-21.1",
+  "catalog_notes": "Added 10 Xbox 360 project sources from the tracked PortedGames list: Dead or Alive Xtreme 2, El Chavo Kart, Ninja Gaiden II (3 projects), Project Gotham Racing 4, Top Spin 4, Pro Evolution Soccer 2017 (Android packages only), Grand Theft Auto IV (PS5 homebrew port) and COGBox for Gears of War 2, 3 and Judgment. These projects have not been gameplay-tested by RE:COPILE; catalog inclusion and download availability do not establish compatibility. Game data is not included.",
+  "catalog_updated_at": "2026-11-21",
   "tracked_lists": [
     {
       "id": "awesome-x360",
@@ -4014,7 +4294,7 @@
       "id": "portedgames-x360",
       "name": "PortedGames · Xbox 360",
       "url": "https://portedgames.com/recompiled-games/xbox-360/",
-      "checked_at": 1793318000.3845358,
+      "checked_at": 1795274610.897551,
       "entries": [
         {
           "title": "Army of Two",
@@ -4043,6 +4323,10 @@
         {
           "title": "Dragon Ball Z: Budokai 3 HD Collection",
           "repo": "novapowers0/DBZ-Budokai-3-HD-Collection"
+        },
+        {
+          "title": "Rayman 3 HD",
+          "repo": "MysteriousAeon/rayman3-hd-recompiled"
         },
         {
           "title": "Skate 3",
@@ -4081,12 +4365,20 @@
           "repo": "VitoMiguelF/crashott-pc"
         },
         {
+          "title": "Dead or Alive Xtreme 2",
+          "repo": "hibikifukui22/Dead-or-Alive-Xtreme-2-Recompilation"
+        },
+        {
           "title": "Dragon Ball Z: Burst Limit",
           "repo": "iExplosiveRage/DBZ-Burst-Limit-Recompiled"
         },
         {
           "title": "Earthworm Jim HD",
           "repo": "TekRantGaming/earthworm-jim-hd-recompiled"
+        },
+        {
+          "title": "El Chavo Kart",
+          "repo": "saulob/el-chavo-kart-recompiled"
         },
         {
           "title": "Eternal Sonata",
@@ -4125,6 +4417,10 @@
           "repo": "KoreanSeats1/Theft4"
         },
         {
+          "title": "Grand Theft Auto IV",
+          "repo": "elripalda/gta4-ps5"
+        },
+        {
           "title": "LEGO Dimensions",
           "repo": "NeverCookFirst/DimensionsRecomp"
         },
@@ -4153,12 +4449,28 @@
           "repo": "madelrandel-blip/NFSMW-Recompiled"
         },
         {
+          "title": "Ninja Gaiden II",
+          "repo": "gamboozino/ng2recomp"
+        },
+        {
+          "title": "Ninja Gaiden II",
+          "repo": "KamiTK2/openNG2"
+        },
+        {
+          "title": "Ninja Gaiden II",
+          "repo": "YaibaKamikaze/IzunaRecomp"
+        },
+        {
           "title": "Peter Jackson's King Kong",
           "repo": "TekRantGaming/king-kong-recompiled"
         },
         {
           "title": "Project Gotham Racing 4",
           "repo": "beatrixzy/PGR4-Recomp"
+        },
+        {
+          "title": "Project Gotham Racing 4",
+          "repo": "zer0ducksgiven/PGR4-ReGPU"
         },
         {
           "title": "Ridge Racer 6",
@@ -4179,6 +4491,10 @@
         {
           "title": "The Simpsons Game",
           "repo": "YesterMester/TheSimpsonsGameRecomp"
+        },
+        {
+          "title": "Top Spin 4",
+          "repo": "shaneomac1337/Top-Spin-4-Recomp"
         },
         {
           "title": "WWE '12",
@@ -4217,8 +4533,16 @@
           "repo": "Masterllgod/naruto-storm-3-full-burst-port-nativo"
         },
         {
+          "title": "Pro Evolution Soccer 2017",
+          "repo": "dzakyraf/pes2017-recomp"
+        },
+        {
           "title": "Crackdown",
           "repo": "Unowa001/crackdown-recomp"
+        },
+        {
+          "title": "Gears of War 2, Gears of War 3 and Gears of War: Judgment",
+          "repo": "Shagg88/COGBox"
         },
         {
           "title": "Ninja Gaiden II",

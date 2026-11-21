@@ -4,7 +4,7 @@
 
 RE:COPILE brings game lists, project documentation, installation, updates and launch settings into one place. Emulator and local game entries provide alternatives when a native port is unavailable. Developed by [MASELKO-95](https://github.com/MASELKO-95).
 
-**Public beta 0.2.2-beta.5.** [Download Linux packages](https://github.com/MASELKO-95/REcopile/releases/tag/v0.2.2-beta.5) or the [matching GPL source archive](https://github.com/MASELKO-95/REcopile/releases/download/v0.2.2-beta.5/Recopile-0.2.2-beta.5-source.zip). Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
+**Release 0.2.5.** [Download Linux packages](https://github.com/MASELKO-95/REcopile/releases/tag/v0.2.5) or the [matching GPL source archive](https://github.com/MASELKO-95/REcopile/releases/download/v0.2.5/Recopile-0.2.5-source.zip). Linux is the current validation platform. Windows packaging still needs a Windows build and validation. Android is deferred.
 
 [![Downloads](https://img.shields.io/github/downloads/MASELKO-95/REcopile/total?style=for-the-badge&logo=github&label=Downloads)](https://github.com/MASELKO-95/REcopile/releases) [![Visitors](https://hits.sh/github.com/MASELKO-95/REcopile.svg?style=for-the-badge&label=Visitors&logo=github)](https://hits.sh/github.com/MASELKO-95/REcopile/)
 

@@ -147,7 +147,8 @@ class GameMedia:
         url = cache["thumbnail"]
         if urlparse(url).hostname != "upload.wikimedia.org": raise UserError("Niedozwolone źródło okładki.")
         raw = read_media(url, 5_000_000)
-        with Image.open(io.BytesIO(raw)) as image:
+        # Only the three accepted decoders may parse downloaded bytes.
+        with Image.open(io.BytesIO(raw), formats=("PNG", "JPEG", "WEBP")) as image:
             if image.width * image.height > 12_000_000 or image.format not in {"PNG", "JPEG", "WEBP"}:
                 raise UserError("Nieobsługiwany format okładki.")
             suffix = {"PNG": ".png", "JPEG": ".jpg", "WEBP": ".webp"}[image.format]
